@@ -8,7 +8,21 @@
 - Would like to mix sound with it as well ? or video
 - js events: click, ALERT :3, ...
 - WHAT DO WE WANT TO SAY OR TALK ABOUT ? (ideas)
-    - digital person (mouchette)
+    - digital person (like mouchette):
+    - OR TAMAGOCHI !!!!!
+    ### Digi Chiika 
+    - buttons that are like eyes, when pressed, blink
+        - make them look around ? (mouse position, random, other button, ...)
+    - communication? 
+        - needs ? 
+    - sound? 
+        - Music :3
+        - Vocaloid like response ? sounds
+    - Visuals: have an img/video background, have a "window like" on it, representing Digi Chiika 
+        - have a button to change the img/video background
+            - space, beach, mountain, big city landscape,...
+        + +make Digi Chiika "respond" to it (emotions)
+ 
 ## Links
 Class website pages: https://anomalse.github.io/CART263-Winter-2026/projects.html
 
@@ -21,4 +35,34 @@ https://anomalse.github.io/CART263-Winter-2026/readings.html
 - mixing real life with online : https://www.blasttheory.co.uk/projects/can-you-see-me-now/ 
 ### Links from other places:
 - Ascii fun & beautiful material: https://www.asciiart.eu/image-to-ascii
-- 
+- fonts: ( https://fonts.google.com/ ); 
+    - fancy/vintage:
+        - https://fonts.google.com/specimen/Ballet?categoryFilters=Feeling:%2FExpressive%2FVintage
+        - https://fonts.google.com/specimen/Almendra+Display?categoryFilters=Feeling:%2FExpressive%2FVintage
+        - https://fonts.google.com/specimen/Astloch?categoryFilters=Feeling:%2FExpressive%2FVintage
+        - https://fonts.google.com/specimen/Special+Elite?categoryFilters=Feeling:%2FExpressive%2FVintage 
+        - https://fonts.google.com/specimen/Manufacturing+Consent?categoryFilters=Feeling:%2FExpressive%2FVintage
+        - https://fonts.google.com/specimen/Bytesized?categoryFilters=Feeling:%2FExpressive%2FVintage
+    - pixel: 
+        - https://fonts.google.com/specimen/Jacquard+12?categoryFilters=Feeling:%2FExpressive%2FVintage
+        - https://fonts.google.com/specimen/Jacquard+12+Charted?categoryFilters=Feeling:%2FExpressive%2FVintage
+        - https://fonts.google.com/specimen/Pixelify+Sans?categoryFilters=Feeling:%2FExpressive%2FVintage
+        - https://fonts.google.com/specimen/Coral+Pixels?categoryFilters=Feeling:%2FExpressive%2FVintage
+        - https://fonts.google.com/specimen/DotGothic16?categoryFilters=Feeling:%2FExpressive%2FVintage
+        - https://fonts.google.com/specimen/Nabla?categoryFilters=Feeling:%2FExpressive%2FFuturistic
+        - https://fonts.google.com/specimen/Doto?categoryFilters=Feeling:%2FExpressive%2FFuturistic
+        - https://fonts.google.com/specimen/Workbench?categoryFilters=Appearance:%2FTheme%2FPixel
+    - weird: 
+        - https://fonts.google.com/specimen/Rubik+Maze?categoryFilters=Feeling:%2FExpressive%2FAwkward
+        - https://fonts.google.com/specimen/Rubik+Burned?categoryFilters=Feeling:%2FExpressive%2FExcited
+        - https://fonts.google.com/specimen/Shizuru?categoryFilters=Feeling:%2FExpressive%2FAwkward
+        - https://fonts.google.com/specimen/Are+You+Serious?categoryFilters=Feeling:%2FExpressive%2FAwkward
+        - https://fonts.google.com/specimen/Milonga?categoryFilters=Feeling:%2FExpressive%2FAwkward
+        - https://fonts.google.com/specimen/Mountains+of+Christmas?categoryFilters=Feeling:%2FExpressive%2FVintage
+        - https://fonts.google.com/specimen/Schoolbell?categoryFilters=Feeling:%2FExpressive%2FVintage
+        - https://fonts.google.com/specimen/Sawarabi+Mincho?categoryFilters=Feeling:%2FExpressive%2FVintage 
+    - normal: 
+        - https://fonts.google.com/specimen/Instrument+Serif?categoryFilters=Feeling:%2FExpressive%2FVintage
+        - https://fonts.google.com/specimen/Xanh+Mono?categoryFilters=Feeling:%2FExpressive%2FVintage
+        
+   
