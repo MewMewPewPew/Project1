@@ -18,19 +18,24 @@
     - sound? 
         - Music :3
         - Vocaloid like response ? sounds
+        - maybe it can make noises depending on state
     - Visuals: have an img/video background, have a "window like" on it, representing Digi Chiika 
         - have a button to change the img/video background
             - space, beach, mountain, big city landscape,...
         + +make Digi Chiika "respond" to it (emotions)
             - different emotional states.. responds to actions or time based?
             - how will it react? animation or change in sprite? maybe change in color? maybe sounds?
-            - will it speak? if so we can think of speech bubbles..
-                - maybe it can make noises if you want to incorporate sound! eg: noises depending on state
+    - will it speak? if so we can think of speech bubbles..
+        - doesn't need to speak in "our" languages.. could be in symbols? binary? maybe ascii?
     - state ideas..
         - happy (play)
         - sad (what would trigger it?)
         - sleep (VS awake)
         - hungry (if food system is added)
+    - battery system instead of energy?
+        - adjacent to a health system?
+        - maybe make it rest when battery becomes red..
+            - recharges? 
 
  
 ## Links
@@ -43,9 +48,15 @@ https://anomalse.github.io/CART263-Winter-2026/readings.html
 - digital person ??https://www.mouchette.org/index.html
 - https://experiments.withgoogle.com/collection/chrome 
 - mixing real life with online : https://www.blasttheory.co.uk/projects/can-you-see-me-now/ 
+
+## Tamagotchi research:
+- website: https://tamawebgame.github.io/
+
+
 ### Links from other places:
 - Ascii fun & beautiful material: https://www.asciiart.eu/image-to-ascii
-- Tamagotchi website: https://tamawebgame.github.io/
+- Game examples:
+    - can be of some inspo: https://itch.io/games/tag-virtual-pet
 - fonts: ( https://fonts.google.com/ ); 
     - fancy/vintage:
         - https://fonts.google.com/specimen/Ballet?categoryFilters=Feeling:%2FExpressive%2FVintage
