@@ -22,6 +22,11 @@
         - have a button to change the img/video background
             - space, beach, mountain, big city landscape,...
         + +make Digi Chiika "respond" to it (emotions)
+            - different emotional states.. responds to actions or time based?
+            - how will it react? animation or change in sprite? maybe change in color? maybe sounds?
+            - will it speak? if so we can think of speech bubbles..
+                - maybe it can make noises if you want to incorporate sound! eg: noises depending on state
+
  
 ## Links
 Class website pages: https://anomalse.github.io/CART263-Winter-2026/projects.html
@@ -35,6 +40,7 @@ https://anomalse.github.io/CART263-Winter-2026/readings.html
 - mixing real life with online : https://www.blasttheory.co.uk/projects/can-you-see-me-now/ 
 ### Links from other places:
 - Ascii fun & beautiful material: https://www.asciiart.eu/image-to-ascii
+- Tamagotchi website: https://tamawebgame.github.io/
 - fonts: ( https://fonts.google.com/ ); 
     - fancy/vintage:
         - https://fonts.google.com/specimen/Ballet?categoryFilters=Feeling:%2FExpressive%2FVintage
