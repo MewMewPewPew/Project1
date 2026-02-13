@@ -26,6 +26,11 @@
             - how will it react? animation or change in sprite? maybe change in color? maybe sounds?
             - will it speak? if so we can think of speech bubbles..
                 - maybe it can make noises if you want to incorporate sound! eg: noises depending on state
+    - state ideas..
+        - happy (play)
+        - sad (what would trigger it?)
+        - sleep (VS awake)
+        - hungry (if food system is added)
 
  
 ## Links
