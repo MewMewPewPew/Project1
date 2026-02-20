@@ -1,5 +1,5 @@
 body{
-    background: rgb(197, 131, 152); /* could be img */
+    background: rgb(116, 94, 113); /* could be img */
 
 }
 .all-box{
@@ -11,37 +11,51 @@ body{
     
 } */
 #chiikaBoxOnly{
-    border: 4px solid #cecece;
+    /* border: 4px solid #cecece; */
     background: #dddddd00;
     border-radius: 10px;
     margin-left: 200px;
-    margin-top: 250px;
+    margin-top: 5%;
     width: 500px;
     height: 500px;   
-    padding: 10px;
+    /* padding: 10px; */
     /* display: none; */
+    position: relative;
 }
 #awakeButton {
+    position: absolute;
     max-width: 10%;
     height: auto;
+    left: 264px;
+    top: 479px;
     
     /* border-radius: 50%;  to make circle border img*/
 }
 #tamagochiOff {
+    z-index: -1;
+    position: absolute;
     max-width: 600px;
     height: auto;
-    padding: 20px;
+    /* padding: 20px; */
     
     /* border-radius: 50%;  to make circle border img*/
 }
-#mindBoxOnly {
-    border: 4px solid #cecece;
-    background: #ddd;
+.mindBox {
+    position: absolute;
+    border: 4px solid #f55894;
+    background: #f7b4ee;
     border-radius: 10px;
-    margin-left: 400px;
-    margin-top: 10px;
+    margin-left: 550px;
+    margin-top: -60px;
     width: 300px;
-    height: 300px;   
+    height: 200px;   
     padding: 10px;
-    display: block;
+    /* display: block; */
+}
+#screen {
+    margin-left: 575px;
+    margin-top: -40px;
+    width: 250px;
+    height: 100px; 
+    /* display: block; */
 }

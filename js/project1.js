@@ -22,7 +22,7 @@ let mindBox = this.document.getElementById("mindBoxOnly");
             wakeUpButton.src = "assets/img/buttonPink-off.png";
             sleep = false;
             //css changes
-            document.body.style.background = "rgb(197, 131, 152)";
+            document.body.style.background = "rgb(116, 94, 113)";
             
         } 
     }
