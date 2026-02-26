@@ -11,6 +11,7 @@
     - digital person (like mouchette):
     - OR TAMAGOCHI !!!!!
     ### Digi Chiika 
+    - GIF: 320px x 320px 
     - buttons that are like eyes, when pressed, blink
         - make them look around ? (mouse position, random, other button, ...)
     - communication? 
@@ -37,7 +38,7 @@
         - maybe make it rest when battery becomes red..
             - recharges? 
 
- 
+- Doki Doki Litterature Club inspiration?? JUST MONIKA !!!!
 ## Links
 Class website pages: https://anomalse.github.io/CART263-Winter-2026/projects.html
 
@@ -54,6 +55,7 @@ https://anomalse.github.io/CART263-Winter-2026/readings.html
 
 
 ### Links from other places:
+- pixel art gifs: https://www.piskelapp.com/p/create/sprite/
 - Ascii fun & beautiful material: https://www.asciiart.eu/image-to-ascii
 - Game examples:
     - can be of some inspo: https://itch.io/games/tag-virtual-pet
