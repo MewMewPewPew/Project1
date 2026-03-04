@@ -3,6 +3,7 @@ window.onload = function (){
     let egg = true; 
     let eggCracked = false;
     let hatched = false;
+    let click = 0;
     //div documents
     let mindBox = this.document.getElementById("mindBoxOnly");
     //img of the tamagotchi (machine)
@@ -50,43 +51,40 @@ window.onload = function (){
             
         } 
     }
+  
     function interactPet(){
         //button interact with pet for now 
         if(egg){
             console.log(egg);
-            if (!hatched){
-                //makes the egg move when mouse over
-                actButton.addEventListener("click", breakingShell())
-                {
-                    console.log("What could be in the egg?");
-                    virtualPetDoc.src = "assets/gif/egg.gif";
-                    // eggCracked = true;
-                    
-                };
-                virtualPetDoc.addEventListener("mouseout", function(e){
-                    this.src = "assets/gif/eggIMG.png";
-                    console.log("mouseOut");
-                    // eggCracked = true;
-                });
-            }
-                
-            //makes the egg hatch
-            virtualPetDoc.addEventListener("click", function(e){ // has to be done only once
-                console.log("New kitty has been born");
-                this.src = "assets/gif/babyKittyegg.gif";
-                egg = false;
-                if (!egg){
-                    console.log(egg + "2");
-                    return;   
-                } 
-            })
-        }
-        else if (!egg){
-            virtualPetDoc.addEventListener("click", function(e){
-            this.src = "assets/gif/babyKitty.gif";
-            })
+            //makes the egg move when mouse over
             
-        }
+            actButton.addEventListener("click", function (e){
+                console.log("What could be in the egg?");
+                
+                click ++;
+                console.log(click);
+            })
+            // make array of gif, loop each click ?
+             
+            
+                
+        //     //makes the egg hatch
+        //     virtualPetDoc.addEventListener("click", function(e){ // has to be done only once
+        //         console.log("New kitty has been born");
+        //         this.src = "assets/gif/babyKittyegg.gif";
+        //         egg = false;
+        //         if (!egg){
+        //             console.log(egg + "2");
+        //             return;   
+        //         } 
+        //     })
+        // }
+        // else if (!egg){
+        //     virtualPetDoc.addEventListener("click", function(e){
+        //     this.src = "assets/gif/babyKitty.gif";
+        //     })
+            
+        // }
 
         // if(egg){
         //     if (!hatched) {
@@ -132,4 +130,5 @@ window.onload = function (){
 
     }
     
+    }
 }
