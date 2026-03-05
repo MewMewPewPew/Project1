@@ -44,6 +44,31 @@ body{
     top: 479px;
     /* border-radius: 50%;  to make circle border img*/
 }
+
+#interactButton2 {
+    left: 191px;
+    top: 510px;
+    /* border-radius: 50%;  to make circle border img*/
+}
+
+#interactButton3 {
+    left: 338px;
+    top: 509px;
+    /* border-radius: 50%;  to make circle border img*/
+}
+
+#interactButton4 {
+    left: 123px;
+    top: 469px;
+    /* border-radius: 50%;  to make circle border img*/
+}
+
+#interactButton5 {
+    left: 407px;
+    top: 469px;
+    /* border-radius: 50%;  to make circle border img*/
+}
+
 #tamagochiOff {
     z-index: -1;
     position: absolute;

@@ -13,8 +13,13 @@ window.onload = function (){
     let virtualPetDoc = this.document.getElementById("pet");
 
     //buttons
+    //check petRef.png to know which number refers to which button
     let wakeUpButton = document.getElementById("awakeButton");
     let actButton = document.getElementById("interactButton");
+    let actButton2 = document.getElementById("interactButton2");
+    let actButton3 = document.getElementById("interactButton3");
+    let actButton4 = document.getElementById("interactButton4");
+    let actButton5 = document.getElementById("interactButton5");
 
     wakeUpButton.addEventListener("click", chiikaAwake);
     function chiikaAwake(){
@@ -34,6 +39,10 @@ window.onload = function (){
             //make the buttons accessable
             interactPet();
             actButton.src = "assets/img/button-base.png";
+            actButton2.src = "assets/img/button-base.png";
+            actButton3.src = "assets/img/button-base.png";
+            actButton4.src = "assets/img/button-base.png";
+            actButton5.src = "assets/img/button-base.png";
         }
         else if(sleep){
             //console.log("chiika is asleep");
@@ -51,6 +60,10 @@ window.onload = function (){
             clickAct = 0;
             console.log(clickAct);
             actButton.src = "assets/img/button-base-off.png";
+            actButton2.src = "assets/img/button-base-off.png";
+            actButton3.src = "assets/img/button-base-off.png";
+            actButton4.src = "assets/img/button-base-off.png";
+            actButton5.src = "assets/img/button-base-off.png";
             //css changes
             document.body.style.background = "rgb(116, 94, 113)";
             
