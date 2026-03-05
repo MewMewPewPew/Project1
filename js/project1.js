@@ -11,7 +11,6 @@ window.onload = function (){
     let tamagochiImg = document.getElementById("tamagochiOff");
     //virtual pet Id
     let virtualPetDoc = this.document.getElementById("pet");
-
     //buttons
     //check petRef.png to know which number refers to which button
     let wakeUpButton = document.getElementById("awakeButton");
@@ -66,7 +65,6 @@ window.onload = function (){
             actButton5.src = "assets/img/button-base-off.png";
             //css changes
             document.body.style.background = "rgb(116, 94, 113)";
-            
         } 
     }
   
