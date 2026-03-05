@@ -1,8 +1,9 @@
+//CART 263
+//This is the code for Project 1 - aka: Digi smt ?
+//By Ash Oest O'Leary & Elle lillin ...
+
 window.onload = function (){
     let sleep = false;
-    let egg = true; 
-    let eggCracked = false;
-    let hatched = false;
     let clickAct = 0;
     //div documents
     let mindBox = this.document.getElementById("mindBoxOnly");
@@ -26,6 +27,8 @@ window.onload = function (){
             virtualPetDoc.style.display ="block";
             //css changes
             document.body.style.background = "rgb(253, 181, 204)";
+            // make the back ground a video ? add pretty clouds drifting ...
+
             // mindBox.style.display = "none";
 
             //make the buttons accessable
