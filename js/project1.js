@@ -3,7 +3,7 @@ window.onload = function (){
     let egg = true; 
     let eggCracked = false;
     let hatched = false;
-    let click = 0;
+    let clickAct = 0;
     //div documents
     let mindBox = this.document.getElementById("mindBoxOnly");
     //img of the tamagotchi (machine)
@@ -43,9 +43,11 @@ window.onload = function (){
 
             //Resetting the virtual pet
             virtualPetDoc.src = "assets/gif/eggIMG.png";
-            egg = true;
-            eggCracked = false;
-
+            // egg = true;
+            // eggCracked = false;
+            clickAct = 0;
+            console.log(clickAct);
+            actButton.src = "assets/img/button-base-off.png";
             //css changes
             document.body.style.background = "rgb(116, 94, 113)";
             
@@ -54,22 +56,37 @@ window.onload = function (){
   
     function interactPet(){
         //button interact with pet for now 
-        if(egg){
-            console.log(egg);
+        // if (!sleep) {
+            // clicks to crack the egg
+            actButton.addEventListener("click", function (e){
+                virtualPetDoc.src = "assets/gif/egg.gif";
+                if (sleep){
+                    clickAct ++;
+                    console.log(sleep);
+
+                }
+                console.log(clickAct);
+                if(clickAct === 2){
+                    virtualPetDoc.src = "assets/gif/babyKittyegg.gif";
+                }
+                else if (clickAct >= 3){
+                    virtualPetDoc.src = "assets/gif/babyKitty.gif";
+                }
+            })
+        // }
+    }
+
+}
+        // if(egg){
+            // console.log(egg);
             //makes the egg move when mouse over
             
-            actButton.addEventListener("click", function (e){
-                console.log("What could be in the egg?");
-                
-                click ++;
-                console.log(click);
-            })
-            // make array of gif, loop each click ?
+            // make array of gif, loop each clickAct ?
              
             
                 
         //     //makes the egg hatch
-        //     virtualPetDoc.addEventListener("click", function(e){ // has to be done only once
+        //     virtualPetDoc.addEventListener("clickAct", function(e){ // has to be done only once
         //         console.log("New kitty has been born");
         //         this.src = "assets/gif/babyKittyegg.gif";
         //         egg = false;
@@ -80,7 +97,7 @@ window.onload = function (){
         //     })
         // }
         // else if (!egg){
-        //     virtualPetDoc.addEventListener("click", function(e){
+        //     virtualPetDoc.addEventListener("clickAct", function(e){
         //     this.src = "assets/gif/babyKitty.gif";
         //     })
             
@@ -110,7 +127,7 @@ window.onload = function (){
         //             }
         //         });
         //         //makes the egg hatch
-        //         virtualPetDoc.addEventListener("click", function(e){ // has to be done only once
+        //         virtualPetDoc.addEventListener("clickAct", function(e){ // has to be done only once
         //             console.log("New kitty has been born");
         //             this.src = "assets/gif/babyKittyegg.gif";
         //             // egg = false;
@@ -128,7 +145,5 @@ window.onload = function (){
         // }
         
 
-    }
+    // }
     
-    }
-}
