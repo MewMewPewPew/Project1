@@ -1,6 +1,6 @@
 //CART 263
 //This is the code for Project 1 - aka: Digi smt ?
-//By Ash Oest O'Leary & Elle lillin ...
+//By Ash Oest O'Leary & Elle lilin ...
 
 window.onload = function (){
     let sleep = false;

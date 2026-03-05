@@ -26,8 +26,14 @@ body{
     position: absolute;
     left: 200px;
     top: 200px;
-    width: 35%;
-    
+    width: 35%; 
+}
+#chain{
+    position: absolute;
+    left: -33px;
+    top: -200px;
+    max-width: 130%;
+    z-index: -1;
 }
 .buttons {
     position: absolute;
