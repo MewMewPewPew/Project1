@@ -90,7 +90,7 @@ window.onload = function (){
             actButton2.addEventListener("click", function (e){
                 console.log("b2");
                 if (clickAct >= 3){
-                    virtualPetDoc.src = "assets/gif/kittySad.gif";
+                    virtualPetDoc.src = "assets/gif/kittyHappy.gif";
                 }
             })
             actButton3.addEventListener("click", function (e){
