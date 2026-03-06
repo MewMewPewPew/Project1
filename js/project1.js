@@ -87,6 +87,30 @@ window.onload = function (){
                     virtualPetDoc.src = "assets/gif/babyKitty.gif";
                 }
             })
+            actButton2.addEventListener("click", function (e){
+                console.log("b2");
+                if (clickAct >= 3){
+                    virtualPetDoc.src = "assets/gif/kittySad.gif";
+                }
+            })
+            actButton3.addEventListener("click", function (e){
+                console.log("b3");
+                if (clickAct >= 3){
+                    virtualPetDoc.src = "assets/gif/kittySad.gif";
+                }
+            })
+            actButton4.addEventListener("click", function (e){
+                console.log("b4");
+                if (clickAct >= 3){
+                    virtualPetDoc.src = "assets/gif/kittySad.gif";
+                }
+            })
+            actButton5.addEventListener("click", function (e){
+                console.log("b5");
+                if (clickAct >= 3){
+                    virtualPetDoc.src = "assets/gif/kittySad.gif";
+                }
+            })
         // }
     }
 
