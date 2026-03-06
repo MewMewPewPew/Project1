@@ -41,6 +41,12 @@ body{
     top: -40px;
     max-width: 30%;
 }
+#charm2{
+    position: absolute;
+    left: 250px;
+    top: -50px;
+    max-width: 40%;
+}
 .buttons {
     position: absolute;
     max-width: 10%;
