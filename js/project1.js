@@ -102,13 +102,13 @@ window.onload = function (){
             actButton4.addEventListener("click", function (e){
                 console.log("b4");
                 if (clickAct >= 3){
-                    virtualPetDoc.src = "assets/gif/kittySad.gif";
+                    virtualPetDoc.src = "assets/gif/kittyPlay.gif";
                 }
             })
             actButton5.addEventListener("click", function (e){
                 console.log("b5");
                 if (clickAct >= 3){
-                    virtualPetDoc.src = "assets/gif/kittySad.gif";
+                    virtualPetDoc.src = "assets/gif/kittyEat.gif";
                 }
             })
         // }
