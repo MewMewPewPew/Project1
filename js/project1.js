@@ -28,6 +28,7 @@ window.onload = function (){
             //Awaken mode
             wakeUpButton.src = "assets/img/buttonPink-on.png";
             tamagochiImg.src = "assets/img/Tamagochi_on.png";
+            
             virtualPetDoc.style.display ="block";
             //css changes
             document.body.style.background = "rgb(253, 181, 204)";
@@ -38,10 +39,6 @@ window.onload = function (){
             //make the buttons accessable
             interactPet();
             actButton.src = "assets/img/button-base.png";
-            actButton2.src = "assets/img/button-base.png";
-            actButton3.src = "assets/img/button-base.png";
-            actButton4.src = "assets/img/button-base.png";
-            actButton5.src = "assets/img/button-base.png";
         }
         else if(sleep){
             //console.log("chiika is asleep");
@@ -64,55 +61,102 @@ window.onload = function (){
             actButton4.src = "assets/img/button-base-off.png";
             actButton5.src = "assets/img/button-base-off.png";
             //css changes
-            document.body.style.background = "rgb(116, 94, 113)";
+            document.body.style.background = "rgb(0, 0, 0)";
         } 
+        // make the button "light up" when pressed
+        wakeUpButton.addEventListener("mousedown", function(e){
+            this.src = "assets/img/buttonPPink-click.png";
+        })
+        wakeUpButton.addEventListener("mouseup", function(e){
+            this.src = "assets/img/buttonPink-on.png";
+        }) 
     }
-  
+    
     function interactPet(){
         //button interact with pet for now 
         // if (!sleep) {
-            // clicks to crack the egg
-            actButton.addEventListener("click", function (e){
-                virtualPetDoc.src = "assets/gif/egg.gif";
-                if (sleep){
-                    clickAct ++;
-                    console.log(sleep);
+            
+        // clicks to crack the egg
+        actButton.addEventListener("click", function (e){
+            virtualPetDoc.src = "assets/gif/egg.gif";
+            if (sleep){
+                clickAct ++;
+                console.log(sleep);
+                
+            }
+            console.log(clickAct);
+            if(clickAct === 2){
+                virtualPetDoc.src = "assets/gif/babyKittyegg.gif";
+            }
+            else if (clickAct >= 3){
+                virtualPetDoc.src = "assets/gif/babyKitty.gif";
+                //make buttons pink when usable
+                actButton2.src = "assets/img/button-base.png";
+                actButton3.src = "assets/img/button-base.png";
+                actButton4.src = "assets/img/button-base.png";
+                actButton5.src = "assets/img/button-base.png";
+            }
+        })
+        actButton2.addEventListener("click", function (e){
+            console.log("b2");
+            if (clickAct >= 3){
+                virtualPetDoc.src = "assets/gif/kittyHappy.gif";
+            } 
+        })
+        actButton3.addEventListener("click", function (e){
+            console.log("b3");
+            if (clickAct >= 3){
+                virtualPetDoc.src = "assets/gif/kittySad.gif";
+            }
+        })
+        actButton4.addEventListener("click", function (e){
+            console.log("b4");
+            if (clickAct >= 3){
+                virtualPetDoc.src = "assets/gif/kittyPlay.gif";
+            }
+        })
+        actButton5.addEventListener("click", function (e){
+            console.log("b5");
+            if (clickAct >= 3){
+                virtualPetDoc.src = "assets/gif/kittyEat.gif";
+            }
+        })
+        // make the buttons "light up" when pressed
+        actButton.addEventListener("mousedown", function(e){
+            this.src = "assets/img/buttonPink-click.png";
+        })
+        actButton.addEventListener("mouseup", function(e){
+            this.src = "assets/img/button-base.png";
+        }) 
 
-                }
-                console.log(clickAct);
-                if(clickAct === 2){
-                    virtualPetDoc.src = "assets/gif/babyKittyegg.gif";
-                }
-                else if (clickAct >= 3){
-                    virtualPetDoc.src = "assets/gif/babyKitty.gif";
-                }
-            })
-            actButton2.addEventListener("click", function (e){
-                console.log("b2");
-                if (clickAct >= 3){
-                    virtualPetDoc.src = "assets/gif/kittyHappy.gif";
-                }
-            })
-            actButton3.addEventListener("click", function (e){
-                console.log("b3");
-                if (clickAct >= 3){
-                    virtualPetDoc.src = "assets/gif/kittySad.gif";
-                }
-            })
-            actButton4.addEventListener("click", function (e){
-                console.log("b4");
-                if (clickAct >= 3){
-                    virtualPetDoc.src = "assets/gif/kittyPlay.gif";
-                }
-            })
-            actButton5.addEventListener("click", function (e){
-                console.log("b5");
-                if (clickAct >= 3){
-                    virtualPetDoc.src = "assets/gif/kittyEat.gif";
-                }
-            })
-        // }
+        actButton2.addEventListener("mousedown", function(e){
+            this.src = "assets/img/buttonPink-click.png";
+        })
+        actButton2.addEventListener("mouseup", function(e){
+            this.src = "assets/img/button-base.png";
+        }) 
+
+        actButton3.addEventListener("mousedown", function(e){
+            this.src = "assets/img/buttonPink-click.png";
+        })
+        actButton3.addEventListener("mouseup", function(e){
+            this.src = "assets/img/button-base.png";
+        }) 
+
+        actButton4.addEventListener("mousedown", function(e){
+            this.src = "assets/img/buttonPink-click.png";
+        })
+        actButton4.addEventListener("mouseup", function(e){
+            this.src = "assets/img/button-base.png";
+        }) 
+
+        actButton5.addEventListener("mousedown", function(e){
+            this.src = "assets/img/buttonPink-click.png";
+        })
+        actButton5.addEventListener("mouseup", function(e){
+            this.src = "assets/img/button-base.png";
+        }) 
     }
-
+    
 }
  

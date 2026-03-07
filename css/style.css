@@ -59,8 +59,9 @@ body{
     height: auto;
 }
 #awakeButton {
-    left: 264px;
-    top: 35px;
+    left: 253px;
+    top: 558px;
+    max-width: 15%;
     /* border-radius: 50%;  to make circle border img*/
 }
 #interactButton {
@@ -94,10 +95,11 @@ body{
 }
 
 #tamagochiOff {
-    z-index: -1;
+    z-index: -2;
     position: absolute;
     max-width: 600px;
     height: auto;
+    top:0px;
     /* padding: 20px; */
     
     /* border-radius: 50%;  to make circle border img*/
