@@ -5,6 +5,7 @@
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         <script src= "js/charms_ani.js"></script>
         <script src= "js/project1.js"></script>  <!-- Might need to change the script position -->
+        <link rel="shortcut icon" href="#"> <!-- fix for favicon issue ? -->
     </head>
 
     <body>
@@ -17,9 +18,10 @@
                 <div class="chikkaBox" id="chiikaBoxOnly"> 
                     <!-- gif of virtal pet -->
                     <img src="assets/img/chainCropped-.png" id="chain">
-                    <img src="assets/img/bowCharm.png" id="charm1">
-                    <img src="assets/img/starCharm.png" id="charm2">
-                    <img src="assets/img/wingCharm.png" id="charm3">
+                    <img src="assets/img/bowCharm.png" class="charm1" id="soundImg">
+                    <img src="assets/img/starCharm.png" class="charm2">
+                    <img src="assets/img/wingCharm.png" class="charm3">
+                    <audio src="assets/mp3/sparkle.mp3" type="audio/mp3" id="sound"> </audio>
                     <img src ="assets/gif/eggIMG.png" alt="Egg" id="pet" style="display: none;">
                     <!-- buttons -->
                     <img src="assets/img/buttonPink-off.png" class="buttons" id="awakeButton">
@@ -30,7 +32,12 @@
                     <img src="assets/img/button-base-off.png" class="buttons" id="interactButton5">
                     <!-- tamagochi -->
                     <img src="assets/img/Tamagochi_off.png" id="tamagochiOff" >
-                    
+
+                    <script> 
+                        document.getElementById("soundImg").addEventListener('click', function(){
+                            document.getElementById("sound").play();
+                        })
+                    </script>
                     
                     <!-- mind/dream box? -->
                     <div>

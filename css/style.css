@@ -35,19 +35,19 @@ body{
     max-width: 130%;
     z-index: -1;
 }
-#charm1{
+.charm1{
     position: absolute;
     left: 110px;
     top: -40px;
     max-width: 30%;
 }
-#charm2{
+.charm2{
     position: absolute;
     left: 250px;
     top: -50px;
     max-width: 40%;
 }
-#charm3{
+.charm3{
     position: absolute;
     left: 350px;
     top: -55px;
