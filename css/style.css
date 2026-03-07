@@ -106,7 +106,7 @@ body{
 }
 .mindBox {
     position: absolute;
-    border: 5px solid #f278ab;
+   
     /* background: #f7b4ee; */
     /* border-radius: 10px; */
     margin-left: 550px;
@@ -114,11 +114,24 @@ body{
     width: 400px;
     /* height: 200px;    */
     /* padding: 10px; */
-    border-radius:50%; 
     /* display: block; */
 }
 #mindBoxOnly{
+    border-radius:50%; 
     z-index: -2;
+    border: 5px solid #f278ab;
+
+}
+#dreamCanvas{
+    position: absolute;
+    border: none;
+    background: #86aca095;
+    margin-top: 10px;
+    margin-left: 610px;
+    width: 280px;
+    height: 200px;
+    border-radius:10%;
+
 }
 #screen {
     margin-left: 575px;
