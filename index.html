@@ -6,6 +6,11 @@
         <script src= "js/charms_ani.js"></script>
         <script src= "js/project1.js"></script>  <!-- Might need to change the script position -->
         <link rel="shortcut icon" href="#"> <!-- fix for favicon issue ? -->
+        <!-- fonts (googlefonts) -->
+        <!-- DotGothic16 | Jacquard 12 + Charted | Shizuru | Schoolbell | Bytesized  -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bytesized&family=DotGothic16&family=Jacquard+12&family=Jacquard+12+Charted&family=Schoolbell&family=Shizuru&display=swap" rel="stylesheet">
     </head>
 
     <body>
@@ -14,6 +19,16 @@
         </header>
         <main>
             <section class ="all-box">
+                <!-- pet name input box -->
+                <div class="inputBox" id="inputBoxOnly" >
+                    <label class="questionDisplay" id="questionName">Name your new virtual pet:</label>
+                    <br>
+                    <input class="questionDisplay" id="vPetName">
+                    <br> 
+                    <button class="questionDisplay" id="submitName">submit</button>
+                </div>
+                <!-- pet name -->
+                <h1 id="vPetNameDisplay"></h1>
                 <!-- Chiika box (tamagochi ?) -->
                 <div class="chikkaBox" id="chiikaBoxOnly"> 
                     <!-- gif of virtal pet -->

@@ -9,16 +9,19 @@ window.onload = function (){
     let mindBox = this.document.getElementById("mindBoxOnly");
     //img of the tamagotchi (machine)
     let tamagochiImg = document.getElementById("tamagochiOff");
-    //virtual pet Id
-    let virtualPetDoc = this.document.getElementById("pet");
+    //virtual pet ID
+    let virtualPetDoc = this.document.getElementById("pet"); 
+    let questionNameBox = document.getElementById("inputBoxOnly");
+    let vPetNameValue;  
+    let vPetName = document.getElementById("vPetNameDisplay");
     //buttons
     //check petRef.png to know which number refers to which button
     let wakeUpButton = document.getElementById("awakeButton");
     let actButton = document.getElementById("interactButton");
-    let actButton2 = document.getElementById("interactButton2");
-    let actButton3 = document.getElementById("interactButton3");
-    let actButton4 = document.getElementById("interactButton4");
-    let actButton5 = document.getElementById("interactButton5");
+    let actButtonHappy = document.getElementById("interactButton2");
+    let actButtonSad = document.getElementById("interactButton3");
+    let actButtonPlay = document.getElementById("interactButton4");
+    let actButtonEat = document.getElementById("interactButton5");
 
     wakeUpButton.addEventListener("click", chiikaAwake);
     function chiikaAwake(){
@@ -38,7 +41,7 @@ window.onload = function (){
 
             //make the buttons accessable
             interactPet();
-            actButton.src = "assets/img/button-base.png";
+            // actButton.src = "assets/img/button-base.png";
         }
         else if(sleep){
             //console.log("chiika is asleep");
@@ -56,10 +59,10 @@ window.onload = function (){
             clickAct = 0;
             console.log(clickAct);
             actButton.src = "assets/img/button-base-off.png";
-            actButton2.src = "assets/img/button-base-off.png";
-            actButton3.src = "assets/img/button-base-off.png";
-            actButton4.src = "assets/img/button-base-off.png";
-            actButton5.src = "assets/img/button-base-off.png";
+            actButtonHappy.src = "assets/img/button-base-off.png";
+            actButtonSad.src = "assets/img/button-base-off.png";
+            actButtonPlay.src = "assets/img/button-base-off.png";
+            actButtonEat.src = "assets/img/button-base-off.png";
             //css changes
             document.body.style.background = "rgb(0, 0, 0)";
         } 
@@ -75,8 +78,9 @@ window.onload = function (){
     function interactPet(){
         //button interact with pet for now 
         // if (!sleep) {
-            
-        // clicks to crack the egg
+            // }
+        actButton.src = "assets/img/button-base.png";
+            // clicks to crack the egg
         actButton.addEventListener("click", function (e){
             virtualPetDoc.src = "assets/gif/egg.gif";
             if (sleep){
@@ -89,33 +93,35 @@ window.onload = function (){
                 virtualPetDoc.src = "assets/gif/babyKittyegg.gif";
             }
             else if (clickAct >= 3){
+                //When egg cracks, give a name to the pet
+                petNameInput();
                 virtualPetDoc.src = "assets/gif/babyKitty.gif";
                 //make buttons pink when usable
-                actButton2.src = "assets/img/button-base.png";
-                actButton3.src = "assets/img/button-base.png";
-                actButton4.src = "assets/img/button-base.png";
-                actButton5.src = "assets/img/button-base.png";
+                actButtonHappy.src = "assets/img/button-base.png";
+                actButtonSad.src = "assets/img/button-base.png";
+                actButtonPlay.src = "assets/img/button-base.png";
+                actButtonEat.src = "assets/img/button-base.png";
             }
         })
-        actButton2.addEventListener("click", function (e){
+        actButtonHappy.addEventListener("click", function (e){
             console.log("b2");
             if (clickAct >= 3){
                 virtualPetDoc.src = "assets/gif/kittyHappy.gif";
             } 
         })
-        actButton3.addEventListener("click", function (e){
+        actButtonSad.addEventListener("click", function (e){
             console.log("b3");
             if (clickAct >= 3){
                 virtualPetDoc.src = "assets/gif/kittySad.gif";
             }
         })
-        actButton4.addEventListener("click", function (e){
+        actButtonPlay.addEventListener("click", function (e){
             console.log("b4");
             if (clickAct >= 3){
                 virtualPetDoc.src = "assets/gif/kittyPlay.gif";
             }
         })
-        actButton5.addEventListener("click", function (e){
+        actButtonEat.addEventListener("click", function (e){
             console.log("b5");
             if (clickAct >= 3){
                 virtualPetDoc.src = "assets/gif/kittyEat.gif";
@@ -128,35 +134,45 @@ window.onload = function (){
         actButton.addEventListener("mouseup", function(e){
             this.src = "assets/img/button-base.png";
         }) 
-
-        actButton2.addEventListener("mousedown", function(e){
+        // Happy button
+        actButtonHappy.addEventListener("mousedown", function(e){
             this.src = "assets/img/buttonPink-click.png";
         })
-        actButton2.addEventListener("mouseup", function(e){
+        actButtonHappy.addEventListener("mouseup", function(e){
             this.src = "assets/img/button-base.png";
         }) 
-
-        actButton3.addEventListener("mousedown", function(e){
+        // Sad button
+        actButtonSad.addEventListener("mousedown", function(e){
             this.src = "assets/img/buttonPink-click.png";
         })
-        actButton3.addEventListener("mouseup", function(e){
+        actButtonSad.addEventListener("mouseup", function(e){
             this.src = "assets/img/button-base.png";
         }) 
-
-        actButton4.addEventListener("mousedown", function(e){
+        // Play button
+        actButtonPlay.addEventListener("mousedown", function(e){
             this.src = "assets/img/buttonPink-click.png";
         })
-        actButton4.addEventListener("mouseup", function(e){
+        actButtonPlay.addEventListener("mouseup", function(e){
             this.src = "assets/img/button-base.png";
         }) 
-
-        actButton5.addEventListener("mousedown", function(e){
+        // Eat button
+        actButtonEat.addEventListener("mousedown", function(e){
             this.src = "assets/img/buttonPink-click.png";
         })
-        actButton5.addEventListener("mouseup", function(e){
+        actButtonEat.addEventListener("mouseup", function(e){
             this.src = "assets/img/button-base.png";
         }) 
     }
     
+    function petNameInput(){
+        questionNameBox.style.display = "block";
+        document.getElementById("submitName").onclick = function(){
+            vPetNameValue = document.getElementById("vPetName").value;
+            console.log(vPetNameValue + " is your new pet !");
+            questionNameBox.style.display = "none";
+            vPetName.style.display = "block";
+            vPetName.textContent = `${vPetNameValue}` ;
+        } //storage & retrieve function to add perhaps ??? 
+    }
 }
  

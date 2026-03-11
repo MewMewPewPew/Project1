@@ -1,15 +1,84 @@
 body{
     background: rgb(0, 0, 0); /* could be img */
-
+    font-weight: 400;
+    font-style: normal;
+    /* font-family quick copy :3
+    font-family: "DotGothic16", sans-serif;
+    font-family: "Jacquard 12 Charted", system-ui;
+    font-family: "Jacquard 12", system-ui; 
+    font-family: "Shizuru", system-ui;
+    font-family: "Schoolbell", cursive;
+    font-family: "Bytesized", sans-serif;*/
 }
 .all-box{
     padding: 0px;
     margin: 0px;
+    position: relative;
 }
 /* .chiikaBox{
     padding: 10px;
     
 } */
+/* Naming Virtual pet box */
+#vPetNameDisplay{
+    position: absolute;
+    z-index: 1;
+    font-size: 45px;
+    font-family: "DotGothic16", sans-serif;
+    color: aquamarine;
+    margin-left: 420px;
+    margin-top: -55px;
+    display: none;
+}
+#inputBoxOnly{
+    display: none;
+}
+.inputBox{
+    z-index: 2;
+    border-radius:48%; 
+    position: absolute;
+   
+    background: #f7b4ee;
+    /* border-radius: 10px; */
+    margin-left: 285px;
+    margin-top: 120px;
+    /* padding-left: 100px; */
+    width: 400px;
+    height: 500px;
+    border: 5px solid #f278ab;
+}
+.questionDisplay{
+    font-family: "DotGothic16", sans-serif;
+    position: relative;
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    font-size: 25px;
+    /* margin-left: 10px; */
+}
+#questionName{
+    margin-top: 150px;
+    
+}
+#vPetName{
+    /* padding-left: 0px;
+    /* padding-top:5px;
+    padding-bottom:5px; */ 
+    font-size: 30px;
+    font-family: "Jacquard 12 Charted", system-ui;
+    background: #0b3f29;
+}
+#submitName{
+    margin-top: 50px;
+    font-size: 20px;
+    padding: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: #c9c9c9;
+}
 #chiikaBoxOnly{
     /* border: 4px solid #cecece; */
     background: #dddddd00;
@@ -70,25 +139,25 @@ body{
     /* border-radius: 50%;  to make circle border img*/
 }
 
-#interactButton2 {
+#interactButton2 { /* happy btn */
     left: 191px;
     top: 510px;
     /* border-radius: 50%;  to make circle border img*/
 }
 
-#interactButton3 {
+#interactButton3 { /* sad btn */
     left: 338px;
     top: 509px;
     /* border-radius: 50%;  to make circle border img*/
 }
 
-#interactButton4 {
+#interactButton4 { /* play btn */
     left: 123px;
     top: 469px;
     /* border-radius: 50%;  to make circle border img*/
 }
 
-#interactButton5 {
+#interactButton5 { /* eat btn */
     left: 407px;
     top: 469px;
     /* border-radius: 50%;  to make circle border img*/

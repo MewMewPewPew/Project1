@@ -59,34 +59,36 @@ https://anomalse.github.io/CART263-Winter-2026/readings.html
 - Ascii fun & beautiful material: https://www.asciiart.eu/image-to-ascii
 - Game examples:
     - can be of some inspo: https://itch.io/games/tag-virtual-pet
+
+- input window refresher: https://www.youtube.com/watch?v=JeXqaKeJSRI&t=56s 
 - fonts: ( https://fonts.google.com/ ); 
     - fancy/vintage:
-        - https://fonts.google.com/specimen/Ballet?categoryFilters=Feeling:%2FExpressive%2FVintage
-        - https://fonts.google.com/specimen/Almendra+Display?categoryFilters=Feeling:%2FExpressive%2FVintage
-        - https://fonts.google.com/specimen/Astloch?categoryFilters=Feeling:%2FExpressive%2FVintage
-        - https://fonts.google.com/specimen/Special+Elite?categoryFilters=Feeling:%2FExpressive%2FVintage 
-        - https://fonts.google.com/specimen/Manufacturing+Consent?categoryFilters=Feeling:%2FExpressive%2FVintage
-        - https://fonts.google.com/specimen/Bytesized?categoryFilters=Feeling:%2FExpressive%2FVintage
+            - https://fonts.google.com/specimen/Ballet?categoryFilters=Feeling:%2FExpressive%2FVintage
+            - https://fonts.google.com/specimen/Almendra+Display?categoryFilters=Feeling:%2FExpressive%2FVintage
+            - https://fonts.google.com/specimen/Astloch?categoryFilters=Feeling:%2FExpressive%2FVintage
+            - https://fonts.google.com/specimen/Special+Elite?categoryFilters=Feeling:%2FExpressive%2FVintage 
+            - https://fonts.google.com/specimen/Manufacturing+Consent?categoryFilters=Feeling:%2FExpressive%2FVintage
+        - !!YES: https://fonts.google.com/specimen/Bytesized?categoryFilters=Feeling:%2FExpressive%2FVintage
     - pixel: 
-        - https://fonts.google.com/specimen/Jacquard+12?categoryFilters=Feeling:%2FExpressive%2FVintage
-        - https://fonts.google.com/specimen/Jacquard+12+Charted?categoryFilters=Feeling:%2FExpressive%2FVintage
-        - https://fonts.google.com/specimen/Pixelify+Sans?categoryFilters=Feeling:%2FExpressive%2FVintage
-        - https://fonts.google.com/specimen/Coral+Pixels?categoryFilters=Feeling:%2FExpressive%2FVintage
-        - https://fonts.google.com/specimen/DotGothic16?categoryFilters=Feeling:%2FExpressive%2FVintage
-        - https://fonts.google.com/specimen/Nabla?categoryFilters=Feeling:%2FExpressive%2FFuturistic
-        - https://fonts.google.com/specimen/Doto?categoryFilters=Feeling:%2FExpressive%2FFuturistic
-        - https://fonts.google.com/specimen/Workbench?categoryFilters=Appearance:%2FTheme%2FPixel
+        - !!YES: https://fonts.google.com/specimen/Jacquard+12?categoryFilters=Feeling:%2FExpressive%2FVintage
+        - !!YES: https://fonts.google.com/specimen/Jacquard+12+Charted?categoryFilters=Feeling:%2FExpressive%2FVintage
+            - https://fonts.google.com/specimen/Pixelify+Sans?categoryFilters=Feeling:%2FExpressive%2FVintage
+            - https://fonts.google.com/specimen/Coral+Pixels?categoryFilters=Feeling:%2FExpressive%2FVintage
+        - !!YES: https://fonts.google.com/specimen/DotGothic16?categoryFilters=Feeling:%2FExpressive%2FVintage
+            - https://fonts.google.com/specimen/Nabla?categoryFilters=Feeling:%2FExpressive%2FFuturistic
+            - https://fonts.google.com/specimen/Doto?categoryFilters=Feeling:%2FExpressive%2FFuturistic
+            - https://fonts.google.com/specimen/Workbench?categoryFilters=Appearance:%2FTheme%2FPixel
     - weird: 
-        - https://fonts.google.com/specimen/Rubik+Maze?categoryFilters=Feeling:%2FExpressive%2FAwkward
-        - https://fonts.google.com/specimen/Rubik+Burned?categoryFilters=Feeling:%2FExpressive%2FExcited
-        - https://fonts.google.com/specimen/Shizuru?categoryFilters=Feeling:%2FExpressive%2FAwkward
-        - https://fonts.google.com/specimen/Are+You+Serious?categoryFilters=Feeling:%2FExpressive%2FAwkward
-        - https://fonts.google.com/specimen/Milonga?categoryFilters=Feeling:%2FExpressive%2FAwkward
-        - https://fonts.google.com/specimen/Mountains+of+Christmas?categoryFilters=Feeling:%2FExpressive%2FVintage
-        - https://fonts.google.com/specimen/Schoolbell?categoryFilters=Feeling:%2FExpressive%2FVintage
-        - https://fonts.google.com/specimen/Sawarabi+Mincho?categoryFilters=Feeling:%2FExpressive%2FVintage 
+            - https://fonts.google.com/specimen/Rubik+Maze?categoryFilters=Feeling:%2FExpressive%2FAwkward
+            - https://fonts.google.com/specimen/Rubik+Burned?categoryFilters=Feeling:%2FExpressive%2FExcited
+        - !!YES: https://fonts.google.com/specimen/Shizuru?categoryFilters=Feeling:%2FExpressive%2FAwkward
+            - https://fonts.google.com/specimen/Are+You+Serious?categoryFilters=Feeling:%2FExpressive%2FAwkward
+            - https://fonts.google.com/specimen/Milonga?categoryFilters=Feeling:%2FExpressive%2FAwkward
+            - https://fonts.google.com/specimen/Mountains+of+Christmas?categoryFilters=Feeling:%2FExpressive%2FVintage
+        - !!YES: https://fonts.google.com/specimen/Schoolbell?categoryFilters=Feeling:%2FExpressive%2FVintage
+            - https://fonts.google.com/specimen/Sawarabi+Mincho?categoryFilters=Feeling:%2FExpressive%2FVintage 
     - normal: 
-        - https://fonts.google.com/specimen/Instrument+Serif?categoryFilters=Feeling:%2FExpressive%2FVintage
-        - https://fonts.google.com/specimen/Xanh+Mono?categoryFilters=Feeling:%2FExpressive%2FVintage
+            - https://fonts.google.com/specimen/Instrument+Serif?categoryFilters=Feeling:%2FExpressive%2FVintage
+            - https://fonts.google.com/specimen/Xanh+Mono?categoryFilters=Feeling:%2FExpressive%2FVintage
         
    
