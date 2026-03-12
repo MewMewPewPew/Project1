@@ -220,6 +220,8 @@ window.onload = function (){
             actButtonEat.src = "assets/img/button-base-off.png";
             //css changes
             document.body.style.background = "rgb(0, 0, 0)";
+
+            buttonSounds();
         } 
         // make the button "light up" when pressed
         wakeUpButton.addEventListener("mousedown", function(e){
@@ -386,5 +388,16 @@ window.onload = function (){
         } 
     }
 
+    function buttonSounds(){
+            const buttonsClicked = document.getElementsByClassName("buttons");
+                    const buttonNoise = document.getElementById("soundButton");
+
+                    for (let i = 0; i < buttonsClicked.length; i++){
+                        buttonsClicked[i].addEventListener("click", function(e) {
+                            console.log("clicked");
+                            buttonNoise.play();
+                        })
+                    }
+    }
 }
  
