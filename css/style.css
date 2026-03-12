@@ -69,7 +69,7 @@ body{
     padding-bottom:5px; */ 
     font-size: 30px;
     font-family: "Jacquard 12 Charted", system-ui;
-    background: #0b3f29;
+    background: #3a4e48ee;
 }
 #submitName{
     margin-top: 50px;
@@ -190,6 +190,18 @@ body{
     z-index: -2;
     border: 5px solid #f278ab;
 
+}
+#awakeCover{
+    z-index: 3;
+    position: absolute;
+    border: none;
+    background: #3a4e48ee;
+    margin-top: 10px;
+    margin-left: 610px;
+    width: 280px;
+    height: 200px;
+    border-radius:10%;
+    /* display: none; */
 }
 #dreamCanvas{
     position: absolute;
