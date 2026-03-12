@@ -38,6 +38,7 @@
                     <img src="assets/img/starCharm.png" class="charm2 soundImg">
                     <img src="assets/img/wingCharm.png" class="charm3 soundImg">
                     <audio src="assets/mp3/sparkle.mp3" type="audio/mp3" id="sound"> </audio>
+                    <audio src="assets/mp3/buttonSound.mp3" type="audio/mp3" id="soundButton"></audio>
                     <img src ="assets/gif/eggIMG.png" alt="Egg" id="pet" style="display: none;">
                     <!-- buttons -->
                     <img src="assets/img/buttonPink-off.png" class="buttons" id="awakeButton">
@@ -57,6 +58,16 @@
                         imgClicked[i].addEventListener("click", function(e) {
                             console.log("clicked");
                             mySound.play();
+                        })
+                    }
+
+                    const buttonsClicked = document.getElementsByClassName("buttons");
+                    const buttonNoise = document.getElementById("soundButton");
+
+                    for (let i = 0; i < buttonsClicked.length; i++){
+                        buttonsClicked[i].addEventListener("click", function(e) {
+                            console.log("clicked");
+                            buttonNoise.play();
                         })
                     }
                     </script>
