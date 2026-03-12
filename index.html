@@ -34,9 +34,9 @@
                 <div class="chikkaBox" id="chiikaBoxOnly"> 
                     <!-- gif of virtal pet -->
                     <img src="assets/img/chainCropped-.png" id="chain">
-                    <img src="assets/img/bowCharm.png" class="charm1" id="soundImg" >
-                    <img src="assets/img/starCharm.png" class="charm2">
-                    <img src="assets/img/wingCharm.png" class="charm3">
+                    <img src="assets/img/bowCharm.png" class="charm1 soundImg" >
+                    <img src="assets/img/starCharm.png" class="charm2 soundImg">
+                    <img src="assets/img/wingCharm.png" class="charm3 soundImg">
                     <audio src="assets/mp3/sparkle.mp3" type="audio/mp3" id="sound"> </audio>
                     <img src ="assets/gif/eggIMG.png" alt="Egg" id="pet" style="display: none;">
                     <!-- buttons -->
@@ -50,10 +50,15 @@
                     <img src="assets/img/Tamagochi_off.png" id="tamagochiOff" >
 
                     <script> 
-                        document.getElementById("soundImg").addEventListener('click', function(e){
-                            console.log("sound");
-                            document.getElementById("sound").play();
+                    const imgClicked = document.getElementsByClassName("soundImg");
+                    const mySound = document.getElementById("sound");
+
+                    for (let i = 0; i < imgClicked.length; i++){
+                        imgClicked[i].addEventListener("click", function(e) {
+                            console.log("clicked");
+                            mySound.play();
                         })
+                    }
                     </script>
                     
                     <!-- mind/dream box? -->
