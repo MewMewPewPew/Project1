@@ -176,6 +176,7 @@ window.onload = function (){
             //console.log("chiika is awake");
             sleep = true;
             dreaming = false;
+            canvas.style.background = "#f6b9fc";
             //Awaken mode
             wakeUpButton.src = "assets/img/buttonPink-on.png";
             
@@ -196,6 +197,9 @@ window.onload = function (){
             //console.log("chiika is asleep");
             sleep = false;
             dreaming = true;
+            counterNum = 0.005;
+            canvas.style.background = "#121f1bb7";
+            canvas.style.display="block";
             //Asleep mode
             wakeUpButton.src = "assets/img/buttonPink-off.png";
             tamagochiImg.src = "assets/img/Tamagochi_off.png";
@@ -224,7 +228,7 @@ window.onload = function (){
         wakeUpButton.addEventListener("mouseup", function(e){
             this.src = "assets/img/buttonPink-on.png";
         }) 
-        canvas.style.background = "#f6b9fc";
+        
         
     }
     
@@ -251,6 +255,7 @@ window.onload = function (){
             }
             else if (clickAct >= 3){
                 //When egg cracks, give a name to the pet
+                canvas.style.display="none";
                 if (!named) {
                     petNameInput();
                 }
