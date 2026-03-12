@@ -14,6 +14,9 @@ window.onload = function (){
     let questionNameBox = document.getElementById("inputBoxOnly");
     let vPetNameValue;  
     let vPetName = document.getElementById("vPetNameDisplay");
+    let nameList = [];
+    let named = false;
+    // let storageVPetName;
     //buttons
     //check petRef.png to know which number refers to which button
     let wakeUpButton = document.getElementById("awakeButton");
@@ -54,8 +57,12 @@ window.onload = function (){
 
             //Resetting the virtual pet
             virtualPetDoc.src = "assets/gif/eggIMG.png";
+            vPetName.style.display = "none";
+            named = false;
             // egg = true;
             // eggCracked = false;
+            //Resetting the console/pet 
+            vPetNameValue = "NoName";
             clickAct = 0;
             console.log(clickAct);
             actButton.src = "assets/img/button-base-off.png";
@@ -94,7 +101,9 @@ window.onload = function (){
             }
             else if (clickAct >= 3){
                 //When egg cracks, give a name to the pet
-                petNameInput();
+                if (!named) {
+                    petNameInput();
+                }
                 virtualPetDoc.src = "assets/gif/babyKitty.gif";
                 //make buttons pink when usable
                 actButtonHappy.src = "assets/img/button-base.png";
@@ -132,35 +141,55 @@ window.onload = function (){
             this.src = "assets/img/buttonPink-click.png";
         })
         actButton.addEventListener("mouseup", function(e){
-            this.src = "assets/img/button-base.png";
+            if (!sleep){
+                this.src = "assets/img/button-base-off.png";
+            }else { 
+                this.src = "assets/img/button-base.png";
+            }
         }) 
         // Happy button
         actButtonHappy.addEventListener("mousedown", function(e){
             this.src = "assets/img/buttonPink-click.png";
         })
         actButtonHappy.addEventListener("mouseup", function(e){
-            this.src = "assets/img/button-base.png";
+            if (!sleep || clickAct < 3){
+                this.src = "assets/img/button-base-off.png";
+            }else { 
+                this.src = "assets/img/button-base.png";
+            }
         }) 
         // Sad button
         actButtonSad.addEventListener("mousedown", function(e){
             this.src = "assets/img/buttonPink-click.png";
         })
         actButtonSad.addEventListener("mouseup", function(e){
-            this.src = "assets/img/button-base.png";
+            if (!sleep || clickAct < 3 ){
+                this.src = "assets/img/button-base-off.png";
+            }else { 
+                this.src = "assets/img/button-base.png";
+            }
         }) 
         // Play button
         actButtonPlay.addEventListener("mousedown", function(e){
             this.src = "assets/img/buttonPink-click.png";
         })
         actButtonPlay.addEventListener("mouseup", function(e){
-            this.src = "assets/img/button-base.png";
+            if (!sleep || clickAct < 3){
+                this.src = "assets/img/button-base-off.png";
+            }else { 
+                this.src = "assets/img/button-base.png";
+            }
         }) 
         // Eat button
         actButtonEat.addEventListener("mousedown", function(e){
             this.src = "assets/img/buttonPink-click.png";
         })
         actButtonEat.addEventListener("mouseup", function(e){
-            this.src = "assets/img/button-base.png";
+            if (!sleep || clickAct < 3){
+                this.src = "assets/img/button-base-off.png";
+            }else { 
+                this.src = "assets/img/button-base.png";
+            }
         }) 
     }
     
@@ -168,11 +197,38 @@ window.onload = function (){
         questionNameBox.style.display = "block";
         document.getElementById("submitName").onclick = function(){
             vPetNameValue = document.getElementById("vPetName").value;
-            console.log(vPetNameValue + " is your new pet !");
-            questionNameBox.style.display = "none";
-            vPetName.style.display = "block";
-            vPetName.textContent = `${vPetNameValue}` ;
-        } //storage & retrieve function to add perhaps ??? 
+            if (vPetNameValue === ""){
+                alert("Name your pet !");
+            } else {
+                named = true; 
+                console.log(vPetNameValue + " is your new pet !");
+                questionNameBox.style.display = "none";
+                vPetName.style.display = "block";
+                vPetName.textContent = `${vPetNameValue}` ;
+
+                //Local storage 
+                let parentID = this.parentElement.id;
+                let storageVPetName = this.parentElement.querySelector("input").value;
+                if(storageVPetName == vPetNameValue) {
+                    // addNewPetName(storageVPetName);
+                    // console.log(getAllNames());
+                    // convert object to JSON string
+                    let jsonVPNames = JSON.stringify(storageVPetName);
+                    nameList.push(storageVPetName);
+                    console.log(nameList);
+                    // save to localStorage
+                    localStorage.setItem(parentID, nameList);
+                    // // get the string
+                    // const str = localStorage.getItem("storageVPetName");
+                    // // convert string to valid object
+                    // const parsedVPNames = JSON.parse(str);
+                    
+                    // console.log(parsedVPNames);
+                    // localStorage.setItem(parentID,storageVPetName);
+                } 
+            }
+        } 
     }
+
 }
  
