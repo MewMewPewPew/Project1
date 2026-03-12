@@ -23,9 +23,10 @@ body{
 #vPetNameDisplay{
     position: absolute;
     z-index: 1;
-    font-size: 45px;
-    font-family: "DotGothic16", sans-serif;
-    color: aquamarine;
+    font-size: 60px;
+    font-family: "Jacquard 12", system-ui;
+    font-weight: 400;
+    color: rgb(127, 255, 227);
     margin-left: 420px;
     margin-top: -55px;
     display: none;
@@ -191,18 +192,6 @@ body{
     border: 5px solid #f278ab;
 
 }
-/* #awakeCover{
-    z-index: 3;
-    position: absolute;
-    border: none;
-    background: #3a4e48ee;
-    margin-top: 10px;
-    margin-left: 610px;
-    width: 280px;
-    height: 200px;
-    border-radius:10%;
-    /* display: none; 
-} */
 #dreamCanvas{
     position: absolute;
     border: none;
@@ -220,4 +209,104 @@ body{
     width: 250px;
     height: 100px; 
     /* display: block; */
+}
+#awakeCover{
+    position: absolute;
+    border: none;
+    background: #86aca095;
+    margin-top: 10px;
+    margin-left: 610px;
+    width: 280px;
+    height: 200px;
+    border-radius:10%;
+    display: none; 
+}
+.bar{
+    margin-top: 22px;
+    width: 280px;
+    height: 20px;
+    
+    background-color: grey;
+}
+#barSad, #barHappy, #barEat, #barPlay {
+    height: 20px;
+}
+.barProgress{
+    /* height: 30px; */
+    background-color: #f278ab;
+}
+#barSadP, #barHappyP, #barEatP, #barPlayP {
+    width: 1%;
+    height: 20px;
+}
+#happyEnd{
+    display: none;
+    width: 280px;
+    height: 200px;
+    border-radius:10%;
+    margin-top: 10px;
+    margin-left: 610px;
+}
+#sadEnd{
+    display: none;
+    z-index: 1;
+    width: 280px;
+    height: 200px;
+    border-radius:10%;
+    margin-top: 10px;
+    margin-left: 610px;
+}
+#playEnd{
+    display: none;
+    z-index: 1;
+    width: 280px;
+    height: 200px;
+    border-radius:10%;
+    margin-top: 10px;
+    margin-left: 610px;
+}
+#sadPoem{
+    display: none;
+    position: absolute;
+    z-index: 4;
+    color:rgb(165, 185, 253);
+    font-family: "Bytesized", sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+    margin-top: -70px;
+    margin-left: 300px;
+}
+#happyPoem{
+    display: none;
+    position: absolute;
+    z-index: 4;
+    color:rgb(252, 252, 252);
+    /* font-family: "Bytesized", sans-serif;
+    font-weight: 400; */
+    font-size: 55px;
+    margin-top: -80px;
+    margin-left: -200px;
+}
+#cake{
+    display: none;
+    position: absolute;
+    z-index: 4;
+    color:rgb(0, 0, 0);
+    font-family: "DotGothic16", sans-serif;
+    font-weight: 400;
+    font-size: 50px;
+    margin-top: 300px;
+    margin-left: 600px;
+    width: 600px;
+}
+.deathCount{
+    z-index: 4;
+    position: relative;
+    color:rgb(255, 255, 255);
+    font-family: "DotGothic16", sans-serif;
+    font-weight: 400;
+    font-size: 50px;
+    margin-top: -10px;
+    margin-left: 1500px;
+    top: -600px;
 }

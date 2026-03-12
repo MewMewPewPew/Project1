@@ -49,6 +49,9 @@ https://anomalse.github.io/CART263-Winter-2026/readings.html
 - digital person ??https://www.mouchette.org/index.html
 - https://experiments.withgoogle.com/collection/chrome 
 - mixing real life with online : https://www.blasttheory.co.uk/projects/can-you-see-me-now/ 
+- https://anthology.rhizome.org/nasty-nets 
+- https://anthology.rhizome.org/dollie-clones 
+- https://anthology.rhizome.org/386-dx 
 
 ## Tamagotchi research:
 - website: https://tamawebgame.github.io/
@@ -61,6 +64,9 @@ https://anomalse.github.io/CART263-Winter-2026/readings.html
     - can be of some inspo: https://itch.io/games/tag-virtual-pet
 
 - input window refresher: https://www.youtube.com/watch?v=JeXqaKeJSRI&t=56s 
+- Sounds: 
+    - purr: Sound Effect by freesound_community from Pixabay
+
 - fonts: ( https://fonts.google.com/ ); 
     - fancy/vintage:
             - https://fonts.google.com/specimen/Ballet?categoryFilters=Feeling:%2FExpressive%2FVintage

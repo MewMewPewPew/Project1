@@ -6,6 +6,21 @@ window.onload = function (){
     let sleep = false;
     let dreaming = true;
     let clickAct = 0;
+    let clickPlay = 0;
+    let clickHappy = 0;
+    let clickSad = 0;
+    let clickEat = 0;
+    let deathCounter = 0;
+    // let parentDom = document.getElementById("chiikaBoxOnly");
+    let barEmotionBox = document.getElementById("awakeCover");
+    let barPlay = document.getElementById("barPlayP");
+    let barHappy = document.getElementById("barHappyP");
+    let barSad = document.getElementById("barSadP");
+    let barEat = document.getElementById("barEatP");
+    const purrSound = document.getElementById("soundHappy"); 
+    const whineSound = document.getElementById("soundSad");
+    const nananaSound = document.getElementById("soundPlay");
+    const buttonSound = document.getElementById("soundButton");
     //img of the tamagotchi 
     let tamagochiImg = document.getElementById("tamagochiOff");
     let tamagotchi = document.getElementById("chiikaBoxOnly");
@@ -16,6 +31,7 @@ window.onload = function (){
     let vPetName = document.getElementById("vPetNameDisplay");
     let nameList = [];
     let named = false;
+    let parsedVPNames;
     //buttons
         //check petRef.png to know which number refers to which button
     let wakeUpButton = document.getElementById("awakeButton");
@@ -59,7 +75,7 @@ window.onload = function (){
                 else if (clickAct === 1){
                 counterNum = 0.07;
                 }
-                else if(clickAct === 2){
+                else if(clickAct >= 2){
                     counterNum = 0;
                 }
                 else {
@@ -81,7 +97,7 @@ window.onload = function (){
                 else if (clickAct === 1){
                 counterNum = 0.07;
                 }
-                else if(clickAct === 2){
+                else if(clickAct >= 2){
                     counterNum = 0;
                 }
                 else {
@@ -171,6 +187,7 @@ window.onload = function (){
 
     //Event when power button is clicked
     wakeUpButton.addEventListener("click", chiikaAwake);
+    console.log(deathCounter);
     function chiikaAwake(){
         if (!sleep){
             //console.log("chiika is awake");
@@ -184,7 +201,7 @@ window.onload = function (){
             
             virtualPetDoc.style.display ="block";
             //css changes
-            document.body.style.background = "rgb(253, 181, 204)";
+            document.body.style.background = "#f6b9fc";
             // make the back ground a video ? add pretty clouds drifting ...
 
             // mindBox.style.display = "none";
@@ -199,7 +216,8 @@ window.onload = function (){
             dreaming = true;
             counterNum = 0.005;
             canvas.style.background = "#121f1bb7";
-            canvas.style.display="block";
+            // canvas.style.display="block";
+            barEmotionBox.style.display="none";
             //Asleep mode
             wakeUpButton.src = "assets/img/buttonPink-off.png";
             tamagochiImg.src = "assets/img/Tamagochi_off.png";
@@ -208,7 +226,8 @@ window.onload = function (){
             //Resetting the virtual pet
             virtualPetDoc.src = "assets/gif/eggIMG.png";
             vPetName.style.display = "none";
-            named = false;
+            whineSound.pause();
+            purrSound.pause();
             //Resetting the console/pet 
             vPetNameValue = "NoName";
             clickAct = 0;
@@ -218,14 +237,39 @@ window.onload = function (){
             actButtonSad.src = "assets/img/button-base-off.png";
             actButtonPlay.src = "assets/img/button-base-off.png";
             actButtonEat.src = "assets/img/button-base-off.png";
+            clickHappy = 0; 
+            clickSad = 0; 
+            clickEat = 0; 
+            clickPlay = 0; 
+            document.getElementById("sadEnd").style.display="none"; 
+            document.getElementById("playEnd").style.display="none";
+            document.getElementById("sadPoem").style.display="none";
+            document.getElementById("happyPoem").style.display="none";
+            document.getElementById("happyEnd").style.display="none";
+            document.getElementById("cake").style.display="none";
             //css changes
             document.body.style.background = "rgb(0, 0, 0)";
 
-            buttonSounds();
+            // buttonSounds();
+            if (named){
+                deathCounter++
+                console.log(deathCounter + "pets gone :(");
+                named = false;
+                createElement()*deathCounter;
+            }
         } 
+        function createElement(){
+            newElementP = document.createElement("p");
+            newElementP.classList.add("deathCount");
+            // newElementP.innerHTML = "<p>+</p>";
+            newElementP.textContent = "+"; //+ parsedVPNames[deathCounter]
+            document.body.appendChild(newElementP);
+            
+        }
         // make the button "light up" when pressed
         wakeUpButton.addEventListener("mousedown", function(e){
             this.src = "assets/img/buttonPPink-click.png";
+            
         })
         wakeUpButton.addEventListener("mouseup", function(e){
             this.src = "assets/img/buttonPink-on.png";
@@ -240,7 +284,7 @@ window.onload = function (){
         actButton.src = "assets/img/button-base.png";
             // clicks to crack the egg
         actButton.addEventListener("click", function (e){
-            
+            buttonSound.play();  
             virtualPetDoc.src = "assets/gif/egg.gif";
             if (sleep){
                 clickAct ++;
@@ -257,7 +301,9 @@ window.onload = function (){
             }
             else if (clickAct >= 3){
                 //When egg cracks, give a name to the pet
-                canvas.style.display="none";
+                // canvas.style.display="none";
+                counterNum = 0;
+                barEmotionBox.style.display ="block";
                 if (!named) {
                     petNameInput();
                 }
@@ -269,29 +315,88 @@ window.onload = function (){
                 actButtonEat.src = "assets/img/button-base.png";
             }
         })
-        // change the gif source when button is clicked
+        // change the gif source when button is clicked + bar levels
         actButtonHappy.addEventListener("click", function (e){
-            console.log("b2");
+            let progress = clickHappy * 10;
             if (clickAct >= 3){
+                buttonSound.play();
                 virtualPetDoc.src = "assets/gif/kittyHappy.gif";
+                console.log("clickHappy "+clickHappy+" b2");
+
+                barHappy.style.width = progress +"%";
+                if (progress >=100){
+                    document.getElementById("happyEnd").style.display="block";
+                    document.getElementById("happyPoem").style.display="block";
+                    purrSound.play();
+                    progress = 0;
+                }else {
+                    clickHappy++
+                }
             } 
+            
         })
         actButtonSad.addEventListener("click", function (e){
-            console.log("b3");
+            let progress = clickSad * 10;
             if (clickAct >= 3){
+                buttonSound.play();
                 virtualPetDoc.src = "assets/gif/kittySad.gif";
+                
+                console.log("clickSad"+ clickSad+"b3");
+                
+                barSad.style.width = progress +"%";
+                if (progress >=100){
+                    mySound.play();
+                    document.getElementById("sadEnd").style.display="block";
+                    document.getElementById("sadPoem").style.display="block";
+                    whineSound.play();
+                    document.body.style.background = "rgb(18, 24, 44)";
+                    progress = 0;
+            
+                }
+                else {
+                    clickSad++
+                }
             }
+            
         })
         actButtonPlay.addEventListener("click", function (e){
-            console.log("b4");
+            let progress = clickPlay * 10;
             if (clickAct >= 3){
+                buttonSound.play();
                 virtualPetDoc.src = "assets/gif/kittyPlay.gif";
+                
+                console.log("clickPlay"+ clickPlay+"b4");
+                barPlay.style.width = progress +"%";
+                if (progress >=100){
+                    mySound.play();
+                    document.getElementById("playEnd").style.display="block";
+                    nananaSound.play();
+                    progress = 0;
+                }
+                else {
+                    clickPlay++
+                }
+            
             }
         })
         actButtonEat.addEventListener("click", function (e){
-            console.log("b5");
+            let progress = clickEat * 10;
             if (clickAct >= 3){
+                buttonSound.play();
                 virtualPetDoc.src = "assets/gif/kittyEat.gif";
+                clickEat++
+                console.log("clickEat"+ clickEat+"b5");
+                barEat.style.width = progress +"%";
+                if (progress >=100){
+                    mySound.play();
+                    //the cake is a lie 
+                    document.getElementById("cake").style.display="block";
+                    progress = 0;
+                }
+                
+                else {
+                    clickEat++
+                }
             }
         })
         // make the buttons "light up" when pressed
@@ -301,7 +406,8 @@ window.onload = function (){
         actButton.addEventListener("mouseup", function(e){
             if (!sleep){
                 this.src = "assets/img/button-base-off.png";
-            }else { 
+            }
+            else { 
                 this.src = "assets/img/button-base.png";
             }
         }) 
@@ -375,11 +481,11 @@ window.onload = function (){
                     nameList.push(storageVPetName);
                     console.log(nameList);
                     // save to localStorage
-                    localStorage.setItem(parentID, nameList);
+                    // localStorage.setItem(nameList, storageVPetName);
                     // // get the string
                     // const str = localStorage.getItem("storageVPetName");
                     // // convert string to valid object
-                    // const parsedVPNames = JSON.parse(str);
+                    // parsedVPNames = JSON.parse(str);
 
                     // console.log(parsedVPNames);
                     // localStorage.setItem(parentID,storageVPetName);
@@ -399,5 +505,5 @@ window.onload = function (){
                         })
                     }
     }
-}
  
+}
