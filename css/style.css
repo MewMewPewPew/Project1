@@ -203,6 +203,12 @@ body{
 #iconE{
     margin-top: 145px;
 }
+#playButton{
+    /* color: rgb(127, 255, 227); */
+    margin-left: 895px;
+    margin-top: 80px; 
+    /* display: none; */
+}
 .mindBox {
     position: absolute;
    
@@ -270,6 +276,7 @@ body{
 }
 #happyEnd{
     display: none;
+    z-index: 1;
     width: 280px;
     height: 200px;
     border-radius:10%;
@@ -331,7 +338,7 @@ body{
 .deathCount{
     z-index: 4;
     position: relative;
-    color:rgb(255, 255, 255);
+    color:rgb(127, 255, 227);
     font-family: "DotGothic16", sans-serif;
     font-weight: 400;
     font-size: 50px;

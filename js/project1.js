@@ -1,6 +1,6 @@
-//CART 263
-//This is the code for Project 1 - aka: Digi smt ?
-//By Ash Oest O'Leary & Elle lilin ...
+//CART 263: Creative computation II 	
+//This is the code for Project 1 - Digi Chiika (デジ ちいか)
+//By Ash Oest O'Leary & Elle lilin Lim-Fauteux
 
 window.onload = function (){
     let sleep = false;
@@ -40,6 +40,7 @@ window.onload = function (){
     let actButtonSad = document.getElementById("interactButton3");
     let actButtonPlay = document.getElementById("interactButton4");
     let actButtonEat = document.getElementById("interactButton5");
+    let playMusicButton = document.getElementById("playButton");
     let progress;
     
     //Virtual pet dream/mind Box animation
@@ -52,14 +53,11 @@ window.onload = function (){
     let counter = 0;
     let counterNum = 0.005;
     
+    //start the animation before it had the change to go to sleep
     if (!sleep) {
-        dreamAnimation();
-        
-        // else {
-            //             cancelAnimationFrame(animateFlowerDream) ;
-            //         }
-            
+        dreamAnimation();   
         } 
+        //dream animation
         function dreamAnimation (){
         // if (clickAct<= 1) {
             tamagotchi.addEventListener("mouseenter",function(e){
@@ -115,6 +113,7 @@ window.onload = function (){
         createFlower(canvas.width / 2,canvas.height / 2, 30,["rgb(241, 148, 195)","rgba(241, 148, 194, 0.45)", "#86aca013", "#00000001"], ["#86aca095", "#86aca095","rgb(0, 0, 0)", "rgb(253, 181, 204)","rgba(241, 148, 194, 0.69)"])
         
     }
+    // changed the function used in class make the dream animation
     function createFlower(xPos,yPos,radius,colors, colorS){
         //bottom +
         drawSinglePetal(xPos,yPos+3*radius/2,radius,colors[2], colorS[0])
@@ -184,11 +183,10 @@ window.onload = function (){
         createFlower(canvas.width / 1.35, canvas.height / 2, newSize2/2, ["rgb(241, 148, 195)","rgba(241, 148, 194, 0.45)", "#86aca063", "#00000001"], ["#86aca095", "#86aca095","rgb(0, 0, 0)", "rgb(253, 181, 204)","rgba(241, 148, 194, 0.69)"]);
         requestAnimationFrame(animateFlowerDream);
     }
- 
 
     //Event when power button is clicked
     wakeUpButton.addEventListener("click", chiikaAwake);
-    console.log(deathCounter);
+    // console.log(deathCounter);
     function chiikaAwake(){
         if (!sleep){
             //console.log("chiika is awake");
@@ -264,6 +262,8 @@ window.onload = function (){
                 createElement()*deathCounter;
             }
         } 
+        // creates a "+" sign that is supposed to represent a pet now gone :( 
+        // local storage ?
         function createElement(){
             newElementP = document.createElement("p");
             newElementP.classList.add("deathCount");
@@ -283,10 +283,9 @@ window.onload = function (){
         
         
     }
-    
+    // interaction with Digi Chiika, buttons & events
     function interactPet(){
-        //button interact with pet for now 
-       
+
         actButton.src = "assets/img/button-base.png";
             // clicks to crack the egg
         actButton.addEventListener("click", function (e){
@@ -321,7 +320,8 @@ window.onload = function (){
                 actButtonEat.src = "assets/img/button-eat-on.png";
             }
         })
-        // change the gif source when button is clicked + bar levels
+        // change the gif source when button is clicked + bar levels 
+        // if bar levels = 100%, unique outcomes happen
         actButtonHappy.addEventListener("click", function (e){
             progress = clickHappy * 10;
             if (clickAct >= 3){
@@ -374,9 +374,11 @@ window.onload = function (){
                 console.log("clickPlay"+ clickPlay+"b4");
                 barPlay.style.width = progress +"%";
                 if (progress >=100){
+                    playMusicButton.src = "assets/img/playButton-on.png";
                     mySound.play();
                     document.getElementById("playEnd").style.display="block";
                     nananaSound.play();
+                    buttonPlayMusic();
                     // progress = 0;
                 }
                 else {
@@ -462,7 +464,34 @@ window.onload = function (){
             }
         }) 
     }
-    
+    //function when 100% of play bar is completed, music start, function can pause it
+    function buttonPlayMusic(){
+        console.log("yoo");
+        let music = true;
+            playMusicButton.addEventListener("click",function(e){
+                
+                if(nananaSound.duration > 0 && music){
+                    console.log("music stopped");
+                    music = false;
+                    nananaSound.pause();
+                    playMusicButton.src = "assets/img/playButton-off.png";
+                }
+                else if (!music){ 
+                    console.log("music");
+                    music = true;
+                    nananaSound.play();
+                    playMusicButton.src = "assets/img/playButton-on.png";
+                }
+
+            })
+        if (!sleep){
+            console.log("sleep");
+            // music = false;
+            nananaSound.pause();
+            playMusicButton.src = "assets/img/playButton-off.png";
+        }
+    }
+    //makes the naming boxed displayed and usable (+ storage.....?)
     function petNameInput(){
         questionNameBox.style.display = "block";
         document.getElementById("submitName").onclick = function(){
@@ -500,16 +529,16 @@ window.onload = function (){
         } 
     }
 
-    function buttonSounds(){
-            const buttonsClicked = document.getElementsByClassName("buttons");
-                    const buttonNoise = document.getElementById("soundButton");
+    // function buttonSounds(){
+    //         const buttonsClicked = document.getElementsByClassName("buttons");
+    //                 const buttonNoise = document.getElementById("soundButton");
 
-                    for (let i = 0; i < buttonsClicked.length; i++){
-                        buttonsClicked[i].addEventListener("click", function(e) {
-                            console.log("clicked");
-                            buttonNoise.play();
-                        })
-                    }
-    }
+    //                 for (let i = 0; i < buttonsClicked.length; i++){
+    //                     buttonsClicked[i].addEventListener("click", function(e) {
+    //                         console.log("clicked");
+    //                         buttonNoise.play();
+    //                     })
+    //                 }
+    // }
  
 }
