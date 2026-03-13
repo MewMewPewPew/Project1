@@ -360,8 +360,9 @@ body{
     color:rgb(127, 255, 227);
     font-family: "DotGothic16", sans-serif;
     font-weight: 400;
-    font-size: 50px;
-    margin-top: -10px;
+    font-size: 40px;
+    margin-top: 10px;
     margin-left: 1500px;
     top: -600px;
+    width:max-content;
 }

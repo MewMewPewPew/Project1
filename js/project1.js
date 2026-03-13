@@ -22,6 +22,8 @@ window.onload = function (){
     const whineSound = document.getElementById("soundSad");
     const nananaSound = document.getElementById("soundPlay");
     const buttonSound = document.getElementById("soundButton");
+    let emoPetDeathArray = ["₍^. .^₎Ⳋ", "ฅ^•ﻌ•^ฅ", "૮꒰◞ ˕ ◟ ྀི꒱ა", "♡/ᐠ •ヮ• マ Ⳋ", "/ᐠ - ˕ -マ"];
+    let emoPetDeathNum = 0;
     //img of the tamagotchi 
     let tamagochiImg = document.getElementById("tamagochiOff");
     let tamagotchi = document.getElementById("chiikaBoxOnly");
@@ -32,8 +34,10 @@ window.onload = function (){
     let vPetName = document.getElementById("vPetNameDisplay");
     let nameList = [];
     let named = false;
-    let deadname =false;
-    let parsedVPNames;
+    let deadname = false;
+    let totaldeathNum;
+    let deadnameS;
+    let storageVPetName;
     //buttons
         //check petRef.png to know which number refers to which button
     let wakeUpButton = document.getElementById("awakeButton");
@@ -218,7 +222,7 @@ window.onload = function (){
             // if (confirm("This will power off your digital pet ... ૮꒰◞ ˕ ◟ ྀི꒱ა") === true) {
             // text = "You can say you goodbyes now before pressing the power off";
             // } else {
-            // text = "♡₍^. .^₎Ⳋ";
+            // text = "♡₍^. .^₎Ⳋ"; ꒰^. .^ ꒱Ⳋ ฅ^•ﻌ•^ฅ 
             // }
             sleep = true;
             named = false;
@@ -270,24 +274,35 @@ window.onload = function (){
             document.getElementById("cake").style.display="none";
             //css changes
             document.body.style.background = "rgb(0, 0, 0)";
-
             // buttonSounds();
+
+            //showing the "death" of pet 
             if (deadname){
                 deathCounter++
                 console.log(deathCounter + "pets gone :(");
                 deadname = false;
-                createElement()*deathCounter;
+                // Storage 
+                localStorage.setItem("deadPetNum", deathCounter);
+                totaldeathNum = localStorage.getItem("deadPetNum");
+                createElement()*totaldeathNum;
             }
         } 
         // creates a "+" sign that is supposed to represent a pet now gone :( 
-        // local storage ?
+        // local storage ? not successfull
         function createElement(){
-            newElementP = document.createElement("p");
-            newElementP.classList.add("deathCount");
-            // newElementP.innerHTML = "<p>+</p>";
-            newElementP.textContent = "+"; //+ parsedVPNames[deathCounter]
-            document.body.appendChild(newElementP);
-            
+            // for (let i = 0; i> nameList.length; i++){
+                newElementP = document.createElement("p");
+                newElementP.classList.add("deathCount");
+                // newElementP.innerHTML = "<p>+</p>";
+                 //+ parsedVPNames[deathCounter]
+                 console.log(nameList[deathCounter-1]);
+
+                newElementP.textContent = emoPetDeathArray[emoPetDeathNum] +nameList[deathCounter-1];
+                // /ᐠ - ˕ -マ / ฅ^•ﻌ•^ฅ  / ૮꒰◞ ˕ ◟ ྀི꒱ა /  ♡/ᐠ •ヮ• マ Ⳋ / ₍^. .^₎Ⳋ
+                
+                // newElementP.textContent = "+" + deadnameS[i];
+                document.body.appendChild(newElementP);
+            // }
         }
         // make the button "light up" when pressed
         wakeUpButton.addEventListener("mousedown", function(e){
@@ -352,6 +367,7 @@ window.onload = function (){
                     document.getElementById("happyPoem").style.display="block";
                     document.body.style.background = "#f6b9fc";
                     purrSound.play();
+                    emoPetDeathNum = 3;
                     // progress = 0;
                 }else {
                     clickHappy++
@@ -374,6 +390,7 @@ window.onload = function (){
                     document.getElementById("sadPoem").style.display="block";
                     whineSound.play();
                     document.body.style.background = "rgb(18, 24, 44)";
+                    emoPetDeathNum = 2;
                     // progress = 0;
             
                 }
@@ -397,6 +414,7 @@ window.onload = function (){
                     document.getElementById("playEnd").style.display="block";
                     nananaSound.play();
                     buttonPlayMusic();
+                    emoPetDeathNum = 1;
                     // progress = 0;
                 }
                 else {
@@ -410,13 +428,14 @@ window.onload = function (){
             if (clickAct >= 3){
                 buttonSound.play();
                 virtualPetDoc.src = "assets/gif/kittyEat.gif";
-                clickEat++
+                
                 console.log("clickEat"+ clickEat+"b5");
                 barEat.style.width = progress +"%";
                 if (progress >=100){
                     mySound.play();
                     //the cake is a lie 
                     document.getElementById("cake").style.display="block";
+                    emoPetDeathNum = 4;
                     // progress = 0;
                 }
                 
@@ -524,25 +543,31 @@ window.onload = function (){
                 vPetName.textContent = `${vPetNameValue}` ;
 
                 //Local storage 
-                let parentID = this.parentElement.id;
-                let storageVPetName = this.parentElement.querySelector("input").value;
-                if(storageVPetName == vPetNameValue) {
-                    // addNewPetName(storageVPetName);
-                    // console.log(getAllNames());
-                    // convert object to JSON string
-                    let jsonVPNames = JSON.stringify(storageVPetName);
-                    nameList.push(storageVPetName);
-                    console.log(nameList);
-                    // save to localStorage
-                    // localStorage.setItem(nameList, storageVPetName);
-                    // // get the string
-                    // const str = localStorage.getItem("storageVPetName");
-                    // // convert string to valid object
-                    // parsedVPNames = JSON.parse(str);
+                storageVPetName = this.parentElement.querySelector("input").value;
+                nameList.push(storageVPetName);
+                console.log(nameList);
+                localStorage.setItem("alldeadnames", nameList);
+                deadnameS = localStorage.getItem("alldeadnames");
+                console.log(deadnameS);
+                // let parentID = this.parentElement.id;
+                
+                // if(storageVPetName == vPetNameValue) {
+                //     // addNewPetName(storageVPetName);
+                //     // console.log(getAllNames());
+                //     // convert object to JSON string
+                //     let jsonVPNames = JSON.stringify(storageVPetName);
+                //     nameList.push(storageVPetName);
+                //     console.log(nameList);
+                //     // save to localStorage
+                //     // localStorage.setItem(nameList, storageVPetName);
+                //     // // get the string
+                //     // const str = localStorage.getItem("storageVPetName");
+                //     // // convert string to valid object
+                //     // parsedVPNames = JSON.parse(str);
 
-                    // console.log(parsedVPNames);
-                    // localStorage.setItem(parentID,storageVPetName);
-                } 
+                //     // console.log(parsedVPNames);
+                //     // localStorage.setItem(parentID,storageVPetName);
+                // } 
             }
         } 
     }
