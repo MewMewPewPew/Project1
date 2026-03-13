@@ -40,6 +40,7 @@ window.onload = function (){
     let actButtonSad = document.getElementById("interactButton3");
     let actButtonPlay = document.getElementById("interactButton4");
     let actButtonEat = document.getElementById("interactButton5");
+    let progress;
     
     //Virtual pet dream/mind Box animation
     let mindBox = this.document.getElementById("mindBoxOnly");
@@ -233,14 +234,19 @@ window.onload = function (){
             clickAct = 0;
             console.log(clickAct);
             actButton.src = "assets/img/button-base-off.png";
-            actButtonHappy.src = "assets/img/button-base-off.png";
-            actButtonSad.src = "assets/img/button-base-off.png";
-            actButtonPlay.src = "assets/img/button-base-off.png";
-            actButtonEat.src = "assets/img/button-base-off.png";
+            actButtonHappy.src = "assets/img/button-happy-off.png";
+            actButtonSad.src = "assets/img/button-sad-off.png";
+            actButtonPlay.src = "assets/img/button-play-off.png";
+            actButtonEat.src = "assets/img/button-eat-offpng.png";
             clickHappy = 0; 
             clickSad = 0; 
             clickEat = 0; 
             clickPlay = 0; 
+            progress = 0;
+            barPlay.style.width = progress +"%";
+            barSad.style.width = progress +"%";
+            barHappy.style.width = progress +"%";
+            barEat.style.width = progress +"%";
             document.getElementById("sadEnd").style.display="none"; 
             document.getElementById("playEnd").style.display="none";
             document.getElementById("sadPoem").style.display="none";
@@ -309,15 +315,15 @@ window.onload = function (){
                 }
                 virtualPetDoc.src = "assets/gif/babyKitty.gif";
                 //make buttons pink when usable
-                actButtonHappy.src = "assets/img/button-base.png";
-                actButtonSad.src = "assets/img/button-base.png";
-                actButtonPlay.src = "assets/img/button-base.png";
-                actButtonEat.src = "assets/img/button-base.png";
+                actButtonHappy.src = "assets/img/button-happy-on.png";
+                actButtonSad.src = "assets/img/button-sad-on.png";
+                actButtonPlay.src = "assets/img/button-play-on.png";
+                actButtonEat.src = "assets/img/button-eat-on.png";
             }
         })
         // change the gif source when button is clicked + bar levels
         actButtonHappy.addEventListener("click", function (e){
-            let progress = clickHappy * 10;
+            progress = clickHappy * 10;
             if (clickAct >= 3){
                 buttonSound.play();
                 virtualPetDoc.src = "assets/gif/kittyHappy.gif";
@@ -328,7 +334,7 @@ window.onload = function (){
                     document.getElementById("happyEnd").style.display="block";
                     document.getElementById("happyPoem").style.display="block";
                     purrSound.play();
-                    progress = 0;
+                    // progress = 0;
                 }else {
                     clickHappy++
                 }
@@ -336,7 +342,7 @@ window.onload = function (){
             
         })
         actButtonSad.addEventListener("click", function (e){
-            let progress = clickSad * 10;
+            progress = clickSad * 10;
             if (clickAct >= 3){
                 buttonSound.play();
                 virtualPetDoc.src = "assets/gif/kittySad.gif";
@@ -350,7 +356,7 @@ window.onload = function (){
                     document.getElementById("sadPoem").style.display="block";
                     whineSound.play();
                     document.body.style.background = "rgb(18, 24, 44)";
-                    progress = 0;
+                    // progress = 0;
             
                 }
                 else {
@@ -360,7 +366,7 @@ window.onload = function (){
             
         })
         actButtonPlay.addEventListener("click", function (e){
-            let progress = clickPlay * 10;
+            progress = clickPlay * 10;
             if (clickAct >= 3){
                 buttonSound.play();
                 virtualPetDoc.src = "assets/gif/kittyPlay.gif";
@@ -371,7 +377,7 @@ window.onload = function (){
                     mySound.play();
                     document.getElementById("playEnd").style.display="block";
                     nananaSound.play();
-                    progress = 0;
+                    // progress = 0;
                 }
                 else {
                     clickPlay++
@@ -380,7 +386,7 @@ window.onload = function (){
             }
         })
         actButtonEat.addEventListener("click", function (e){
-            let progress = clickEat * 10;
+            progress = clickEat * 10;
             if (clickAct >= 3){
                 buttonSound.play();
                 virtualPetDoc.src = "assets/gif/kittyEat.gif";
@@ -391,7 +397,7 @@ window.onload = function (){
                     mySound.play();
                     //the cake is a lie 
                     document.getElementById("cake").style.display="block";
-                    progress = 0;
+                    // progress = 0;
                 }
                 
                 else {
@@ -417,9 +423,9 @@ window.onload = function (){
         })
         actButtonHappy.addEventListener("mouseup", function(e){
             if (!sleep || clickAct < 3){
-                this.src = "assets/img/button-base-off.png";
+                this.src = "assets/img/button-happy-off.png";
             }else { 
-                this.src = "assets/img/button-base.png";
+                this.src = "assets/img/button-happy-on.png";
             }
         }) 
         // Sad button
@@ -428,9 +434,9 @@ window.onload = function (){
         })
         actButtonSad.addEventListener("mouseup", function(e){
             if (!sleep || clickAct < 3 ){
-                this.src = "assets/img/button-base-off.png";
+                this.src = "assets/img/button-sad-off.png";
             }else { 
-                this.src = "assets/img/button-base.png";
+                this.src = "assets/img/button-sad-on.png";
             }
         }) 
         // Play button
@@ -439,9 +445,9 @@ window.onload = function (){
         })
         actButtonPlay.addEventListener("mouseup", function(e){
             if (!sleep || clickAct < 3){
-                this.src = "assets/img/button-base-off.png";
+                this.src = "assets/img/button-play-off.png";
             }else { 
-                this.src = "assets/img/button-base.png";
+                this.src = "assets/img/button-play-on.png";
             }
         }) 
         // Eat button
@@ -450,9 +456,9 @@ window.onload = function (){
         })
         actButtonEat.addEventListener("mouseup", function(e){
             if (!sleep || clickAct < 3){
-                this.src = "assets/img/button-base-off.png";
+                this.src = "assets/img/button-eat-offpng.png";
             }else { 
-                this.src = "assets/img/button-base.png";
+                this.src = "assets/img/button-eat-on.png";
             }
         }) 
     }

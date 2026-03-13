@@ -184,6 +184,25 @@ body{
     
     /* border-radius: 50%;  to make circle border img*/
 }
+#box{
+    position: relative; 
+}
+.icons{
+    z-index: 3;
+    position: absolute;
+    margin-left: 568px;
+    margin-top: 20px;
+    width: 55px;
+}
+#iconH{
+    margin-top: 60px;
+}
+#iconS{
+    margin-top: 105px;
+}
+#iconE{
+    margin-top: 145px;
+}
 .mindBox {
     position: absolute;
    
