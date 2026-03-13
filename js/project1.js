@@ -5,6 +5,7 @@
 window.onload = function (){
     let sleep = false;
     let dreaming = true;
+    // let powerOff = false;
     let clickAct = 0;
     let clickPlay = 0;
     let clickHappy = 0;
@@ -31,6 +32,7 @@ window.onload = function (){
     let vPetName = document.getElementById("vPetNameDisplay");
     let nameList = [];
     let named = false;
+    let deadname =false;
     let parsedVPNames;
     //buttons
         //check petRef.png to know which number refers to which button
@@ -209,7 +211,22 @@ window.onload = function (){
             interactPet();
             // actButton.src = "assets/img/button-base.png";
         }
-        else if(sleep){
+        else if (named){ 
+            confirm("Pressing this button will power off your digital pet ... ૮꒰◞ ˕ ◟ ྀི꒱ა");
+            //from  https://www.w3schools.com/jsref/met_win_confirm.asp
+            // let text; 
+            // if (confirm("This will power off your digital pet ... ૮꒰◞ ˕ ◟ ྀི꒱ა") === true) {
+            // text = "You can say you goodbyes now before pressing the power off";
+            // } else {
+            // text = "♡₍^. .^₎Ⳋ";
+            // }
+            sleep = true;
+            named = false;
+            deadname = true;
+
+        }
+        else if(sleep && !named ){
+            // alert("!This will power off your digital pet!")
             //console.log("chiika is asleep");
             sleep = false;
             dreaming = true;
@@ -255,10 +272,10 @@ window.onload = function (){
             document.body.style.background = "rgb(0, 0, 0)";
 
             // buttonSounds();
-            if (named){
+            if (deadname){
                 deathCounter++
                 console.log(deathCounter + "pets gone :(");
-                named = false;
+                deadname = false;
                 createElement()*deathCounter;
             }
         } 
@@ -333,6 +350,7 @@ window.onload = function (){
                 if (progress >=100){
                     document.getElementById("happyEnd").style.display="block";
                     document.getElementById("happyPoem").style.display="block";
+                    document.body.style.background = "#f6b9fc";
                     purrSound.play();
                     // progress = 0;
                 }else {

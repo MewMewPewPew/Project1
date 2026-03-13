@@ -22,7 +22,7 @@ body{
 /* Naming Virtual pet box */
 #vPetNameDisplay{
     position: absolute;
-    z-index: 1;
+    z-index: 6;
     font-size: 60px;
     font-family: "Jacquard 12", system-ui;
     font-weight: 400;
@@ -35,7 +35,8 @@ body{
     display: none;
 }
 .inputBox{
-    z-index: 2;
+    z-index: 6;
+    
     border-radius:48%; 
     position: absolute;
    
@@ -49,6 +50,7 @@ body{
     border: 5px solid #f278ab;
 }
 .questionDisplay{
+    z-index: 6;
     font-family: "DotGothic16", sans-serif;
     position: relative;
     display: flex;
@@ -137,6 +139,7 @@ body{
     position: absolute;
     max-width: 10%;
     height: auto;
+    z-index: 4;
 }
 #awakeButton {
     left: 253px;
@@ -188,7 +191,7 @@ body{
     position: relative; 
 }
 .icons{
-    z-index: 3;
+    z-index: 5;
     position: absolute;
     margin-left: 568px;
     margin-top: 20px;
@@ -205,6 +208,7 @@ body{
 }
 #playButton{
     /* color: rgb(127, 255, 227); */
+    
     margin-left: 895px;
     margin-top: 80px; 
     /* display: none; */
@@ -243,9 +247,14 @@ body{
     margin-top: -40px;
     width: 250px;
     height: 100px; 
+    /* z-index: 3; */
     /* display: block; */
 }
-#awakeCover{
+#screenMind{
+    z-index: 3; 
+}
+/* I dont think #awake cover is used */
+#awakeCover{ 
     position: absolute;
     border: none;
     background: #86aca095;
@@ -276,6 +285,7 @@ body{
 }
 #happyEnd{
     display: none;
+    opacity: 0.6;
     z-index: 1;
     width: 280px;
     height: 200px;
@@ -285,7 +295,8 @@ body{
 }
 #sadEnd{
     display: none;
-    z-index: 1;
+    opacity: 0.5;
+    z-index: 2;
     width: 280px;
     height: 200px;
     border-radius:10%;
@@ -294,6 +305,7 @@ body{
 }
 #playEnd{
     display: none;
+    opacity: 0.6;
     z-index: 1;
     width: 280px;
     height: 200px;
@@ -304,24 +316,31 @@ body{
 #sadPoem{
     display: none;
     position: absolute;
-    z-index: 4;
+    z-index: 3;
     color:rgb(165, 185, 253);
     font-family: "Bytesized", sans-serif;
     font-weight: 400;
     font-size: 25px;
     margin-top: -70px;
     margin-left: 300px;
+    /* from https://www.w3schools.com/howto/howto_css_disable_text_selection.asp#:~:text=You%20can%20use%20the%20user,be%20used%20to%20prevent%20this. */
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 #happyPoem{
     display: none;
     position: absolute;
-    z-index: 4;
+    z-index: 3;
     color:rgb(252, 252, 252);
     /* font-family: "Bytesized", sans-serif;
     font-weight: 400; */
     font-size: 55px;
     margin-top: -80px;
     margin-left: -200px;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 #cake{
     display: none;
