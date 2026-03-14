@@ -21,9 +21,9 @@ Screenshots: ([play the game](https://mewmewpewpew.github.io/Project1/) before, 
 ![2](assets/img/ScreenShoot/play.PNG)  
 
 <!-- Outcomes: -->
-![3](assets/img/ScreenShoot/playOutcome.PNG) 
-![3](assets/img/ScreenShoot/bars.PNG)  
-![3](assets/img/ScreenShoot/sadOutcome.PNG) 
+![play](assets/img/ScreenShoot/PlayOutcome.PNG) 
+![eat](assets/img/ScreenShoot/bars.PNG)  
+![sad](assets/img/ScreenShoot/SadOutcome.PNG) 
 ![3](assets/img/ScreenShoot/happyOutcome.PNG) 
 
 <!--  -->
