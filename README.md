@@ -4,9 +4,10 @@
 Project-1 < CART 263 < Concordia 
 
 ---
-#### Refer to the [artist statement](assets/img/ScreenShoot/cart263project1.pdf) for more information
-
-Screenshots: ([play the game](https://mewmewpewpew.github.io/Project1/) before, don't spoil yourself)
+![start](assets/img/ScreenShoot/0.PNG)
+Refer to the [artist statement](assets/img/ScreenShoot/cart263project1.pdf) for more information!!
+### Screenshots:
+<!-- ([play the game](https://mewmewpewpew.github.io/Project1/) before, don't spoil yourself) -->
 ![start](assets/img/ScreenShoot/1.PNG)
 ![start](assets/img/ScreenShoot/2.PNG)
 ![start](assets/img/ScreenShoot/3.PNG)
