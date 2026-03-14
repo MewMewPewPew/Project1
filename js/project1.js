@@ -47,6 +47,7 @@ window.onload = function (){
     let actButtonPlay = document.getElementById("interactButton4");
     let actButtonEat = document.getElementById("interactButton5");
     let playMusicButton = document.getElementById("playButton");
+    let artistStatementButton = document.getElementById("statementboxButton");
     let progress;
     
     //Virtual pet dream/mind Box animation
@@ -59,6 +60,20 @@ window.onload = function (){
     let counter = 0;
     let counterNum = 0.005;
     
+    //Artist Statement render
+    let textOpen = false;
+    let statementBox = document.getElementById("statementBoxOnly");
+    artistStatementButton.addEventListener("click",function(e){
+        if (!textOpen){
+            statementBox.style.display = "block";
+            artistStatementButton.style.opacity ="100%";
+            textOpen =true;
+        } else {
+            statementBox.style.display = "none";
+            artistStatementButton.style.opacity ="40%";
+            textOpen =false;
+        }
+    })
     //start the animation before it had the change to go to sleep
     if (!sleep) {
         dreamAnimation();   
@@ -251,7 +266,7 @@ window.onload = function (){
             //Resetting the console/pet 
             vPetNameValue = "NoName";
             clickAct = 0;
-            console.log(clickAct);
+            // console.log(clickAct);
             actButton.src = "assets/img/button-base-off.png";
             actButtonHappy.src = "assets/img/button-happy-off.png";
             actButtonSad.src = "assets/img/button-sad-off.png";
@@ -279,7 +294,7 @@ window.onload = function (){
             //showing the "death" of pet 
             if (deadname){
                 deathCounter++
-                console.log(deathCounter + "pets gone :(");
+                console.log(deathCounter + "pet(s) gone T-T");
                 deadname = false;
                 // Storage 
                 localStorage.setItem("deadPetNum", deathCounter);
@@ -295,7 +310,7 @@ window.onload = function (){
                 newElementP.classList.add("deathCount");
                 // newElementP.innerHTML = "<p>+</p>";
                  //+ parsedVPNames[deathCounter]
-                 console.log(nameList[deathCounter-1]);
+                //  console.log(nameList[deathCounter-1]);
 
                 newElementP.textContent = emoPetDeathArray[emoPetDeathNum] +nameList[deathCounter-1];
                 // /ᐠ - ˕ -マ / ฅ^•ﻌ•^ฅ  / ૮꒰◞ ˕ ◟ ྀི꒱ა /  ♡/ᐠ •ヮ• マ Ⳋ / ₍^. .^₎Ⳋ
@@ -325,10 +340,10 @@ window.onload = function (){
             virtualPetDoc.src = "assets/gif/egg.gif";
             if (sleep){
                 clickAct ++;
-                console.log(sleep);
+                // console.log(sleep);
                 
             }
-            console.log(clickAct);
+            // console.log(clickAct);
             if (clickAct === 1){
                 counterNum = 0.07;
             }
@@ -339,6 +354,7 @@ window.onload = function (){
             else if (clickAct >= 3){
                 //When egg cracks, give a name to the pet
                 // canvas.style.display="none";
+                console.log("ฅ^•ﻌ•^ฅ - a Digi Chiika is born")
                 counterNum = 0;
                 barEmotionBox.style.display ="block";
                 if (!named) {
@@ -359,7 +375,7 @@ window.onload = function (){
             if (clickAct >= 3){
                 buttonSound.play();
                 virtualPetDoc.src = "assets/gif/kittyHappy.gif";
-                console.log("clickHappy "+clickHappy+" b2");
+                // console.log("clickHappy "+clickHappy+" b2");
 
                 barHappy.style.width = progress +"%";
                 if (progress >=100){
@@ -381,15 +397,15 @@ window.onload = function (){
                 buttonSound.play();
                 virtualPetDoc.src = "assets/gif/kittySad.gif";
                 
-                console.log("clickSad"+ clickSad+"b3");
+                // console.log("clickSad"+ clickSad+"b3");
                 
                 barSad.style.width = progress +"%";
                 if (progress >=100){
                     mySound.play();
                     document.getElementById("sadEnd").style.display="block";
                     document.getElementById("sadPoem").style.display="block";
-                    whineSound.play();
                     document.body.style.background = "rgb(18, 24, 44)";
+                    whineSound.play();
                     emoPetDeathNum = 2;
                     // progress = 0;
             
@@ -406,12 +422,13 @@ window.onload = function (){
                 buttonSound.play();
                 virtualPetDoc.src = "assets/gif/kittyPlay.gif";
                 
-                console.log("clickPlay"+ clickPlay+"b4");
+                // console.log("clickPlay"+ clickPlay+"b4");
                 barPlay.style.width = progress +"%";
                 if (progress >=100){
                     playMusicButton.src = "assets/img/playButton-on.png";
                     mySound.play();
                     document.getElementById("playEnd").style.display="block";
+                    document.body.style.background = "#f6b9fc";
                     nananaSound.play();
                     buttonPlayMusic();
                     emoPetDeathNum = 1;
@@ -429,12 +446,13 @@ window.onload = function (){
                 buttonSound.play();
                 virtualPetDoc.src = "assets/gif/kittyEat.gif";
                 
-                console.log("clickEat"+ clickEat+"b5");
+                // console.log("clickEat"+ clickEat+"b5");
                 barEat.style.width = progress +"%";
                 if (progress >=100){
                     mySound.play();
                     //the cake is a lie 
                     document.getElementById("cake").style.display="block";
+                    document.body.style.background = "#f6b9fc";
                     emoPetDeathNum = 4;
                     // progress = 0;
                 }
@@ -503,18 +521,17 @@ window.onload = function (){
     }
     //function when 100% of play bar is completed, music start, function can pause it
     function buttonPlayMusic(){
-        console.log("yoo");
         let music = true;
             playMusicButton.addEventListener("click",function(e){
                 
                 if(nananaSound.duration > 0 && music){
-                    console.log("music stopped");
+                    // console.log("music stopped");
                     music = false;
                     nananaSound.pause();
                     playMusicButton.src = "assets/img/playButton-off.png";
                 }
                 else if (!music){ 
-                    console.log("music");
+                    // console.log("music");
                     music = true;
                     nananaSound.play();
                     playMusicButton.src = "assets/img/playButton-on.png";
@@ -522,7 +539,7 @@ window.onload = function (){
 
             })
         if (!sleep){
-            console.log("sleep");
+            // console.log("sleep");
             // music = false;
             nananaSound.pause();
             playMusicButton.src = "assets/img/playButton-off.png";
@@ -548,7 +565,7 @@ window.onload = function (){
                 console.log(nameList);
                 localStorage.setItem("alldeadnames", nameList);
                 deadnameS = localStorage.getItem("alldeadnames");
-                console.log(deadnameS);
+                // console.log(deadnameS);
                 // let parentID = this.parentElement.id;
                 
                 // if(storageVPetName == vPetNameValue) {

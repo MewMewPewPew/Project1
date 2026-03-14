@@ -366,3 +366,91 @@ body{
     top: -600px;
     width:max-content;
 }
+/* artist statement thangs */
+#statementboxButton{
+    position: absolute;
+    width: 40px;
+    margin-top: -60px;
+    opacity: 40%;
+    
+}
+#statementBoxOnly{
+    display: none;
+}
+.statementBox{
+    z-index: 7;
+    border-radius:2%; 
+    position: absolute;
+    background: #f7b4ee98;
+    /* border-radius: 10px; */
+    margin-left: 50px;
+    margin-top: -50px;
+    /* padding-left: 100px; */
+    width: 1500px;
+    height: 2800px;
+    border: 5px solid #f278ab;
+    font-family: "DotGothic16", sans-serif;
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+    
+    
+}
+h1{
+    color: rgb(0, 0, 0);
+    font-family: "Jacquard 12 Charted", system-ui;
+    font-weight: 400;
+    position: relative;
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 75px;
+    margin-top: -10px;
+}
+h2{
+/* margin-left: 250px; */
+    /* color: rgb(127, 255, 206); */
+    color: rgb(127, 255, 206);
+    margin: 20px;
+    font-family: "Jacquard 12", system-ui; 
+    font-weight: 400;
+    font-size: 35px;
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -10px;
+}
+p{
+    margin: 20px;
+}
+#title{
+    margin-top: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+    margin-left: auto ;
+    margin-right: auto ;
+    font-size: 60px;
+    z-index: 8;
+    font-family: "Shizuru", system-ui;
+    font-weight: 400;
+    color: rgb(127, 255, 206);
+    /* background: rgba(127, 255, 206, 0.521);
+    border-radius:50%;  */
+}
+#pawASCII{
+    color: rgb(127, 255, 206);
+    position: relative;
+    display: flex;
+    justify-content: center ;
+    align-items: center;  
+    font-size: 27px;
+    margin-top: -90px;
+}
+    /* font-family: "Jacquard 12 Charted", system-ui;
+    font-family: "Jacquard 12", system-ui; 
+    font-family: "Shizuru", system-ui; */
