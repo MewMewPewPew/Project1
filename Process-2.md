@@ -4,6 +4,7 @@ use 1 library (Phaser or Three) and add stuff to our programm
 
 ### Pokemon-like fight sequence
 reference: https://www.youtube.com/watch?v=YTEWoLw8GM4&list=PLmcXe0-sfoSgq-pyXrFx0GZjHbvoVUW8t&index=9 series
+- https://pippinbarr.com/cart26 3-2021/course-information/schedule.html#game-engine 
     - make other animation variation of virtual pets + movements (https://www.piskelapp.com/p/create/sprite/ )
     - change the asleep mode to not "turn off"/kill the Digi Chiika -> Instead 
         - create a PV (life point) bar & if PV bar >= 0 {the digi chiika dies :( }
