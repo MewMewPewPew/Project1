@@ -5,7 +5,7 @@
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         <script src= "js/charms_ani.js"></script>
         <script src= "js/project1.js"></script>  
-        <!-- phaser3 + P2 pages.js-->
+        <!-- phaser3 + P2 .js-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <script src="//cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.min.js"></script> 
         
@@ -26,10 +26,11 @@
     <!-- from P2 file -->
     <div class="container" id="game-container"></div>
     <script src="script/main.js" type="module"></script>
-
-            <section class ="all-box">
-                <!-- Artist statement box -->
-                
+    
+    <section class ="all-box">
+        <!-- Artist statement box -->
+        <img src="assets/gif/huh.gif" id="exclamationP">
+        
                 <img src="assets/gif/eggIMG.png" id="statementboxButton" alt="Artist statement">
                 <div class="statementBox" id="statementBoxOnly">
                     <h2 id="title">Digi Chiika (デジ ちいか)</h2>
@@ -72,7 +73,7 @@
                 </div>
                 <!-- pet name -->
                 <h1 id="vPetNameDisplay"></h1>
-
+                
                 <!-- Chiika box (tamagochi ?) -->
                 <div class="chikkaBox" id="chiikaBoxOnly"> 
                     <!-- gif of virtal pet -->
@@ -92,14 +93,14 @@
                     <img src="assets/gif/sad.gif" class="mindBox" id="sadEnd"> 
                     <img src="assets/gif/play.gif" class="mindBox" id="playEnd">
                     <span id="happyPoem">           ++++++++                                              ++++++
-  *°          +                    +                                +  
-       °                                        +               ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠠⡦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀
-⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠴⠖⠒⠒⢺⠓⠒⠒⠂⠀⠀⠀⠤⠤⡧⠄                  ⠀⠼⠤⠄⠀
-⠀⠀⠀⢹⠙⠀⠀⠀⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠒⣏⠒⠂⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀+⠀ °  + 
-⠀⠀⠀⠀⠁⠀⠀⠀⠉⠀⠀⠀⠀⠀⠀⠀⠀*⠀⠀⠀⠀⠀⡄⠀⠀⠀⠀⠀
-</span>
+                        *°          +                    +                                +  
+                        °                                        +               ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                        ⠀⠀⠀⠀⠀⠀⠠⡦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀
+                        ⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠴⠖⠒⠒⢺⠓⠒⠒⠂⠀⠀⠀⠤⠤⡧⠄                  ⠀⠼⠤⠄⠀
+                        ⠀⠀⠀⢹⠙⠀⠀⠀⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                        ⠀⠀⠀⠀⠀⠀⠀⠒⣏⠒⠂⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀+⠀ °  + 
+                        ⠀⠀⠀⠀⠁⠀⠀⠀⠉⠀⠀⠀⠀⠀⠀⠀⠀*⠀⠀⠀⠀⠀⡄⠀⠀⠀⠀⠀
+                    </span>
                     <span id="sadPoem">⠀⠀⠀⢠⣿⣿⣶⣶⣦⣤⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⣀⣀⣀⣀⡀⠀⠀⠀⠀
 ⠀⠀⠀⣼⡇⠀⠈⠓⠦⣉⠛⠻⢷⣦⣄⣀⣀⣠⣤⣤⣴⣶⣶⣦⣤⣄⣀⣤⣤⣤⣶⠶⠿⠿⠟⠛⠛⠛⠛⠛⠛⣛⣻⠿⢛⣿⡿⠁⠀⠀
 ⠀⠀⠀⣿⡇⠀⠀⠀⠀⠉⠓⢦⡀⠉⠛⠛⠛⠉⠉⠁⠀⠀⠀⠀⠉⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⣀⣤⠴⠒⠉⠉⠀⣠⣿⠋⠀⠀⠀⠀
@@ -148,16 +149,16 @@
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⢘⣷⣤⣤⣼⡿⠷⠶⠿⢟⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⢙⣻⢷⣦⣤⣿⣿⣿⢾⣿⣛⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀</span>
 
 
-                    <!-- buttons -->
-                    <img src="assets/img/buttonPink-off.png" class="buttons" id="awakeButton">
-                    <img src="assets/img/button-base-off.png" class="buttons" id="interactButton">
+<!-- buttons -->
+<img src="assets/img/buttonPink-off.png" class="buttons" id="awakeButton">
+<img src="assets/img/button-base-off.png" class="buttons" id="interactButton">
                     <img src="assets/img/button-happy-off.png" class="buttons" id="interactButton2">
                     <img src="assets/img/button-sad-off.png" class="buttons" id="interactButton3">
                     <img src="assets/img/button-play-off.png" class="buttons" id="interactButton4">
                     <img src="assets/img/button-eat-offpng.png" class="buttons" id="interactButton5">
                     <!-- tamagochi -->
                     <img src="assets/img/Tamagochi_off.png" id="tamagochiOff" >
-
+                    
                     <script> 
                     const imgClicked = document.getElementsByClassName("soundImg");
                     const mySound = document.getElementById("sound");

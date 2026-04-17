@@ -12,6 +12,10 @@ window.onload = function (){
     let clickSad = 0;
     let clickEat = 0;
     let deathCounter = 0;
+    // doc to start the battle scene
+    let battleButton = document.getElementById("exclamationP");
+    let battleScene = document.getElementById("game-container");
+
     // let parentDom = document.getElementById("chiikaBoxOnly");
     let barEmotionBox = document.getElementById("awakeCover");
     let barPlay = document.getElementById("barPlayP");
@@ -341,6 +345,7 @@ window.onload = function (){
             if (sleep){
                 clickAct ++;
                 // console.log(sleep);
+                battleButton.style.display = "none";
                 
             }
             // console.log(clickAct);
@@ -351,7 +356,7 @@ window.onload = function (){
                 counterNum = 0;
                 virtualPetDoc.src = "assets/gif/babyKittyegg.gif";
             }
-            else if (clickAct >= 3){
+            else if (clickAct === 3){
                 //When egg cracks, give a name to the pet
                 // canvas.style.display="none";
                 console.log("ฅ^•ﻌ•^ฅ - a Digi Chiika is born")
@@ -366,6 +371,23 @@ window.onload = function (){
                 actButtonSad.src = "assets/img/button-sad-on.png";
                 actButtonPlay.src = "assets/img/button-play-on.png";
                 actButtonEat.src = "assets/img/button-eat-on.png";
+            }
+            // else if (clickAct >=4){
+            //    virtualPetDoc.src = "assets/gif/babyKitty.gif";
+            // }
+            else if (clickAct >=4){
+                virtualPetDoc.src = "assets/gif/babyKitty.gif";
+                console.log(":3")
+                // make the button visible
+                battleButton.style.display ="block";
+            }
+        })
+        // battle button 
+        battleButton.addEventListener("click", function (e){
+            if (window.confirm(`${vPetNameValue}`+ " saw something curious, " + `${vPetNameValue}`+ " wants to investigate ")){ 
+                battleScene.style.display = "flex";
+            } else {
+                battleButton.style.display = "none";
             }
         })
         // change the gif source when button is clicked + bar levels 
