@@ -1,12 +1,14 @@
 //file to name identify and name assets
 
+// import { DOM } from "phaser";
+
 export const BATTLE_BACKGROUND_ASSET_KEYS = Object.freeze({
     FOREST: "FOREST",
 });
 
 export const MONSTER_ASSET_KEYS = Object.freeze({
-    IGUANIGNITE: "Digi-Pet",//`${vPetNamePhas3r}`, //"IGUANIGNITE",
-    // U_PET_NAME: `${vPetNamePhas3r}`, 
+    IGUANIGNITE: `${vPetName}`,//"Digi-Pet",//`${vPetNameValue}` `${vPetNamePhas3r}`, //"IGUANIGNITE",
+    // U_PET_NAME: `${vPetNamePhas3r}`, let vPetNameValue;  
     // U_PET_NAME_: vPetName,
     CARNODUSK: "Baqua beast", //
     FIRE: "Fuergo beast",

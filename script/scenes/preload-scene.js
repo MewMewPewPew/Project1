@@ -9,6 +9,7 @@ import {
 import Phaser from "../library/phaser.js";
 import { SCENE_KEYS } from "./scene-keys.js";
 
+
 export class PreloadScene extends Phaser.Scene {
     constructor() {
         super({
@@ -105,8 +106,8 @@ export class PreloadScene extends Phaser.Scene {
         }
         );
         // load game sound
-        this.musicBattle = this.load.audio(`battleMusic`, "../../assets/sound/BattleSoundtrack.mp3")
-        
+        this.load.audio(`battleMusic`, "../../assets/sound/BattleSoundtrack.mp3");
+        // musicBattle = this.sound.add(`battleMusic`);
         // //game display? html id
         // var gameDisplay  = document.getElementById("game-container");
         // this.load.html( //game-container

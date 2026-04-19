@@ -28,6 +28,7 @@ const BATTLE_STATES = Object.freeze ({
     FLEE_ATTEMPT: 'FLEE_ATTEMPT', //checking if player can run away
 })
 
+
 export class BattleScene extends Phaser.Scene {
     /** @type {BattleMenu} */ //these are types of comments that help knowing what kind of content is what
     #battleMenu;
@@ -164,13 +165,14 @@ export class BattleScene extends Phaser.Scene {
         this.#activePlayerMonster.playAnimationPlayer();
         this.#activeEnemyMonster.playAnimationEnemy();
         //console.log(this.#activeEnemyMonster.isFainted);
+        // sound 
+        // var music = this.sound.add(`battleMusic`);
     }
 
     //calls every frame
     update(){
         //lets it be constantly updated to clear queue - helps with timing
         this.#battleStateMachine.update();
-
         //JustDown a method that helps to know if something was pressed
         const wasSpaceKeyPressed = Phaser.Input.Keyboard.JustDown(this.#cursorKeys.space);
         if(wasSpaceKeyPressed){
@@ -282,7 +284,10 @@ export class BattleScene extends Phaser.Scene {
 
     #createBattleStateMachine(){
         this.#battleStateMachine = new StateMachine('battle', this);
-
+        //add or stop music
+        var music = this.sound.add('battleMusic');
+        //make the sound less loud
+        music.setVolume(0.5);
         this.#battleStateMachine.addState({
             name: BATTLE_STATES.INTRO,
             onEnter: () => {
@@ -312,8 +317,8 @@ export class BattleScene extends Phaser.Scene {
         this.#battleStateMachine.addState({
             name: BATTLE_STATES.BRING_OUT_MONSTER,
             onEnter: () => {
-                //waiting for player's monster to appear + notifying user
-                this.sound.play(`battleMusic`)
+                // start battle music
+                music.play();
                 this.#battleMenu.updateInfoPaneMessagesAndWaitForInput([`go ${this.#activePlayerMonster.name}!`],
                     () => {
                         //waiting for text animations to finish
@@ -367,9 +372,10 @@ export class BattleScene extends Phaser.Scene {
         this.#battleStateMachine.addState({
             name: BATTLE_STATES.FINISHED,
             onEnter: () => {
-                // this.sound.stopByKey(`battleMusic`);
-                // this.sound.stop(`battleMusic`);
-                //musicBattle.stop(`battleMusic`); //
+                //stop music
+                music.stop();
+                //change the Div style display to none (make it disapear)
+                document.getElementById("game-container").style.display = "none";
                 this.#transitionToNextScene();
                 
             }

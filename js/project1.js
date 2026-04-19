@@ -2,6 +2,9 @@
 //This is the code for Project 1 - Digi Chiika (デジ ちいか)
 //By Ash Oest O'Leary & Elle lilin Lim-Fauteux
 
+//make variables global to be able to acess them in phaser
+let battleScene; 
+let vPetName; 
 window.onload = function (){
     let sleep = false;
     let dreaming = true;
@@ -13,9 +16,10 @@ window.onload = function (){
     let clickEat = 0;
     let deathCounter = 0;
     // doc to start the battle scene
+    battleScene = document.getElementById("game-container");
     let battleButton = document.getElementById("exclamationP");
-    let battleScene = document.getElementById("game-container");
     
+    // pet_name = document.getElementById
     
     // let parentDom = document.getElementById("chiikaBoxOnly");
     let barEmotionBox = document.getElementById("awakeCover");
@@ -35,8 +39,8 @@ window.onload = function (){
     //virtual pet ID
     let virtualPetDoc = document.getElementById("pet"); 
     let questionNameBox = document.getElementById("inputBoxOnly");
-    let vPetNameValue;  
-    let vPetName = document.getElementById("vPetNameDisplay");
+    let vPetNameValue; 
+    vPetName = document.getElementById("vPetNameDisplay");
     let nameList = [];
     let named = false;
     let deadname = false;
