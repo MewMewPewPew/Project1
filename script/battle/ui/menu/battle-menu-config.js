@@ -4,5 +4,8 @@ import Phaser from '../../../library/phaser.js';
 //text style for battle ui
 export const BATTLE_UI_TEXT_STYLE = Object.freeze({
     color: 'black',
-    fontSize: '30px',
+    fontSize: '34px',
+    fontFamily: 'gothicFont',
+    fontStyle: 'italic',
+    
 });

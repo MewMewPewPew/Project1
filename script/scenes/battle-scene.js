@@ -88,7 +88,7 @@ export class BattleScene extends Phaser.Scene {
         this.#activePlayerMonster = new PlayerBattleMonster({
             scene: this,
             monsterDetails: {
-                name: MONSTER_ASSET_KEYS.IGUANIGNITE,
+                name: MONSTER_ASSET_KEYS.IGUANIGNITE, //U_PET_NAME
                 assetKey: MONSTER_ASSET_KEYS.IGUANIGNITE,
                 // assetFrame: 0,
                 // frames: this.anims.generateFrameNumbers(`MONSTER_ASSET_KEYS.IGUANIGNITE`, {

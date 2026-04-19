@@ -86,11 +86,22 @@ export class PreloadScene extends Phaser.Scene {
                 endFrame: 57,
             }
         );
+        // load user pet name ?
+        // this.load.html(
+        //     MONSTER_ASSET_KEYS.U_PET_NAME, "../index.html"
+            
+        // );
+        // this.load.script(
+        //     MONSTER_ASSET_KEYS.U_PET_NAME_, "../js/project1.js" //, "script"
+        // );
+        
+        // console.log(MONSTER_ASSET_KEYS.U_PET_NAME);
         // this.load.image(
         //     MONSTER_ASSET_KEYS.IGUANIGNITE, 
         //     `${monsterTamerAssetPath}/monsters/iguanignite.png`
         // );
-
+        // load font
+        this.load.font('gothicFont', "../../assets/font/DotGothic16-Regular.ttf" , 'truetype' ); // "https://fonts.googleapis.com/css2?family=DotGothic16&display=swap"
         //ui assets
         this.load.image(
             UI_ASSET_KEYS.CURSOR, 
@@ -104,7 +115,7 @@ export class PreloadScene extends Phaser.Scene {
     create() {
         console.log(`[${PreloadScene.name}:create] invoked`);
         //console.log(this.textures.get("background"));
-
+        // console.log(MONSTER_ASSET_KEYS.U_PET_NAME);
         this.scene.start(SCENE_KEYS.BATTLE_SCENE);
         //drawing test
         //corner left = 0,0 -> thats where it starts off

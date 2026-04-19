@@ -15,7 +15,8 @@ window.onload = function (){
     // doc to start the battle scene
     let battleButton = document.getElementById("exclamationP");
     let battleScene = document.getElementById("game-container");
-
+    let vPetNameVP = document.getElementById("vPetNamePhas3r");
+    
     // let parentDom = document.getElementById("chiikaBoxOnly");
     let barEmotionBox = document.getElementById("awakeCover");
     let barPlay = document.getElementById("barPlayP");
@@ -610,7 +611,9 @@ window.onload = function (){
             }
         } 
     }
-
+    // console.log(vPetNamePhas3r);
+// vPetNameVP = `${vPetNameValue}`;
+vPetNameVP = vPetNameValue;
     // function buttonSounds(){
     //         const buttonsClicked = document.getElementsByClassName("buttons");
     //                 const buttonNoise = document.getElementById("soundButton");

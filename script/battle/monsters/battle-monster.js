@@ -47,6 +47,12 @@ export class BattleMonster{
         //     this._monsterDetails.assetKey, 
         //     this._monsterDetails.assetFrame || 0
         // );
+        // this._scene.add.text(             
+        //     position.x, 
+        //     position.y, 
+        //     this._monsterDetails.name , //this._monsterDetails.name //MONSTER_ASSET_KEYS.U_PET_NAME
+           
+        // );
         this.#createHealthBarComponents(config.scaleHealthBarBackgroundImageByY);
 
         this._monsterDetails.attackIds.forEach((attackId) => {
@@ -63,7 +69,7 @@ export class BattleMonster{
 //  */
 
 playAnimation() {
-    this._phaserGameObject.play(`attackerPetAnim`);
+    this._phaserGameObject.play(`attackerPetAnim`); //won't play? 
     this._phaserGameObject.play(`playerPetAnim`);
 }
 
@@ -72,6 +78,10 @@ playAnimation() {
         return this._currentHealth <= 0;
     }
 
+    // /** @type {import("../../../js/project1.js").???} */
+    // get name(){
+    //     return this._monsterDetails.name;
+    // }
     /** @type {string} */
     get name(){
         return this._monsterDetails.name;
@@ -112,8 +122,9 @@ playAnimation() {
         //const enemyHealthBar = this.#activeEnemyMonster._healthBar;
         const monsterNameGameText = this._scene.add.text(30, 20, 
             this.name, {
-                color: "#7E3D3F",
+                color: "#000000",
                 fontSize: "32px",
+                fontFamily: 'gothicFont',
             }
         );
 
@@ -121,14 +132,16 @@ playAnimation() {
         .setOrigin(0).setScale(1, scaleHealthBarBackgroundImageByY)
 
         const monsterHealthBarLevelText = this._scene.add.text(monsterNameGameText.width + 35, 22, `L${this.level}`, {
-            color: "#ED474B",
+            color: "#88ff84",
             fontSize: "28px",
+            fontFamily: 'gothicFont',
         });
 
         const monsterHpText = this._scene.add.text(30, 55, "HP", {
-            color: "#FF6505",
-            fontSize: "24px",
+            color: "#fb84ff",
+            fontSize: "22px",
             fontStyle: "italic",
+            fontFamily: 'gothicFont',
         });
 
         //container for enemy health
