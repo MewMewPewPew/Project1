@@ -77,6 +77,7 @@ export class BattleMenu {
         return undefined;
     }
 
+    //display battle menu
     showMainBattleMenu(){
         this.#activeBattleMenu = ACTIVE_BATTLE_MENU.BATTLE_MAIN;
         this.#battleTextGameObjectLine1.setText('what should');
@@ -90,17 +91,20 @@ export class BattleMenu {
         this.#selectedAttackIndex = undefined;
     }
 
+    //hide battle menu
     hideMainBattleMenu(){
         this.#mainBattleMenuPhaserContainerGameObject.setAlpha(0);
         this.#battleTextGameObjectLine1.setAlpha(0);
         this.#battleTextGameObjectLine2.setAlpha(0);
     }
 
+    //display monster's atk menu
     showMonsterAttackSubMenu(){
         this.#activeBattleMenu = ACTIVE_BATTLE_MENU.BATTLE_MOVE_SELECT;
         this.#moveSelectionSubBattleMenuPhaserContainerGameObject.setAlpha(1);
     }
 
+    //hide monster's atk menu
     hideMonsterAttackSubMenu(){
         this.#activeBattleMenu = ACTIVE_BATTLE_MENU.BATTLE_MAIN;
         this.#moveSelectionSubBattleMenuPhaserContainerGameObject.setAlpha(0);
@@ -221,7 +225,7 @@ export class BattleMenu {
             rectHeight, 
             0xede4f3, 
             1)
-        .setOrigin(0).setStrokeStyle(8, 0xe4434a, 1);
+        .setOrigin(0).setStrokeStyle(8, 0x7D0E4D, 1);
     }
 
     #createMainInfoSubPane() {
@@ -230,7 +234,7 @@ export class BattleMenu {
         
         //originally y was zero but had to adjust a bit..
         return this.#scene.add.rectangle(0,-1.2, rectWidth, rectHeight, 0xede4f3, 1)
-        .setOrigin(0).setStrokeStyle(8, 0X905AC2, 1);
+        .setOrigin(0).setStrokeStyle(8, 0X983BED, 1);
     }
 
     /**
