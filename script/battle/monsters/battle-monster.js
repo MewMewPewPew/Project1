@@ -112,7 +112,7 @@ playAnimation() {
         //const enemyHealthBar = this.#activeEnemyMonster._healthBar;
         const monsterNameGameText = this._scene.add.text(30, 20, 
             this.name, {
-                color: "#7E3D3F",
+                color: "#7D0E4D",
                 fontSize: "32px",
             }
         );

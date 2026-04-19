@@ -257,7 +257,7 @@ export class BattleScene extends Phaser.Scene {
             name: BATTLE_STATES.PRE_BATTLE_INFO,
             onEnter: () => {
                 //waiting for enemy monster's appearing + notifying user
-                this.#battleMenu.updateInfoPaneMessagesAndWaitForInput([`wild ${this.#activeEnemyMonster.name} appeard!`],
+                this.#battleMenu.updateInfoPaneMessagesAndWaitForInput([`wild ${this.#activeEnemyMonster.name} appears!`],
                     () => {
                         //waiting for text animations to finish
                         //no animations for now, so just this
