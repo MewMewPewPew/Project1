@@ -61,6 +61,19 @@ export class BattleScene extends Phaser.Scene {
 
         //render player + enemy
         //stats for enemy
+        // this.#activeEnemyMonster = new EnemyBattleMonster({
+        //     scene: this,
+        //     monsterDetails: {
+        //         name: [MONSTER_ASSET_KEYS.CARNODUSK, MONSTER_ASSET_KEYS.FIRE],
+        //         assetKey: [MONSTER_ASSET_KEYS.CARNODUSK, MONSTER_ASSET_KEYS.FIRE],
+        //         assetFrame: 22,
+        //         currentHp: 25,
+        //         maxHp: 25,
+        //         attackIds: [1],
+        //         baseAttack: 5,
+        //         currentLevel: 5,
+        //     },
+        // });
         this.#activeEnemyMonster = new EnemyBattleMonster({
             scene: this,
             monsterDetails: {
@@ -77,12 +90,35 @@ export class BattleScene extends Phaser.Scene {
         this.anims.create({
             key: `attackerPetAnim`,
              frames: this.anims.generateFrameNumbers(MONSTER_ASSET_KEYS.CARNODUSK, {
-                start: 22,
+                start: 23,
                 end: 24,
             }),
             frameRate:5,
             repeat:-1,
         });
+        //Fire animation guy
+        // this.#activeEnemyMonster = new EnemyBattleMonster({
+        //     scene: this,
+        //     monsterDetails: {
+        //         name: MONSTER_ASSET_KEYS.FIRE,
+        //         assetKey: MONSTER_ASSET_KEYS.FIRE,
+        //         assetFrame: 22,
+        //         currentHp: 25,
+        //         maxHp: 25,
+        //         attackIds: [1],
+        //         baseAttack: 5,
+        //         currentLevel: 5,
+        //     },
+        // });
+        // this.anims.create({
+        //     key: `attackerPetAnim2`,
+        //      frames: this.anims.generateFrameNumbers(MONSTER_ASSET_KEYS.FIRE, {
+        //         start: 23,
+        //         end: 24,
+        //     }),
+        //     frameRate:5,
+        //     repeat:-1,
+        // });
 
         //stats for player
         this.#activePlayerMonster = new PlayerBattleMonster({
@@ -124,7 +160,9 @@ export class BattleScene extends Phaser.Scene {
         //for keyboard
         this.#cursorKeys = this.input.keyboard.createCursorKeys();
 
-        this.#activePlayerMonster.playAnimation();
+        // this.#activePlayerMonster.playAnimation();
+        this.#activePlayerMonster.playAnimationPlayer();
+        this.#activeEnemyMonster.playAnimationEnemy();
         //console.log(this.#activeEnemyMonster.isFainted);
     }
 
@@ -257,7 +295,7 @@ export class BattleScene extends Phaser.Scene {
             name: BATTLE_STATES.PRE_BATTLE_INFO,
             onEnter: () => {
                 //waiting for enemy monster's appearing + notifying user
-                this.#battleMenu.updateInfoPaneMessagesAndWaitForInput([`wild ${this.#activeEnemyMonster.name} appears!`],
+                this.#battleMenu.updateInfoPaneMessagesAndWaitForInput([`wild ${this.#activeEnemyMonster.name} appeard!`],
                     () => {
                         //waiting for text animations to finish
                         //no animations for now, so just this

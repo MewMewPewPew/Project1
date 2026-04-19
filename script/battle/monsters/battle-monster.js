@@ -39,7 +39,6 @@ export class BattleMonster{
             )
             // .setScale(4)
             ;
-        
 
         // this._phaserGameObject = this._scene.add.image(
         //     position.x, 
@@ -68,10 +67,14 @@ export class BattleMonster{
 //  * @returns {void}
 //  */
 
-playAnimation() {
-    this._phaserGameObject.play(`attackerPetAnim`); //won't play? 
+playAnimationPlayer() {
     this._phaserGameObject.play(`playerPetAnim`);
 }
+playAnimationEnemy() {
+    this._phaserGameObject.play(`attackerPetAnim`); //won't play? 
+    // this._phaserGameObject.play(`attackerPetAnim2`); //won't play? 
+} 
+
 
     /** @type {boolean} */
     get isFainted(){

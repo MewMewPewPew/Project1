@@ -6,6 +6,6 @@ export const BATTLE_UI_TEXT_STYLE = Object.freeze({
     color: 'black',
     fontSize: '34px',
     fontFamily: 'gothicFont',
-    fontStyle: 'italic',
+    // fontStyle: 'italic',
     
 });

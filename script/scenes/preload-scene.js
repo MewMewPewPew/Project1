@@ -70,14 +70,32 @@ export class PreloadScene extends Phaser.Scene {
         );
 
         //monster assets
-        this.load.spritesheet(
+        this.load.spritesheet( 
             MONSTER_ASSET_KEYS.CARNODUSK,
-            `${monsterTamerAssetPath}/monsters/babyegg_water_emo.png`, {
+            `${monsterTamerAssetPath}/monsters/babyegg_water_emo.png`, { //water
             frameWidth: 320,
             frameHeight: 320,
             endFrame: 56,
         }
         );
+        this.load.spritesheet( 
+            MONSTER_ASSET_KEYS.FIRE,
+            `${monsterTamerAssetPath}/monsters/babyegg_fire_emo.png`, { //fire
+            frameWidth: 320,
+            frameHeight: 320,
+            endFrame: 55,
+        }
+        );
+        // enemy Image
+        // this.load.image(
+        //     MONSTER_ASSET_KEYS.CARNODUSK, //water
+        //     `${monsterTamerAssetPath}/monsters/babyegg_water_emo-25.png.png`
+        // );
+        // this.load.image(
+        //     MONSTER_ASSET_KEYS.CARNODUSK, //fire
+        //     `${monsterTamerAssetPath}/monsters/babyegg_fire_emo-26.png.png`
+        // );
+        //player spritesheet
         this.load.spritesheet(
             MONSTER_ASSET_KEYS.IGUANIGNITE,
             `${monsterTamerAssetPath}/monsters/babyKittyegg_emoG.png`, {

@@ -8,7 +8,8 @@ export const MONSTER_ASSET_KEYS = Object.freeze({
     IGUANIGNITE: "Digi-Pet",//`${vPetNameValue}`, //"IGUANIGNITE",
     // U_PET_NAME: vPetNameValue,
     // U_PET_NAME_: vPetName,
-    CARNODUSK: "beast",
+    CARNODUSK: "Baqua beast", //
+    FIRE: "Fuergo beast",
 });
 
 export const BATTLE_ASSET_KEYS = Object.freeze({
