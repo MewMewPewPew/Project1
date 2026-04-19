@@ -9,10 +9,11 @@ reference: https://www.youtube.com/watch?v=YTEWoLw8GM4&list=PLmcXe0-sfoSgq-pyXrF
     - change the asleep mode to not "turn off"/kill the Digi Chiika -> Instead 
         - create a PV (life point) bar & if PV bar >= 0 {the digi chiika dies :( }
     - intergrate phazer code in project 1
+    - https://www.youtube.com/watch?v=fEWo5q_xy-Q&list=PLNVA15CuezfM-AZLt6IM9Xwk3VGySwn8R&index=2 - Trainer Battle - Pokémon Red/Blue/Yellow Soundtrack 
 
 
 ### other changes
-    - make the "dead" virtual pet's name actually saved in the local storage
+    - make the "dead" virtual pet's name actually saved in the local storage ??
     
 ### Make artist statement 
 - either big text again 

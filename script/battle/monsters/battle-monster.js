@@ -52,6 +52,8 @@ export class BattleMonster{
         //     this._monsterDetails.name , //this._monsterDetails.name //MONSTER_ASSET_KEYS.U_PET_NAME
            
         // );
+        
+
         this.#createHealthBarComponents(config.scaleHealthBarBackgroundImageByY);
 
         this._monsterDetails.attackIds.forEach((attackId) => {

@@ -104,7 +104,15 @@ export class PreloadScene extends Phaser.Scene {
             endFrame: 57,
         }
         );
-        // load user pet name ?
+        // load game sound
+        this.musicBattle = this.load.audio(`battleMusic`, "../../assets/sound/BattleSoundtrack.mp3")
+        
+        // //game display? html id
+        // var gameDisplay  = document.getElementById("game-container");
+        // this.load.html( //game-container
+        //     `gameDisplay`, "../index.html"
+        // )
+        // // load user pet name ?
         // this.load.html(
         //     MONSTER_ASSET_KEYS.U_PET_NAME, "../index.html"
             

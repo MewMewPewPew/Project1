@@ -105,7 +105,7 @@ export class BattleScene extends Phaser.Scene {
         //         assetFrame: 22,
         //         currentHp: 25,
         //         maxHp: 25,
-        //         attackIds: [1],
+        //         attackIds: [3],
         //         baseAttack: 5,
         //         currentLevel: 5,
         //     },
@@ -124,7 +124,7 @@ export class BattleScene extends Phaser.Scene {
         this.#activePlayerMonster = new PlayerBattleMonster({
             scene: this,
             monsterDetails: {
-                name: MONSTER_ASSET_KEYS.IGUANIGNITE, //U_PET_NAME
+                name: MONSTER_ASSET_KEYS.IGUANIGNITE, // U_PET_NAME 
                 assetKey: MONSTER_ASSET_KEYS.IGUANIGNITE,
                 // assetFrame: 0,
                 // frames: this.anims.generateFrameNumbers(`MONSTER_ASSET_KEYS.IGUANIGNITE`, {
@@ -249,9 +249,10 @@ export class BattleScene extends Phaser.Scene {
     #postBattleSequenceCheck(){
         if(this.#activeEnemyMonster.isFainted){
             this.#battleMenu.updateInfoPaneMessagesAndWaitForInput(
-                [`Wild ${this.#activeEnemyMonster.name} fainted`, 'You have gained some exp!'], 
+                [`Wild ${this.#activeEnemyMonster.name} was defeated`, `${this.#activePlayerMonster.name} enjoyed playing!`], //would add name here if could
                 () => {
-                    this.#battleStateMachine.setState(BATTLE_STATES.FINISHED);
+                    this.#battleStateMachine.setState(BATTLE_STATES.FINISHED); // + get element by Id("game-container").style.display = "none"
+                    
                 }
             );
             return;
@@ -262,6 +263,7 @@ export class BattleScene extends Phaser.Scene {
                 [`${this.#activePlayerMonster.name} fainted`, 'You have no more monsters, escaping to safety...'], 
                 () => {
                     this.#battleStateMachine.setState(BATTLE_STATES.FINISHED);
+                    // this.scene.setVisible(false, SCENE_KEYS.BATTLE_SCENE);
                 }
             );
             return;
@@ -311,6 +313,7 @@ export class BattleScene extends Phaser.Scene {
             name: BATTLE_STATES.BRING_OUT_MONSTER,
             onEnter: () => {
                 //waiting for player's monster to appear + notifying user
+                this.sound.play(`battleMusic`)
                 this.#battleMenu.updateInfoPaneMessagesAndWaitForInput([`go ${this.#activePlayerMonster.name}!`],
                     () => {
                         //waiting for text animations to finish
@@ -364,7 +367,11 @@ export class BattleScene extends Phaser.Scene {
         this.#battleStateMachine.addState({
             name: BATTLE_STATES.FINISHED,
             onEnter: () => {
+                // this.sound.stopByKey(`battleMusic`);
+                // this.sound.stop(`battleMusic`);
+                //musicBattle.stop(`battleMusic`); //
                 this.#transitionToNextScene();
+                
             }
         });
 

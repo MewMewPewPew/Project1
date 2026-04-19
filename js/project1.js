@@ -15,7 +15,7 @@ window.onload = function (){
     // doc to start the battle scene
     let battleButton = document.getElementById("exclamationP");
     let battleScene = document.getElementById("game-container");
-    let vPetNameVP = document.getElementById("vPetNamePhas3r");
+    
     
     // let parentDom = document.getElementById("chiikaBoxOnly");
     let barEmotionBox = document.getElementById("awakeCover");
@@ -627,3 +627,4 @@ vPetNameVP = vPetNameValue;
     // }
  
 }
+let vPetNameVP = document.getElementById("vPetNamePhas3r");
