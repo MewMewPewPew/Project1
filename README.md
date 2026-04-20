@@ -1,12 +1,20 @@
 # Digi Chiika (デジ ちいか) 
 ### Play [デジ ちいか / Digi Chiika](https://mewmewpewpew.github.io/Project1/) by Ash Oest O’Leary & Elle Lilin Kyuss Lim-Fauteux 
 
-#### Project-1 < CART 263 < Concordia 
+### Project 1 & 2 < CART 263 < Concordia 
 
+#### Walkthrough Video link:
+
+<!-- [![Watch the video](https://raw.githubusercontent.com/MewMewPewPew/Project1/main/assets/video/thumbnail.PNG)](https://raw.githubusercontent.com/MewMewPewPew/Project1/main/assets/video/walkthroughProject2.mp4) -->
+
+[![Watch the video](https://img.youtube.com/vi/8umVyxZAJNI&t=32s/0.jpg)](https://www.youtube.com/watch?v=8umVyxZAJNI&t=32s)
 ---
 ![start](assets/img/ScreenShoot/0.PNG)
-Refer to the [artist statement](assets/img/ScreenShoot/cart263project1.pdf) for more information!!
-### Screenshots:
+Refer to the [artist statement 1](assets/img/ScreenShoot/cart263project1.pdf) & [artist statement-2](assets/img/ScreenShoot/Artist_Statement2.pdf) for more information!!
+
+---
+### Project1 
+#### Screenshots:
 <!-- ([play the game](https://mewmewpewpew.github.io/Project1/) before, don't spoil yourself) -->
 ![start](assets/img/ScreenShoot/1.PNG)
 ![start](assets/img/ScreenShoot/mind.PNG)
@@ -32,7 +40,7 @@ Refer to the [artist statement](assets/img/ScreenShoot/cart263project1.pdf) for 
 ![4](assets/img/ScreenShoot/alert.PNG) 
 ![4](assets/img/ScreenShoot/DeadGang.PNG) 
 
-### Project-2 < CART 263 < Concordia 
+### Project 2 
 We intergrated a library called Phaser(3) to add a battle scene to our game - pokemon style! 
 Refer to the [artist statement-2](assets/img/ScreenShoot/Artist_Statement2.pdf) for more information!!
 
