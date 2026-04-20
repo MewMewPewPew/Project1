@@ -6,12 +6,17 @@
     },
     {
         "id": 2,
-        "name": "slash",
+        "name": "paw punch",
         "animationName": "SLASH"
     },
     {
         "id": 3,
-        "name": "spark",
+        "name": "ruff play",
+        "animationName": "SLASH"
+    },
+    {
+        "id": 4,
+        "name": "growl",
         "animationName": "ICE_SHARD"
     }
     

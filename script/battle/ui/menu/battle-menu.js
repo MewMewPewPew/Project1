@@ -16,6 +16,11 @@ const ATTACK_MENU_CURSOR_POS = Object.freeze({
     y: 38,
 })
 
+// const ITEM_MENU_CURSOR_POS = Object.freeze({
+//     x: 42,
+//     y: 38,
+// })
+
 export class BattleMenu {
     /** @type {Phaser.Scene} */
     #scene;
@@ -60,6 +65,7 @@ export class BattleMenu {
         this.#activeBattleMenu = ACTIVE_BATTLE_MENU.BATTLE_MAIN;
         this.#selectedBattleMenuOption = BATTLE_MENU_OPTIONS.FIGHT;
         this.#selectedAttackMenuOption = ATTACK_MOVE_OPTIONS.MOVE_1;
+        // this.#selectedItemMenuOption = ITEM_MOVE_OPTIONS.MOVE_1;
         this.#queuedInfoPanelCallback = undefined;
         this.#queuedInfoPanelMessages = [];
         this.#waitingForPlayerInput = false;
@@ -471,7 +477,7 @@ export class BattleMenu {
         if(this.#selectedBattleMenuOption === BATTLE_MENU_OPTIONS.SWITCH){
             //todo
             this.#activeBattleMenu = ACTIVE_BATTLE_MENU.BATTLE_SWITCH;
-            this.updateInfoPaneMessagesAndWaitForInput(['You have no other monsters in your party..'], () => {
+            this.updateInfoPaneMessagesAndWaitForInput(['Your pet observed the environment...', 'This new space seems to make your pet curious', 'Your pet looks at you with big eyes'], () => {
                 this.#switchToMainBattleMenu();
             });
             return;
