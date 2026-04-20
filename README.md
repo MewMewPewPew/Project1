@@ -46,7 +46,6 @@ We intergrated a library called Phaser(3) to add a battle scene to our game - po
 ![battle](assets/img/ScreenShoot/ye.PNG)
 ![gif](assets/img/ScreenShoot/babyKittyegg_emoG.gif) 
 ![gif](assets/img/ScreenShoot/babyegg_water_emo.gif)
-![gif](assets/img/ScreenShoot/babyegg_fire_emo.gif)
 ---
 ### Credits: 
 CART 263 class learning material: https://anomalse.github.io/CART263-Winter-2026/projects.html
@@ -79,3 +78,4 @@ About “kawaii”/Japanese studies & ASCII art
 
 
 THANKS  <3
+![gif](assets/img/ScreenShoot/babyegg_fire_emo.gif)
