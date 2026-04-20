@@ -1,4 +1,4 @@
-import { HEALTH_BAR_ASSET_KEYS } from '../../assets/asset-keys.js';
+import { HEALTH_BAR_ASSET_KEYS } from '../../assetsK/asset-keys.js';
 import Phaser from '../../library/phaser.js';
 
 export class HealthBar {

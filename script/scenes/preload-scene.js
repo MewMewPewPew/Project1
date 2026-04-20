@@ -6,7 +6,7 @@ import {
     MONSTER_ASSET_KEYS,
     User_petName,
     UI_ASSET_KEYS,
-} from "../assets/asset-keys.js";
+} from "../assetsK/asset-keys.js";
 import Phaser from "../library/phaser.js";
 import { SCENE_KEYS } from "./scene-keys.js";
 
@@ -139,7 +139,7 @@ export class PreloadScene extends Phaser.Scene {
         //     `${monsterTamerAssetPath}/monsters/iguanignite.png`
         // );
         // load font
-        this.load.font('gothicFont', "../assets/font/DotGothic16-Regular.ttf" , 'truetype' ); // "https://fonts.googleapis.com/css2?family=DotGothic16&display=swap"
+        this.load.font(`gothicFont`, "../../assets/font/DotGothic16-Regular.ttf" , 'truetype' ); // "https://fonts.googleapis.com/css2?family=DotGothic16&display=swap"
         //ui assets
         this.load.image(
             UI_ASSET_KEYS.CURSOR,

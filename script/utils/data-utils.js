@@ -1,4 +1,4 @@
-import { DATA_ASSET_KEYS } from '../assets/asset-keys.js';
+import { DATA_ASSET_KEYS } from '../assetsK/asset-keys.js';
 
 export class DataUtils {
     static getMonsterAttack(scene, attackId){

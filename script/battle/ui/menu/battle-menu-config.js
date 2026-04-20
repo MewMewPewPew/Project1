@@ -5,7 +5,7 @@ import Phaser from '../../../library/phaser.js';
 export const BATTLE_UI_TEXT_STYLE = Object.freeze({
     color: 'black',
     fontSize: '34px',
-    fontFamily: 'gothicFont',
+    fontFamily: `gothicFont`,
     // fontStyle: 'italic',
     
 });
