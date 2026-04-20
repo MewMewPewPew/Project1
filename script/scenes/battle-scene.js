@@ -4,13 +4,14 @@ import {
     //BATTLE_BACKGROUND_ASSET_KEYS,
     //HEALTH_BAR_ASSET_KEYS,
     MONSTER_ASSET_KEYS,
+    User_petName,
 } from "../assets/asset-keys.js";
 import { Background } from "../battle/background.js";
 import { HealthBar } from "../battle/ui/health-bar.js";
 import { BattleMenu } from '../battle/ui/menu/battle-menu.js';
 import { DIRECTION } from "../common/direction.js";
 import {SCENE_KEYS} from "./scene-keys.js";
-//import { BattleMonster } from "../battle/monsters/battle-monster.js";
+import { BattleMonster } from "../battle/monsters/battle-monster.js";
 import { EnemyBattleMonster } from "../battle/monsters/enemy-battle-monster.js";
 import { PlayerBattleMonster } from "../battle/monsters/player-battle-monster.js";
 import { StateMachine } from "../utils/state-machine.js";
@@ -42,6 +43,8 @@ export class BattleScene extends Phaser.Scene {
     #activePlayerAttackIndex;
     /** @type {StateMachine} */
     #battleStateMachine;
+    /** @type {BattleMonster} */
+    #ExportName;
 
     constructor() {
         super({
@@ -55,6 +58,8 @@ export class BattleScene extends Phaser.Scene {
 
     create() {
         console.log(`[${BattleScene.name}:create] invoked`);
+
+        
 
         //create main background
         const background = new Background(this);
@@ -125,7 +130,7 @@ export class BattleScene extends Phaser.Scene {
         this.#activePlayerMonster = new PlayerBattleMonster({
             scene: this,
             monsterDetails: {
-                name: MONSTER_ASSET_KEYS.IGUANIGNITE, // U_PET_NAME 
+                name: User_petName.name, // U_PET_NAME 
                 assetKey: MONSTER_ASSET_KEYS.IGUANIGNITE,
                 // assetFrame: 0,
                 // frames: this.anims.generateFrameNumbers(`MONSTER_ASSET_KEYS.IGUANIGNITE`, {
@@ -140,7 +145,10 @@ export class BattleScene extends Phaser.Scene {
                 baseAttack: 15,
                 currentLevel: 5,
             },
+            
         });
+        // this.#activePlayerMonster._monsterDetails.name.update(User_petName.name);
+        // this.#activePlayerMonster._monsterDetails.name.getName(document.getElementById("vPetNameDisplay").textContent);
         //animation 
         this.anims.create({
             key: `playerPetAnim`,
@@ -160,7 +168,7 @@ export class BattleScene extends Phaser.Scene {
 
         //for keyboard
         this.#cursorKeys = this.input.keyboard.createCursorKeys();
-
+        
         // this.#activePlayerMonster.playAnimation();
         this.#activePlayerMonster.playAnimationPlayer();
         this.#activeEnemyMonster.playAnimationEnemy();
@@ -168,16 +176,32 @@ export class BattleScene extends Phaser.Scene {
         // sound 
         // var music = this.sound.add(`battleMusic`);
     }
-
+    
     //calls every frame
     update(){
-        //lets it be constantly updated to clear queue - helps with timing
         this.#battleStateMachine.update();
+
+        //This changes the name of the Virtual Pet - BUT DOENT EXPORT IT or smt...
+        if (document.getElementById("exclamationP").style.display === "block" ){
+            // console.log(":-0");
+            updateVPetNameInput(User_petName);
+            // this.#activePlayerMonster
+            // this.#activePlayerMonster.name = 
+            // console.log(this.#activePlayerMonster.monsterDetails.name);
+        }  
+        function updateVPetNameInput(e){
+            // console.log(User_petName);
+            // console.log(document.getElementById("vPetNameDisplay").textContent);
+            e.name = `${document.getElementById("vPetNameDisplay").textContent}` ; 
+        }
+        if (User_petName.name != "Pet "){
+            // this.#ExportName.name = update();
+            
+        }
         //JustDown a method that helps to know if something was pressed
         const wasSpaceKeyPressed = Phaser.Input.Keyboard.JustDown(this.#cursorKeys.space);
         if(wasSpaceKeyPressed){
             this.#battleMenu.handlePlayerInput('OK');
-
             //check if player selected attack, update text
             if(this.#battleMenu.selectedAttack === undefined){
                 return;
@@ -195,6 +219,7 @@ export class BattleScene extends Phaser.Scene {
             this.#battleStateMachine.setState(BATTLE_STATES.ENEMY_INPUT);
             
         }
+       
 
         if(Phaser.Input.Keyboard.JustDown(this.#cursorKeys.shift)){
             this.#battleMenu.handlePlayerInput('CANCEL');
@@ -288,16 +313,20 @@ export class BattleScene extends Phaser.Scene {
         var music = this.sound.add('battleMusic');
         //make the sound less loud
         music.setVolume(0.5);
+        //update pet name
+        // var vPetName = this.string.add(MONSTER_ASSET_KEYS.IGUANIGNITE)
+       
         this.#battleStateMachine.addState({
             name: BATTLE_STATES.INTRO,
-            onEnter: () => {
+            onEnter: () => { 
+                // updateVPetNameInput(MONSTER_ASSET_KEYS);
                 //waiting for scene set up and completing transitions
                 this.time.delayedCall(500, () =>{
                     this.#battleStateMachine.setState(BATTLE_STATES.PRE_BATTLE_INFO);
                 })
             }
         });
-
+        
         this.#battleStateMachine.addState({
             name: BATTLE_STATES.PRE_BATTLE_INFO,
             onEnter: () => {

@@ -1,6 +1,9 @@
-import { BATTLE_ASSET_KEYS} from "../../assets/asset-keys.js";
+import { BATTLE_ASSET_KEYS, 
+    MONSTER_ASSET_KEYS,
+    User_petName,} from "../../assets/asset-keys.js";
 import { DataUtils } from "../../utils/data-utils.js";
 import { HealthBar } from "../ui/health-bar.js";
+
 
 export class BattleMonster{
     /** @protected @type {Phaser.Scene} */
@@ -30,7 +33,7 @@ export class BattleMonster{
         this._currentHealth = this._monsterDetails.currentHp;
         this._maxHealth = this._monsterDetails.maxHp;
         this._monsterAttacks = [];
-
+    // this._monsterDetails.assetKey.freeze = false; //trying smt 
         this._phaserGameObject = this._scene.add.sprite(
             position.x, 
             position.y, 
@@ -52,7 +55,9 @@ export class BattleMonster{
         //     this._monsterDetails.name , //this._monsterDetails.name //MONSTER_ASSET_KEYS.U_PET_NAME
            
         // );
-        
+         
+
+
 
         this.#createHealthBarComponents(config.scaleHealthBarBackgroundImageByY);
 
@@ -69,6 +74,7 @@ export class BattleMonster{
 //  * @returns {void}
 //  */
 
+
 playAnimationPlayer() {
     this._phaserGameObject.play(`playerPetAnim`);
 }
@@ -83,14 +89,14 @@ playAnimationEnemy() {
         return this._currentHealth <= 0;
     }
 
-    // /** @type {import("../../../js/project1.js").???} */
-    // get name(){
-    //     return this._monsterDetails.name;
-    // }
     /** @type {string} */
     get name(){
         return this._monsterDetails.name;
     }
+    // /** @type {string} */
+    // get name(){
+    //     return this._monsterDetails.name;
+    // }
 
     /** @type {import("../../types/typedef.js").Attack[]} */
     get attacks(){

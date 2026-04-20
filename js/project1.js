@@ -4,7 +4,14 @@
 
 //make variables global to be able to acess them in phaser
 let battleScene; 
-let vPetName; 
+let battleButton;
+let vPetName;
+let named;
+let namedPhaser;
+// let vPetNameValue; 
+// let vPetNameValue = document.getElementById("vPetNamePhas3r");
+// let vPetNameVP = document.getElementById("vPetNamePhas3r");
+
 window.onload = function (){
     let sleep = false;
     let dreaming = true;
@@ -17,8 +24,8 @@ window.onload = function (){
     let deathCounter = 0;
     // doc to start the battle scene
     battleScene = document.getElementById("game-container");
-    let battleButton = document.getElementById("exclamationP");
-    
+    battleButton = document.getElementById("exclamationP");
+    namedPhaser = false;
     // pet_name = document.getElementById
     
     // let parentDom = document.getElementById("chiikaBoxOnly");
@@ -39,10 +46,11 @@ window.onload = function (){
     //virtual pet ID
     let virtualPetDoc = document.getElementById("pet"); 
     let questionNameBox = document.getElementById("inputBoxOnly");
-    let vPetNameValue; 
+    // let vPetNameValue;
+    let vPetNameValue;  
     vPetName = document.getElementById("vPetNameDisplay");
     let nameList = [];
-    let named = false;
+    named = false;
     let deadname = false;
     let totaldeathNum;
     let deadnameS;
@@ -581,6 +589,7 @@ window.onload = function (){
                 alert("Name your pet !");
             } else {
                 named = true; 
+                console.log(named);
                 console.log(vPetNameValue + " is your new pet !");
                 questionNameBox.style.display = "none";
                 vPetName.style.display = "block";
@@ -617,7 +626,7 @@ window.onload = function (){
     }
     // console.log(vPetNamePhas3r);
 // vPetNameVP = `${vPetNameValue}`;
-vPetNameVP = vPetNameValue;
+// vPetNameVP = vPetNameValue;
     // function buttonSounds(){
     //         const buttonsClicked = document.getElementsByClassName("buttons");
     //                 const buttonNoise = document.getElementById("soundButton");
@@ -631,4 +640,3 @@ vPetNameVP = vPetNameValue;
     // }
  
 }
-let vPetNameVP = document.getElementById("vPetNamePhas3r");

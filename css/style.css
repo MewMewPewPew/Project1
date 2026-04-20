@@ -33,6 +33,10 @@ body{
     /* margin-right: 15px; */
    
 }
+#game-name-change{
+    display: none;
+    position: absolute;
+}
 .all-box{
     padding: 0px;
     margin: 0px;

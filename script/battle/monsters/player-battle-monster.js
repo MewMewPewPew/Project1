@@ -1,4 +1,7 @@
 import {BattleMonster} from "./battle-monster.js";
+import { BATTLE_ASSET_KEYS, 
+    MONSTER_ASSET_KEYS,
+    User_petName,} from "../../assets/asset-keys.js";
 
 /** @type {import("../../types/typedef.js").Coordinate} */
 const PlAYER_POSITION = Object.freeze({
@@ -17,6 +20,14 @@ export class PlayerBattleMonster extends BattleMonster{
         super(config, PlAYER_POSITION);
         this._phaserGameObject.setFlipX(true);
         this._phaserHealthBarGameContainer.setPosition(556, 318);
+        this._monsterDetails = config.monsterDetails;
+        
+        //unfreeze the name data of player monster?? set it to => document.getElementById("vPetNameDisplay").textContent 
+        // or document.getElementById("vPetName").value
+        // this._phaserGameObject.data.freeze = false;
+        // this._monsterDetails.name.set = document.getElementById("vPetNameDisplay").textContent;
+        // getName(document.getElementById("vPetNameDisplay").textContent)
+        // this._monsterDetails.name.setFreeze = false;
 
         this.#addHealthBarComponents();
     }

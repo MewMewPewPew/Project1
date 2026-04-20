@@ -1,18 +1,31 @@
+// "use strict";
 //file to name identify and name assets
 
 // import { DOM } from "phaser";
 
 export const BATTLE_BACKGROUND_ASSET_KEYS = Object.freeze({
     FOREST: "FOREST",
+    WONDERSEA: "WONDERSEA",
+});
+// let User_petName = document.getElementById("vPetNameDisplay").textContent;
+export let User_petName = Object({ 
+    name: "Pet ",
 });
 
-export const MONSTER_ASSET_KEYS = Object.freeze({
-    IGUANIGNITE: `${vPetName}`,//"Digi-Pet",//`${vPetNameValue}` `${vPetNamePhas3r}`, //"IGUANIGNITE",
+export const MONSTER_ASSET_KEYS = Object({
+    IGUANIGNITE: " pet ", //`${document.getElementById("vPetNameDisplay").textContent}` // User_petName ,//"Digi-Pet",//`${vPetNameValue}` `${vPetNamePhas3r}`, //"IGUANIGNITE",
+    // IGUANIGNITE: document.getElementById("vPetNameDisplay").textContent ,
     // U_PET_NAME: `${vPetNamePhas3r}`, let vPetNameValue;  
-    // U_PET_NAME_: vPetName,
+    // U_PET_NAME: `${User_petName}` + " ",
     CARNODUSK: "Baqua beast", //
     FIRE: "Fuergo beast",
-});
+    
+})
+
+// // console.log(named === true);
+// updateVPetNameInput(MONSTER_ASSET_KEYS);
+;
+
 
 export const BATTLE_ASSET_KEYS = Object.freeze({
     HEALTH_BAR_BACKGROUND: "HEALTH_BAR_BACKGROUND",
@@ -34,3 +47,4 @@ export const UI_ASSET_KEYS = Object.freeze({
 export const DATA_ASSET_KEYS = Object.freeze({
     ATTACKS: "ATTACKS",
 });
+
