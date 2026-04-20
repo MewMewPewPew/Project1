@@ -63,8 +63,10 @@ body{
     font-size: 60px;
     font-family: "Jacquard 12", system-ui;
     font-weight: 400;
-    color: rgb(127, 255, 227);
-    margin-left: 420px;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 5px rgb(243, 60, 213);
+    /* rgb(127, 255, 227) */
+    margin-left: 390px;
     margin-top: -55px;
     display: none;
 }

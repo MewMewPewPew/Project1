@@ -63,7 +63,7 @@ export class BattleScene extends Phaser.Scene {
 
         //create main background
         const background = new Background(this);
-        background.showForest();
+        background.showForest(); // is in fact not a forest but a beautiful sunset at the sea
 
         //stats for enemy
         // Water type
