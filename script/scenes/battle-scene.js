@@ -43,14 +43,13 @@ export class BattleScene extends Phaser.Scene {
     #activePlayerAttackIndex;
     /** @type {StateMachine} */
     #battleStateMachine;
-    // /** @type {BattleMonster} */
-    // #ExportName;
+    /** @type {BattleMonster} */
+    #ExportName;
 
     constructor() {
         super({
             key: SCENE_KEYS.BATTLE_SCENE,
         });
-        // this.#activePlayerMonster
     }
 
     init(){
@@ -142,8 +141,8 @@ export class BattleScene extends Phaser.Scene {
                 // repeat:-1
                 currentHp: 25,
                 maxHp: 25,
-                attackIds: [2,3,4],
-                baseAttack: 8,
+                attackIds: [2],
+                baseAttack: 15,
                 currentLevel: 5,
             },
             
@@ -410,14 +409,14 @@ export class BattleScene extends Phaser.Scene {
                 
             }
         });
-// this.#battleStateMachine.setState(BATTLE_STATES.FLEE_ATTEMPT);
+
         this.#battleStateMachine.addState({
             name: BATTLE_STATES.FLEE_ATTEMPT,
             onEnter: () => {
                 this.#battleMenu.updateInfoPaneMessagesAndWaitForInput([`You got away safely!`], () => {
                     this.#battleStateMachine.setState(BATTLE_STATES.FINISHED);
                 });
-            } 
+            }
         });
 
         //start state machine
