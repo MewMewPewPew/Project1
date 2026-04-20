@@ -289,6 +289,7 @@ window.onload = function (){
             sleep = true;
             named = false;
             deadname = true;
+            battleButton.style.display = "none";
 
         }
         else if(sleep && !named ){
@@ -300,6 +301,7 @@ window.onload = function (){
             canvas.style.background = "#121f1bb7";
             // canvas.style.display="block";
             barEmotionBox.style.display="none";
+            battleButton.style.display = "none";
             //Asleep mode
             wakeUpButton.src = "assets/img/buttonPink-off.png";
             tamagochiImg.src = "assets/img/Tamagochi_off.png";
@@ -388,7 +390,7 @@ window.onload = function (){
             if (sleep){
                 clickAct ++;
                 // console.log(sleep);
-                battleButton.style.display = "none";
+                // battleButton.style.display = "none";
                 
             }
             // console.log(clickAct);
