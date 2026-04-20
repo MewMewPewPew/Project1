@@ -64,7 +64,7 @@ CART 263 class learning material: https://anomalse.github.io/CART263-Winter-2026
 
 Project2
 - Youtube series by Scott Westover, https://www.youtube.com/watch?v=YTEWoLw8GM4&list=PLmcXe0-sfoSgq-pyXrFx0GZjHbvoVUW8t&index=9 
-- learning material on phaser by Pippin, https://pippinbarr.com/cart26 3-2021/course-information/schedule.html#game-engine  
+- learning material on phaser by Pippin, [https://pippinbarr.com/cart263-2021/course-information/schedule.html#game-engine](https://pippinbarr.com/cart263-2021/course-information/schedule.html#game-engine)  
 
 About “kawaii”/Japanese studies & ASCII art
 - https://utppublishing.com/doi/abs/10.1558/sols.36212 
