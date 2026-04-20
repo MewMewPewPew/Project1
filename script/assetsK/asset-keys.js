@@ -48,3 +48,6 @@ export const DATA_ASSET_KEYS = Object.freeze({
     ATTACKS: "ATTACKS",
 });
 
+export const AUDIO_ASSET_KEYS = Object.freeze({
+    BATTLE: "BATTLE",
+});
