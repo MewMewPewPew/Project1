@@ -17,6 +17,9 @@ const game = new Phaser.Game({
     },
     backgroundColor: "#000000",
     //scene: [PreloadScene], //another way to start scene
+    audio: {
+        disableWebAudio: true,
+    },
 });
 
 game.scene.add(SCENE_KEYS.PRELOAD_SCENE, PreloadScene);
