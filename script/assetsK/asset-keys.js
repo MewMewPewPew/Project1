@@ -4,20 +4,22 @@
 // import { DOM } from "phaser";
 
 export const BATTLE_BACKGROUND_ASSET_KEYS = Object.freeze({
-    FOREST: "FOREST",
-    WONDERSEA: "WONDERSEA",
+    FOREST: "FOREST", //this one is the wonder sea
+    WONDERSEA: "WONDERSEA", // this one is the forest lol
 });
+
+//Tried here to name the player pet in different manner for a goal I couldn't meet YET !
 // let User_petName = document.getElementById("vPetNameDisplay").textContent;
 export let User_petName = Object({ 
-    name: "your pet",
+    name: "your pet", //earth + the one used to name
 });
 
 export const MONSTER_ASSET_KEYS = Object({
-    IGUANIGNITE: " pet ", //`${document.getElementById("vPetNameDisplay").textContent}` // User_petName ,//"Digi-Pet",//`${vPetNameValue}` `${vPetNamePhas3r}`, //"IGUANIGNITE",
+    IGUANIGNITE: " pet ", //earth + the one used for sprite 
+    //`${document.getElementById("vPetNameDisplay").textContent}` // User_petName ,//"Digi-Pet",//`${vPetNameValue}` `${vPetNamePhas3r}`, //"IGUANIGNITE",
     // IGUANIGNITE: document.getElementById("vPetNameDisplay").textContent ,
     // U_PET_NAME: `${vPetNamePhas3r}`, let vPetNameValue;  
-    // U_PET_NAME: `${User_petName}` + " ",
-    CARNODUSK: "Baqua beast", //
+    CARNODUSK: "Baqua beast", //water
     FIRE: "Fuergo beast",
     
 })
@@ -25,7 +27,6 @@ export const MONSTER_ASSET_KEYS = Object({
 // // console.log(named === true);
 // updateVPetNameInput(MONSTER_ASSET_KEYS);
 ;
-
 
 export const BATTLE_ASSET_KEYS = Object.freeze({
     HEALTH_BAR_BACKGROUND: "HEALTH_BAR_BACKGROUND",
@@ -46,8 +47,4 @@ export const UI_ASSET_KEYS = Object.freeze({
 
 export const DATA_ASSET_KEYS = Object.freeze({
     ATTACKS: "ATTACKS",
-});
-
-export const AUDIO_ASSET_KEYS = Object.freeze({
-    BATTLE: "BATTLE",
 });

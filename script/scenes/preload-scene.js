@@ -1,3 +1,5 @@
+//Preloading all of our files here
+
 import {
     BATTLE_ASSET_KEYS,
     BATTLE_BACKGROUND_ASSET_KEYS,
@@ -30,7 +32,6 @@ export class PreloadScene extends Phaser.Scene {
         const monsterTamerAssetPath = "assets/images/monster-tamer";
         const kenneysAssetPath = "assets/images/kenneys-assets";
 
-        // const soundPath = "../../assets/sound"; 
         //battle backgrounds
         this.load.image(
             BATTLE_BACKGROUND_ASSET_KEYS.FOREST,
@@ -76,14 +77,17 @@ export class PreloadScene extends Phaser.Scene {
         );
 
         //monster assets
+
+        //water type
         this.load.spritesheet( 
-            MONSTER_ASSET_KEYS.CARNODUSK, //water type
+            MONSTER_ASSET_KEYS.CARNODUSK, 
             `${monsterTamerAssetPath}/monsters/babyegg_water_emo.png`, { //water
             frameWidth: 320,
             frameHeight: 320,
             endFrame: 56,
         }
         );
+        //fire type
         this.load.spritesheet( 
             MONSTER_ASSET_KEYS.FIRE,
             `${monsterTamerAssetPath}/monsters/babyegg_fire_emo.png`, { //fire
@@ -92,7 +96,7 @@ export class PreloadScene extends Phaser.Scene {
             endFrame: 55,
         }
         );
-        // enemy Image
+        // Monster Image
         // this.load.image(
         //     MONSTER_ASSET_KEYS.CARNODUSK, //water
         //     `${monsterTamerAssetPath}/monsters/babyegg_water_emo-25.png.png`
@@ -101,9 +105,9 @@ export class PreloadScene extends Phaser.Scene {
         //     MONSTER_ASSET_KEYS.CARNODUSK, //fire
         //     `${monsterTamerAssetPath}/monsters/babyegg_fire_emo-26.png.png`
         // );
-        //player spritesheet
-                
-        
+
+
+        //player spritesheet (earth)
             this.load.spritesheet(
                 MONSTER_ASSET_KEYS.IGUANIGNITE,
                 `${monsterTamerAssetPath}/monsters/babyKittyegg_emoG.png`, {
@@ -127,12 +131,13 @@ export class PreloadScene extends Phaser.Scene {
 
         // load font
         this.load.font(`gothicFont`, "assets/font/DotGothic16-Regular.ttf" , 'truetype' ); // "https://fonts.googleapis.com/css2?family=DotGothic16&display=swap"
+       
         //ui assets
         this.load.image(
             UI_ASSET_KEYS.CURSOR,
             `${monsterTamerAssetPath}/ui/cursor.png`
         );
-
+        
         //load json data
         this.load.json(DATA_ASSET_KEYS.ATTACKS, "assets/data/attacks.json");
     }

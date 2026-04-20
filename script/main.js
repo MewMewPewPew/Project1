@@ -1,3 +1,7 @@
+//CART 263: Creative computation II 	
+//This is the code for Project 1 & 2 - Digi Chiika (デジ ちいか)
+//By Ash Oest O'Leary & Elle lilin Lim-Fauteux
+//This Phaser part was inspired by Scott Westover and his Monster Tamer game
 "use strict";
 
 import Phaser from "./library/phaser.js";
@@ -16,7 +20,6 @@ const game = new Phaser.Game({
         autoCenter: Phaser.Scale.CENTER_BOTH,
     },
     backgroundColor: "#000000",
-    //scene: [PreloadScene], //another way to start scene
     audio: {
         disableWebAudio: true,
     },
@@ -24,5 +27,4 @@ const game = new Phaser.Game({
 
 game.scene.add(SCENE_KEYS.PRELOAD_SCENE, PreloadScene);
 game.scene.add(SCENE_KEYS.BATTLE_SCENE, BattleScene);
-// if(named === true){}
 game.scene.start(SCENE_KEYS.PRELOAD_SCENE);

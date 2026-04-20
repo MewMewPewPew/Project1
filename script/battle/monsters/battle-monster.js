@@ -1,3 +1,5 @@
+// Class for all creatures
+
 import { BATTLE_ASSET_KEYS, 
     MONSTER_ASSET_KEYS,
     User_petName,} from "../../assetsK/asset-keys.js";
@@ -38,26 +40,10 @@ export class BattleMonster{
             position.x, 
             position.y, 
             this._monsterDetails.assetKey, 
-            //idk bout this: this._monsterDetails.assetFrame || 20 
+            //this._monsterDetails.assetFrame || 20 
             )
-            // .setScale(4)
+            //.setScale(4)
             ;
-
-        // this._phaserGameObject = this._scene.add.image(
-        //     position.x, 
-        //     position.y, 
-        //     this._monsterDetails.assetKey, 
-        //     this._monsterDetails.assetFrame || 0
-        // );
-        // this._scene.add.text(             
-        //     position.x, 
-        //     position.y, 
-        //     this._monsterDetails.name , //this._monsterDetails.name //MONSTER_ASSET_KEYS.U_PET_NAME
-           
-        // );
-         
-
-
 
         this.#createHealthBarComponents(config.scaleHealthBarBackgroundImageByY);
 
@@ -69,12 +55,7 @@ export class BattleMonster{
         });
     }
 
-// /**
-//  * @param {() => void} callback
-//  * @returns {void}
-//  */
-
-
+// function for the animation to play 
 playAnimationPlayer() {
     this._phaserGameObject.play(`playerPetAnim`);
 }
@@ -93,11 +74,7 @@ playAnimationEnemy() {
     get name(){
         return this._monsterDetails.name;
     }
-    // /** @type {string} */
-    // get name(){
-    //     return this._monsterDetails.name;
-    // }
-
+    
     /** @type {import("../../types/typedef.js").Attack[]} */
     get attacks(){
         return [...this._monsterAttacks];
@@ -126,16 +103,16 @@ playAnimationEnemy() {
         }
         this._healthBar.setMeterPercentageAnimated(this._currentHealth / this._maxHealth, {callback});
     }
-
+    // text style determined below
     #createHealthBarComponents(scaleHealthBarBackgroundImageByY = 1){
         this._healthBar = new HealthBar(this._scene, 34, 37);
-
         //const enemyHealthBar = this.#activeEnemyMonster._healthBar;
+       
         const monsterNameGameText = this._scene.add.text(30, 20, 
             this.name, {
                 color: "#000000",
                 fontSize: "32px",
-                fontFamily: 'gothicFont',
+                fontFamily: `gothicFont`,
             }
         );
 
@@ -145,14 +122,14 @@ playAnimationEnemy() {
         const monsterHealthBarLevelText = this._scene.add.text(monsterNameGameText.width + 35, 22, `L${this.level}`, {
             color: "#88ff84",
             fontSize: "28px",
-            fontFamily: 'gothicFont',
+            fontFamily: `gothicFont`,
         });
 
         const monsterHpText = this._scene.add.text(30, 55, "HP", {
             color: "#fb84ff",
-            fontSize: "22px",
+            fontSize: "20px",
             fontStyle: "italic",
-            fontFamily: 'gothicFont',
+            fontFamily: `gothicFont`,
         });
 
         //container for enemy health

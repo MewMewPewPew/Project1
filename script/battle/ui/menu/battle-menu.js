@@ -1,3 +1,5 @@
+// Battle menu - where some text output can be determined
+
 import Phaser from '../../../library/phaser.js';
 import { MONSTER_ASSET_KEYS, UI_ASSET_KEYS } from "../../../assetsK/asset-keys.js";
 import { DIRECTION } from '../../../common/direction.js';

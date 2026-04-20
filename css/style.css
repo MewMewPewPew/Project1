@@ -413,6 +413,7 @@ body{
 }
 /* + command list */
 #statementboxButton2{
+    z-index: 10;
     position: absolute;
     width: 40px;
     margin-top: -20px;
@@ -421,7 +422,7 @@ body{
 }
 #commandBoxOnly{
     display: none;
-    height: 750px;
+    height: 770px;
     margin-left: 50px;
 }
 #textCommand{
@@ -433,7 +434,7 @@ body{
     display: none;
 }
 .statementBox{
-    z-index: 7;
+    z-index: 10;
     border-radius:2%; 
     position: absolute;
     background: #f7b4ee98;
@@ -514,7 +515,7 @@ p{
     align-items: center;  
     font-size: 30px;
     margin-top: -380px;
-    left: 350px;
+    left: 360px;
 }
  /* font-family: "Jacquard 12 Charted", system-ui;
     font-family: "Jacquard 12", system-ui; 

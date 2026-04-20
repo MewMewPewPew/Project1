@@ -1,3 +1,5 @@
+//Class used to facilitate the states changes of the Pokemon style battle
+
 /**
  * @typedef State
  * @type {Object}

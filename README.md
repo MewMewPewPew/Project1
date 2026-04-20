@@ -1,7 +1,7 @@
 # Digi Chiika (デジ ちいか) 
 ### Play [デジ ちいか / Digi Chiika](https://mewmewpewpew.github.io/Project1/) by Ash Oest O’Leary & Elle Lilin Kyuss Lim-Fauteux 
 
-Project-1 < CART 263 < Concordia 
+#### Project-1 < CART 263 < Concordia 
 
 ---
 ![start](assets/img/ScreenShoot/0.PNG)
@@ -9,6 +9,7 @@ Refer to the [artist statement](assets/img/ScreenShoot/cart263project1.pdf) for 
 ### Screenshots:
 <!-- ([play the game](https://mewmewpewpew.github.io/Project1/) before, don't spoil yourself) -->
 ![start](assets/img/ScreenShoot/1.PNG)
+![start](assets/img/ScreenShoot/mind.PNG)
 ![start](assets/img/ScreenShoot/2.PNG)
 ![start](assets/img/ScreenShoot/3.PNG)
 ![start](assets/img/ScreenShoot/4.PNG)
@@ -33,10 +34,11 @@ Refer to the [artist statement](assets/img/ScreenShoot/cart263project1.pdf) for 
 
 ### Project-2 < CART 263 < Concordia 
 We intergrated a library called Phaser(3) to add a battle scene to our game - pokemon style! 
+Refer to the [artist statement-2](assets/img/ScreenShoot/Artist_Statement2.pdf) for more information!!
 
 #### more screenshots:
 ![start](assets/img/ScreenShoot/P2-1.PNG)
-![start](assets/img/ScreenShoot/investigate.PNG)
+![start](assets/img/ScreenShoot/Alert_i.PNG)
 ![battle](assets/img/ScreenShoot/battle.PNG)
 ![battle](assets/img/ScreenShoot/b2.PNG)
 ![battle](assets/img/ScreenShoot/IA.PNG)

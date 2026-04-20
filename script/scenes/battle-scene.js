@@ -1,3 +1,5 @@
+// Major scene where most stuff happends (battle)
+
 import Phaser from "../library/phaser.js";
 import { 
     BATTLE_ASSET_KEYS,
@@ -59,27 +61,12 @@ export class BattleScene extends Phaser.Scene {
     create() {
         console.log(`[${BattleScene.name}:create] invoked`);
 
-        
-
         //create main background
         const background = new Background(this);
         background.showForest();
 
-        //render player + enemy
         //stats for enemy
-        // this.#activeEnemyMonster = new EnemyBattleMonster({
-        //     scene: this,
-        //     monsterDetails: {
-        //         name: [MONSTER_ASSET_KEYS.CARNODUSK, MONSTER_ASSET_KEYS.FIRE],
-        //         assetKey: [MONSTER_ASSET_KEYS.CARNODUSK, MONSTER_ASSET_KEYS.FIRE],
-        //         assetFrame: 22,
-        //         currentHp: 25,
-        //         maxHp: 25,
-        //         attackIds: [1],
-        //         baseAttack: 5,
-        //         currentLevel: 5,
-        //     },
-        // });
+        // Water type
         this.#activeEnemyMonster = new EnemyBattleMonster({
             scene: this,
             monsterDetails: {
@@ -93,6 +80,7 @@ export class BattleScene extends Phaser.Scene {
                 currentLevel: 5,
             },
         });
+        // it's animation with sprite
         this.anims.create({
             key: `attackerPetAnim`,
              frames: this.anims.generateFrameNumbers(MONSTER_ASSET_KEYS.CARNODUSK, {
@@ -102,7 +90,7 @@ export class BattleScene extends Phaser.Scene {
             frameRate:5,
             repeat:-1,
         });
-        //Fire animation guy
+        // Fire type
         // this.#activeEnemyMonster = new EnemyBattleMonster({
         //     scene: this,
         //     monsterDetails: {
@@ -116,6 +104,7 @@ export class BattleScene extends Phaser.Scene {
         //         currentLevel: 5,
         //     },
         // });
+        // it's animation with sprite
         // this.anims.create({
         //     key: `attackerPetAnim2`,
         //      frames: this.anims.generateFrameNumbers(MONSTER_ASSET_KEYS.FIRE, {
@@ -147,9 +136,7 @@ export class BattleScene extends Phaser.Scene {
             },
             
         });
-        // this.#activePlayerMonster._monsterDetails.name.update(User_petName.name);
-        // this.#activePlayerMonster._monsterDetails.name.getName(document.getElementById("vPetNameDisplay").textContent);
-        //animation 
+        // it's animation with sprite
         this.anims.create({
             key: `playerPetAnim`,
              frames: this.anims.generateFrameNumbers(MONSTER_ASSET_KEYS.IGUANIGNITE, {
@@ -160,7 +147,6 @@ export class BattleScene extends Phaser.Scene {
             repeat:-1,
         });
         
-        
 
         //render out the main + sub info panes
         this.#battleMenu = new BattleMenu(this, this.#activePlayerMonster);
@@ -168,20 +154,20 @@ export class BattleScene extends Phaser.Scene {
 
         //for keyboard
         this.#cursorKeys = this.input.keyboard.createCursorKeys();
-        
+        this.comma = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.COMMA);
+        this.period = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.PERIOD);
         // this.#activePlayerMonster.playAnimation();
         this.#activePlayerMonster.playAnimationPlayer();
         this.#activeEnemyMonster.playAnimationEnemy();
         //console.log(this.#activeEnemyMonster.isFainted);
-        // sound 
-        // var music = this.sound.add(`battleMusic`);
+
     }
     
     //calls every frame
     update(){
         this.#battleStateMachine.update();
 
-        //This changes the name of the Virtual Pet - BUT DOENT EXPORT IT or smt...
+        //This changes the name of the Virtual Pet - BUT DOENT EXPORT IT or smt... sadnessss
         if (document.getElementById("exclamationP").style.display === "block" ){
             // console.log(":-0");
             updateVPetNameInput(User_petName);
@@ -194,13 +180,13 @@ export class BattleScene extends Phaser.Scene {
             // console.log(document.getElementById("vPetNameDisplay").textContent);
             e.name = `${document.getElementById("vPetNameDisplay").textContent}` ; 
         }
-        if (User_petName.name != "Pet "){
-            // this.#ExportName.name = update();
-            
-        }
+        // if (User_petName.name != "your pet"){
+        //     // this.#ExportName.name = update();
+        // }
+        
         //JustDown a method that helps to know if something was pressed
-        const wasSpaceKeyPressed = Phaser.Input.Keyboard.JustDown(this.#cursorKeys.space);
-        if(wasSpaceKeyPressed){
+        const wasShiftKeyPressed = Phaser.Input.Keyboard.JustDown(this.period); 
+        if(wasShiftKeyPressed){
             this.#battleMenu.handlePlayerInput('OK');
             //check if player selected attack, update text
             if(this.#battleMenu.selectedAttack === undefined){
@@ -219,9 +205,8 @@ export class BattleScene extends Phaser.Scene {
             this.#battleStateMachine.setState(BATTLE_STATES.ENEMY_INPUT);
             
         }
-       
 
-        if(Phaser.Input.Keyboard.JustDown(this.#cursorKeys.shift)){
+        if(Phaser.Input.Keyboard.JustDown(this.comma)){
             this.#battleMenu.handlePlayerInput('CANCEL');
             return;
         }
@@ -273,6 +258,7 @@ export class BattleScene extends Phaser.Scene {
         );
     }
 
+    // Ending sequence (defeated)
     #postBattleSequenceCheck(){
         if(this.#activeEnemyMonster.isFainted){
             this.#battleMenu.updateInfoPaneMessagesAndWaitForInput(
@@ -312,7 +298,8 @@ export class BattleScene extends Phaser.Scene {
         //add or stop music
         var music = this.sound.add('battleMusic');
         //make the sound less loud
-        music.setVolume(0.5);
+        music.setVolume(0.8);
+
         //update pet name
         // var vPetName = this.string.add(MONSTER_ASSET_KEYS.IGUANIGNITE)
        
@@ -348,7 +335,7 @@ export class BattleScene extends Phaser.Scene {
             onEnter: () => {
                 // start battle music
                 music.play();
-                this.#battleMenu.updateInfoPaneMessagesAndWaitForInput([`go ${this.#activePlayerMonster.name}!`],
+                this.#battleMenu.updateInfoPaneMessagesAndWaitForInput([`go digi pet !`], //${this.#activePlayerMonster.name}!
                     () => {
                         //waiting for text animations to finish
                         //no animations for now, so just this

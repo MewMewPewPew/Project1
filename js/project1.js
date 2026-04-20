@@ -1,16 +1,14 @@
 //CART 263: Creative computation II 	
-//This is the code for Project 1 - Digi Chiika (デジ ちいか)
+//This is the code for Project 1 & 2 - Digi Chiika (デジ ちいか)
 //By Ash Oest O'Leary & Elle lilin Lim-Fauteux
 
 //make variables global to be able to acess them in phaser
 let battleScene; 
 let battleButton;
+
 let vPetName;
 let named;
-let namedPhaser;
-// let vPetNameValue; 
-// let vPetNameValue = document.getElementById("vPetNamePhas3r");
-// let vPetNameVP = document.getElementById("vPetNamePhas3r");
+
 
 window.onload = function (){
     let sleep = false;
@@ -25,7 +23,6 @@ window.onload = function (){
     // doc to start the battle scene
     battleScene = document.getElementById("game-container");
     battleButton = document.getElementById("exclamationP");
-    namedPhaser = false;
     // pet_name = document.getElementById
     
     // let parentDom = document.getElementById("chiikaBoxOnly");
