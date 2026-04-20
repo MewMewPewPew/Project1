@@ -30,6 +30,7 @@ export class PreloadScene extends Phaser.Scene {
         const monsterTamerAssetPath = "assets/images/monster-tamer";
         const kenneysAssetPath = "assets/images/kenneys-assets";
 
+        const soundPath = "../../assets/sound"; 
         //battle backgrounds
         this.load.image(
             BATTLE_BACKGROUND_ASSET_KEYS.FOREST,
@@ -115,7 +116,8 @@ export class PreloadScene extends Phaser.Scene {
      
         
         // load game sound
-        this.load.audio(`battleMusic`, "../../assets/sound/BattleSoundtrack.mp3");
+        
+        this.load.audio(`battleMusic`, `${soundPath}/BattleSoundtrack.mp3`);
         
         // //game display? html id
         // var gameDisplay  = document.getElementById("game-container");
@@ -137,7 +139,7 @@ export class PreloadScene extends Phaser.Scene {
         //     `${monsterTamerAssetPath}/monsters/iguanignite.png`
         // );
         // load font
-        this.load.font('gothicFont', "../../assets/font/DotGothic16-Regular.ttf" , 'truetype' ); // "https://fonts.googleapis.com/css2?family=DotGothic16&display=swap"
+        this.load.font('gothicFont', "../assets/font/DotGothic16-Regular.ttf" , 'truetype' ); // "https://fonts.googleapis.com/css2?family=DotGothic16&display=swap"
         //ui assets
         this.load.image(
             UI_ASSET_KEYS.CURSOR,
