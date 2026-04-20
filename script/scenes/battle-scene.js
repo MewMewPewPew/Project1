@@ -141,7 +141,7 @@ export class BattleScene extends Phaser.Scene {
                 // repeat:-1
                 currentHp: 25,
                 maxHp: 25,
-                attackIds: [2],
+                attackIds: [2,3,4],
                 baseAttack: 15,
                 currentLevel: 5,
             },

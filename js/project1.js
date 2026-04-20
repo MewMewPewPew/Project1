@@ -65,6 +65,7 @@ window.onload = function (){
     let actButtonEat = document.getElementById("interactButton5");
     let playMusicButton = document.getElementById("playButton");
     let artistStatementButton = document.getElementById("statementboxButton");
+    let commandButton = document.getElementById("statementboxButton2");
     let progress;
     
     //Virtual pet dream/mind Box animation
@@ -80,17 +81,49 @@ window.onload = function (){
     //Artist Statement render
     let textOpen = false;
     let statementBox = document.getElementById("statementBoxOnly");
+    let textOpen2 = false;
+    let commmandBox = document.getElementById("commandBoxOnly");
+
     artistStatementButton.addEventListener("click",function(e){
-        if (!textOpen){
+        if (!textOpen && !textOpen2){
             statementBox.style.display = "block";
             artistStatementButton.style.opacity ="100%";
             textOpen =true;
-        } else {
+        } else if (!textOpen && textOpen2){
+            statementBox.style.display = "block";
+            commmandBox.style.display = "none";
+            commandButton.style.opacity ="30%";
+            artistStatementButton.style.opacity ="100%";
+            textOpen =true;
+            textOpen2 =false;
+        }
+        else {
             statementBox.style.display = "none";
             artistStatementButton.style.opacity ="40%";
             textOpen =false;
         }
     })
+    //command box render 
+    commandButton.addEventListener("click",function(e){
+        if (!textOpen && !textOpen2){
+            commmandBox.style.display = "block";
+            commandButton.style.opacity ="100%";
+            textOpen2 =true;
+        } else if (textOpen && !textOpen2){
+            statementBox.style.display = "none";
+            commmandBox.style.display = "block";
+            commandButton.style.opacity ="100%";
+            artistStatementButton.style.opacity ="40%";
+            textOpen2 =true;
+            textOpen =false;
+        }
+        else {
+            commmandBox.style.display = "none";
+            commandButton.style.opacity ="30%";
+            textOpen2 =false;
+        }
+    })
+
     //start the animation before it had the change to go to sleep
     if (!sleep) {
         dreamAnimation();   

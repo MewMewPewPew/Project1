@@ -462,7 +462,7 @@ export class BattleMenu {
         if(this.#selectedBattleMenuOption === BATTLE_MENU_OPTIONS.ITEM){
             //todo
             this.#activeBattleMenu = ACTIVE_BATTLE_MENU.BATTLE_FLEE;
-            this.updateInfoPaneMessagesAndWaitForInput(['Your bag is empty..'], () => {
+            this.updateInfoPaneMessagesAndWaitForInput(['The cake is a lie..'], () => {
                 this.#switchToMainBattleMenu();
             });
             return;
@@ -471,7 +471,7 @@ export class BattleMenu {
         if(this.#selectedBattleMenuOption === BATTLE_MENU_OPTIONS.SWITCH){
             //todo
             this.#activeBattleMenu = ACTIVE_BATTLE_MENU.BATTLE_SWITCH;
-            this.updateInfoPaneMessagesAndWaitForInput(['You have no other monsters in your party..'], () => {
+            this.updateInfoPaneMessagesAndWaitForInput(['Your pet observed the environment...', 'This new space seems to make your pet excited', 'Your pet looks at you with big eyes'], () => {
                 this.#switchToMainBattleMenu();
             });
             return;

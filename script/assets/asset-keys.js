@@ -9,7 +9,7 @@ export const BATTLE_BACKGROUND_ASSET_KEYS = Object.freeze({
 });
 // let User_petName = document.getElementById("vPetNameDisplay").textContent;
 export let User_petName = Object({ 
-    name: "Pet ",
+    name: "your pet",
 });
 
 export const MONSTER_ASSET_KEYS = Object({

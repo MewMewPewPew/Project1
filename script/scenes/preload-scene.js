@@ -33,11 +33,11 @@ export class PreloadScene extends Phaser.Scene {
         //battle backgrounds
         this.load.image(
             BATTLE_BACKGROUND_ASSET_KEYS.FOREST,
-            `${monsterTamerAssetPath}/battle-backgrounds/forest-background2.png`
+            `${monsterTamerAssetPath}/battle-backgrounds/rainbow-background.png`
         );
         this.load.image(
             BATTLE_BACKGROUND_ASSET_KEYS.WONDERSEA,
-            `${monsterTamerAssetPath}/battle-backgrounds/rainbow-background.png`
+            `${monsterTamerAssetPath}/battle-backgrounds/forest-background2.png`
         );
 
         //battle assets
