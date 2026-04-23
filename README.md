@@ -12,7 +12,8 @@
 ![start](assets/img/ScreenShoot/0.PNG)
 Refer to the [artist statement 1](assets/img/ScreenShoot/cart263project1.pdf) & [artist statement-2](assets/img/ScreenShoot/Artist_Statement2.pdf) for more information!!
 
-[github repo for battle scene] made seperately for easier integration into project 1 !
+[github repo for battle scene](https://github.com/lilinlim/cart263-P2) made separately for easier integration into project 1 !
+
 ---
 ### Project1 
 #### Screenshots:
