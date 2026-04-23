@@ -14,10 +14,12 @@ export class Background {
     constructor(scene){
         this.#scene = scene;
 
+        //creating and linking background to scene
         this.#backgroundGameObject = this.#scene.add.image(0, 0, BATTLE_BACKGROUND_ASSET_KEYS.FOREST)
         .setOrigin(0).setAlpha(0);
     }
 
+    //showing background + updating it to correct layer
     showForest(){
         this.#backgroundGameObject.setTexture(BATTLE_BACKGROUND_ASSET_KEYS.FOREST).setAlpha(1);
     }

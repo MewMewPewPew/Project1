@@ -1,3 +1,4 @@
+//common file for directions for keyboard commands
 /**
  * @typedef {keyof typeof DIRECTION} Direction
  */

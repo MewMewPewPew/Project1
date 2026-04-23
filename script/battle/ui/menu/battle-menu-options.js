@@ -3,18 +3,20 @@
  * @typedef {keyof typeof BATTLE_MENU_OPTIONS} BattleMenuOptions
  */
 
+//options + text for each option in battle menu
 /** @enum {BattleMenuOptions} */
 export const BATTLE_MENU_OPTIONS = Object.freeze({
-    FIGHT: 'FIGHT',
-    SWITCH: 'WONDER',
-    ITEM: 'CAKE',
-    FLEE: 'FLEE',
+    FIGHT: 'FIGHT', //fighting opponent
+    SWITCH: 'WONDER', //switch monsters
+    ITEM: 'CAKE', //use an item
+    FLEE: 'FLEE', //leaving battle
 });
 
 /**
  * @typedef {keyof typeof ATTACK_MOVE_OPTIONS} AttackMoveOptions
  */
 
+//choose among provided movesets for monster
 /** @enum {AttackMoveOptions} */
 export const ATTACK_MOVE_OPTIONS = Object.freeze({
     MOVE_1: 'MOVE_1',

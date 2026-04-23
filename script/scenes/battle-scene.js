@@ -303,6 +303,7 @@ export class BattleScene extends Phaser.Scene {
         //update pet name
         // var vPetName = this.string.add(MONSTER_ASSET_KEYS.IGUANIGNITE)
        
+        //intro battle state
         this.#battleStateMachine.addState({
             name: BATTLE_STATES.INTRO,
             onEnter: () => { 
@@ -314,11 +315,12 @@ export class BattleScene extends Phaser.Scene {
             }
         });
         
+        //setting battle
         this.#battleStateMachine.addState({
             name: BATTLE_STATES.PRE_BATTLE_INFO,
             onEnter: () => {
                 //waiting for enemy monster's appearing + notifying user
-                this.#battleMenu.updateInfoPaneMessagesAndWaitForInput([`wild ${this.#activeEnemyMonster.name} appeard!`],
+                this.#battleMenu.updateInfoPaneMessagesAndWaitForInput([`wild ${this.#activeEnemyMonster.name} appears!`],
                     () => {
                         //waiting for text animations to finish
                         //no animations for now, so just this
@@ -330,6 +332,7 @@ export class BattleScene extends Phaser.Scene {
             }
         });
 
+        //bringing out monster
         this.#battleStateMachine.addState({
             name: BATTLE_STATES.BRING_OUT_MONSTER,
             onEnter: () => {
@@ -348,6 +351,7 @@ export class BattleScene extends Phaser.Scene {
             }
         });
 
+        //player input state
         this.#battleStateMachine.addState({
             name: BATTLE_STATES.PLAYER_INPUT,
             onEnter: () => {
@@ -355,6 +359,7 @@ export class BattleScene extends Phaser.Scene {
             }
         });
 
+        //enemy input state
         this.#battleStateMachine.addState({
             name: BATTLE_STATES.ENEMY_INPUT,
             onEnter: () => {
@@ -364,6 +369,7 @@ export class BattleScene extends Phaser.Scene {
             }
         });
 
+        //attack state
         this.#battleStateMachine.addState({
             name: BATTLE_STATES.BATTLE,
             onEnter: () => {
@@ -378,6 +384,7 @@ export class BattleScene extends Phaser.Scene {
             },
         });
 
+        //checking everything after attack
         this.#battleStateMachine.addState({
             name: BATTLE_STATES.POST_ATTACK_CHECK,
             onEnter: () => {
@@ -385,6 +392,7 @@ export class BattleScene extends Phaser.Scene {
             }
         });
 
+        //attack finish state
         this.#battleStateMachine.addState({
             name: BATTLE_STATES.FINISHED,
             onEnter: () => {
@@ -397,6 +405,7 @@ export class BattleScene extends Phaser.Scene {
             }
         });
 
+        //flee state
         this.#battleStateMachine.addState({
             name: BATTLE_STATES.FLEE_ATTEMPT,
             onEnter: () => {

@@ -1,5 +1,8 @@
+//file specifically for details regarding enemy monster
+
 import {BattleMonster} from "./battle-monster.js";
 
+//its position
 /** @type {import("../../types/typedef.js").Coordinate} */
 const ENEMY_POSITION = Object.freeze({
     x: 768,

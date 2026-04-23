@@ -1,5 +1,6 @@
 import Phaser from "../library/phaser";
 
+//for battle monster scene
 /**
  * @typedef BattleMonsterConfig
  * @type {Object}
@@ -8,6 +9,7 @@ import Phaser from "../library/phaser";
  * @property {number} [scaleHealthBarBackgroundImageByY=1]
  */
 
+//for the monsters themselves
 /**
  * @typedef Monster
  * @type {Object}
@@ -21,6 +23,7 @@ import Phaser from "../library/phaser";
  * @property {number[]} attackIds
  */
 
+//monster's placement
 /**
  * @typedef Coordinate
  * @type {Object}
@@ -28,6 +31,7 @@ import Phaser from "../library/phaser";
  * @property {number} y
  */
 
+//for the monsters' attacks
 /**
  * @typedef Attack
  * @type {Object}

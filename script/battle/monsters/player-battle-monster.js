@@ -3,6 +3,7 @@ import { BATTLE_ASSET_KEYS,
     MONSTER_ASSET_KEYS,
     User_petName,} from "../../assetsK/asset-keys.js";
 
+//its position
 /** @type {import("../../types/typedef.js").Coordinate} */
 const PlAYER_POSITION = Object.freeze({
     x: 256,
@@ -32,10 +33,12 @@ export class PlayerBattleMonster extends BattleMonster{
         this.#addHealthBarComponents();
     }
 
+    //setting up health bar
     #setHealthBarText(){
         this.#healthBarTextGameObject.setText(`${this._currentHealth}/${this._maxHealth}`);
     }
 
+    //adding text to hp bar
     #addHealthBarComponents(){
         this.#healthBarTextGameObject = this._scene.add
         .text(443, 80, "", {
@@ -48,6 +51,7 @@ export class PlayerBattleMonster extends BattleMonster{
         this._phaserHealthBarGameContainer.add(this.#healthBarTextGameObject);
     }
 
+    //adjusting hp when damage is done
     /**
      * 
      * @param {number} damage 

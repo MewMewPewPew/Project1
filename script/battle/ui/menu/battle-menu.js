@@ -123,15 +123,18 @@ export class BattleMenu {
             return;
         }
 
+        //go to main menu
         if(input === 'CANCEL'){
             this.#switchToMainBattleMenu();
             return;
         }
+        //go to battle menu
         if (input === 'OK'){
             if(this.#activeBattleMenu === ACTIVE_BATTLE_MENU.BATTLE_MAIN){
                 this.#handlePlayerChooseMainBattleOption();
                 return;
             }
+            //attack menu
             if(this.#activeBattleMenu === ACTIVE_BATTLE_MENU.BATTLE_MOVE_SELECT){
                 this.#handlePlayerChooseAttack();
                 return;
@@ -175,13 +178,16 @@ export class BattleMenu {
         this.#waitingForPlayerInput = true;
     }
 
+    //main battle menu
     #createMainBattleMenu(){
+        //opening messages
         this.#battleTextGameObjectLine1 = this.#scene.add.text(20, 468, 'what should', BATTLE_UI_TEXT_STYLE);
         this.#battleTextGameObjectLine2 = this.#scene.add.text(20, 512, `${this.#activePlayerMonster.name} do next?`, BATTLE_UI_TEXT_STYLE);
         
         this.#mainBattleMenuCursorPhaserImageGameObject = this.#scene.add.image(BATTLE_MENU_CURSOR_POS.x, BATTLE_MENU_CURSOR_POS.y, UI_ASSET_KEYS.CURSOR, 0)
         .setOrigin(0.5).setScale(2.5);
         
+        //placing options within menu
         this.#mainBattleMenuPhaserContainerGameObject = this.#scene.add.container(520, 448, [
             this.#createMainInfoSubPane(),
             this.#scene.add.text(55, 22, BATTLE_MENU_OPTIONS.FIGHT, BATTLE_UI_TEXT_STYLE),
@@ -194,10 +200,12 @@ export class BattleMenu {
         this.hideMainBattleMenu();
     }
 
+    //sub menu: attacks
     #createMonsterAttackSubMenu(){
         this.#attackBattleMenuCursorPhaserImageGameObject 
         = this.#scene.add.image(ATTACK_MENU_CURSOR_POS.x, ATTACK_MENU_CURSOR_POS.y, UI_ASSET_KEYS.CURSOR, 0).setOrigin(0.5).setScale(2.5);
 
+        //show attack names using array
         /** @type {string[]} */
         const attackNames = [];
         for(let i =0; i < 4; i+= 1){
@@ -212,10 +220,12 @@ export class BattleMenu {
             this.#attackBattleMenuCursorPhaserImageGameObject
         ]);
 
+        //hiding when exiting it
         this.hideMonsterAttackSubMenu();
     }
     
 
+    //main panel
     #createMainInfoPane() {
         const padding = 4;
         const rectHeight = 124;
@@ -230,6 +240,7 @@ export class BattleMenu {
         .setOrigin(0).setStrokeStyle(8, 0x7D0E4D, 1);
     }
 
+    //sub panel
     #createMainInfoSubPane() {
         const rectWidth = 500;
         const rectHeight = 124;
@@ -342,6 +353,7 @@ export class BattleMenu {
         }
     }
 
+    //input for keyboard when action selection
     /**
      * @param {import('../../../common/direction.js').Direction} direction
      */
@@ -426,6 +438,7 @@ export class BattleMenu {
         exhaustiveGuard(this.#selectedAttackMenuOption);
     }
 
+    //setting up the moves on menu
     #moveMoveSelectBattleMenuCursor(){
         if(this.#activeBattleMenu !== ACTIVE_BATTLE_MENU.BATTLE_MOVE_SELECT){
             return;
@@ -448,6 +461,7 @@ export class BattleMenu {
         }
     }
 
+    //going from attack menu to main menu
     #switchToMainBattleMenu(){
         this.hideMonsterAttackSubMenu();
         this.showMainBattleMenu();
@@ -456,11 +470,13 @@ export class BattleMenu {
     #handlePlayerChooseMainBattleOption(){
         this.hideMainBattleMenu();
 
+        //going from main menu to battle menu
         if(this.#selectedBattleMenuOption === BATTLE_MENU_OPTIONS.FIGHT){
             this.showMonsterAttackSubMenu();
             return;
         }
 
+        //going from main menu to "item"
         if(this.#selectedBattleMenuOption === BATTLE_MENU_OPTIONS.ITEM){
             //todo
             this.#activeBattleMenu = ACTIVE_BATTLE_MENU.BATTLE_FLEE;
@@ -470,6 +486,7 @@ export class BattleMenu {
             return;
         }
 
+        //going from main menu to "switch"
         if(this.#selectedBattleMenuOption === BATTLE_MENU_OPTIONS.SWITCH){
             //todo
             this.#activeBattleMenu = ACTIVE_BATTLE_MENU.BATTLE_SWITCH;
@@ -479,6 +496,7 @@ export class BattleMenu {
             return;
         }
 
+        //going from main menu to "flee"
         if(this.#selectedBattleMenuOption === BATTLE_MENU_OPTIONS.FLEE){
             //todo
             this.#activeBattleMenu = ACTIVE_BATTLE_MENU.BATTLE_FLEE;
@@ -491,6 +509,7 @@ export class BattleMenu {
         exhaustiveGuard(this.#selectedBattleMenuOption);
     }
 
+    //attack move selection
     #handlePlayerChooseAttack(){
         let selectedMoveIndex = 0;
         switch (this.#selectedAttackMenuOption){

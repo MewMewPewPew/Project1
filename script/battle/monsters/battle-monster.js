@@ -103,7 +103,7 @@ playAnimationEnemy() {
         }
         this._healthBar.setMeterPercentageAnimated(this._currentHealth / this._maxHealth, {callback});
     }
-    // text style determined below
+    //text style determined below
     #createHealthBarComponents(scaleHealthBarBackgroundImageByY = 1){
         this._healthBar = new HealthBar(this._scene, 34, 37);
         //const enemyHealthBar = this.#activeEnemyMonster._healthBar;
@@ -119,12 +119,14 @@ playAnimationEnemy() {
         const healthBarBgImage = this._scene.add.image(0, 0, BATTLE_ASSET_KEYS.HEALTH_BAR_BACKGROUND)
         .setOrigin(0).setScale(1, scaleHealthBarBackgroundImageByY)
 
+        //text for monster level
         const monsterHealthBarLevelText = this._scene.add.text(monsterNameGameText.width + 35, 22, `L${this.level}`, {
             color: "#88ff84",
             fontSize: "28px",
             fontFamily: `gothicFont`,
         });
 
+        //text for monster hp
         const monsterHpText = this._scene.add.text(30, 55, "HP", {
             color: "#fb84ff",
             fontSize: "20px",

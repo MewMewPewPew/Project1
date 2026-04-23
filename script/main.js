@@ -9,6 +9,7 @@ import {SCENE_KEYS} from "./scenes/scene-keys.js";
 import {PreloadScene} from "./scenes/preload-scene.js";
 import { BattleScene } from "./scenes/battle-scene.js";
 
+//part of setting up phaser
 const game = new Phaser.Game({
     type: Phaser.CANVAS,
     pixelArt: false,
@@ -25,6 +26,7 @@ const game = new Phaser.Game({
     },
 });
 
+//adding scenes
 game.scene.add(SCENE_KEYS.PRELOAD_SCENE, PreloadScene);
 game.scene.add(SCENE_KEYS.BATTLE_SCENE, BattleScene);
 game.scene.start(SCENE_KEYS.PRELOAD_SCENE);
